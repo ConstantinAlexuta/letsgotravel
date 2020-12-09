@@ -7,9 +7,9 @@ jobs:
   build_and_preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: .github\workflows\main.yml
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: actions/checkout@master
+      - run: .github/workflows/main.yml
+      - uses: FirebaseExtended/action-hosting-deploy@master
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_LETSGOTRAVEL_YNASS }}'
