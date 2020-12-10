@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/lgt-ui",
+    "public": "dist\\lgt-ui",
     "ignore": [
       "firebase.json",
       "**/.*",
