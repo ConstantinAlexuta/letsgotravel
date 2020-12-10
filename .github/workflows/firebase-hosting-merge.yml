@@ -15,7 +15,7 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           #          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          repoToken: 1//09JwauBLxHY5PCgYIARAAGAkSNwF-L9IrNBo0qbOeeGnwhudgAv6loK0g3aDoQRCv984Kce_jW-nxKlVR6bMvVz_jqms2fuBEwqE
+          repoToken: '1//09JwauBLxHY5PCgYIARAAGAkSNwF-L9IrNBo0qbOeeGnwhudgAv6loK0g3aDoQRCv984Kce_jW-nxKlVR6bMvVz_jqms2fuBEwqE'
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_LETSGOTRAVEL_YNASS }}"
           channelId: live
           projectId: letsgotravel-ynass
