@@ -1,0 +1,34 @@
+<!-- <p>navbar-fixed-line1-dropdown1 works!</p> -->
+
+
+<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Despre noi
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item nav-link" routerLink="/about-us" routerLinkActive="active"  href="#">Despre noi</a></li>
+                <li><a class="dropdown-item nav-link" [routerLink]="['/about-us']"   href="#">Firma de incredere</a></li>
+                <li><a class="dropdown-item nav-link" routerLink="about-us"   href="#">Termeni si conditii</a></li>
+                <li><a class="dropdown-item" href="#">Contract cadru</a></li>
+                <li><a class="dropdown-item" href="#">Politica de confidentialitate</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+<!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+    aria-expanded="false">
+    Dropdown
+</a>
+<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li>
+        <hr class="dropdown-divider">
+    </li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+</ul> -->
