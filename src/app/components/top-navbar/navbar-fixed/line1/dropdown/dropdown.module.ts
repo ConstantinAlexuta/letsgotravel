@@ -8,7 +8,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { FrameworkContractComponent } from './framework-contract/framework-contract.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,14 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     PrivacyPolicyComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([
+        { path: 'about-us', component: AboutUsComponent },
+        { path: 'reliable-company', component: ReliableCompanyComponent },
+        { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
+        { path: 'framework-contract', component: FrameworkContractComponent },
+        { path: 'privacy-policy', component: PrivacyPolicyComponent }
+    ])
   ],
   exports: [
     DropdownComponent
