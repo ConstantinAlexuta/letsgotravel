@@ -8,6 +8,7 @@ import { Line4Component } from './line4/line4.component';
 import { SocialComponent } from './social/social.component';
 import { LogoComponent } from './logo/logo.component';
 import { SearchComponent } from './search/search.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 
@@ -24,6 +25,10 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [
+    SideBarLeftComponent
+  ],
+  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class SideBarLeftModule { }

@@ -13,3 +13,11 @@ export class NavbarComponent implements OnInit {
   }
 
 }
+
+
+$(document).ready(function() {
+  
+  // SideNav Initializationa
+  // $(".button-collapse").sideNav();
+  
+});

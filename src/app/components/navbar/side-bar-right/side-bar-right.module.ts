@@ -6,6 +6,7 @@ import { Line2Component } from './line2/line2.component';
 import { Line3Component } from './line3/line3.component';
 import { Line4Component } from './line4/line4.component';
 import { SocialComponent } from './social/social.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 
@@ -20,6 +21,10 @@ import { SocialComponent } from './social/social.component';
     ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [
+    SideBarRightComponent
+  ],
+  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class SideBarRightModule { }

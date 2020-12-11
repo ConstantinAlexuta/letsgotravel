@@ -11,6 +11,9 @@ import { NavbarFixedLineAdminComponent } from './navbar-fixed-line-admin/navbar-
 import { NavbarFixedLine3Component } from './navbar-fixed-line3/navbar-fixed-line3.component';
 import { NavbarFixedLine2Component } from './navbar-fixed-line2/navbar-fixed-line2.component';
 import { NavbarFixedLineSuperAdminComponent } from './navbar-fixed-line-super-admin/navbar-fixed-line-super-admin.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { LogoComponent } from './logo/logo.component';
+import { NavbarFixedLogoComponent } from './navbar-fixed-logo/navbar-fixed-logo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { NavbarFixedLineSuperAdminComponent } from './navbar-fixed-line-super-ad
     NavbarFixedLine2Component,
     NavbarFixedLine3Component,
     NavbarFixedLineAdminComponent,
-    NavbarFixedLineSuperAdminComponent
+    NavbarFixedLineSuperAdminComponent,
+    LogoComponent,
+    NavbarFixedLogoComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +33,15 @@ import { NavbarFixedLineSuperAdminComponent } from './navbar-fixed-line-super-ad
     NavbarFixedLine3Module,
     NavbarFixedLineAdminModule,
     NavbarFixedLineSuperAdminModule
+  ],
+  exports: [
+    NavbarFixedComponent,
+    NavbarFixedLine1Component,
+    NavbarFixedLine2Component,
+    NavbarFixedLine3Component,
+    NavbarFixedLineAdminComponent,
+    NavbarFixedLineSuperAdminComponent
   ]
+  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class NavbarFixedModule { }
