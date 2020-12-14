@@ -5,6 +5,7 @@ import { TopNavbarComponent } from './top-navbar.component';
 import { NavbarFixedModule } from './navbar-fixed/navbar-fixed.module';
 import { SideBarLeftModule } from './side-bar-left/side-bar-left.module';
 import { SideBarRightModule } from './side-bar-right/side-bar-right.module';
+import { NavbarMobileModule } from './navbar-mobile/navbar-mobile.module';
 
 
 
@@ -17,7 +18,8 @@ import { SideBarRightModule } from './side-bar-right/side-bar-right.module';
     CommonModule,
     NavbarFixedModule,
     SideBarLeftModule,
-    SideBarRightModule
+    SideBarRightModule,
+    NavbarMobileModule
   ],
   exports: [
     TopNavbarComponent

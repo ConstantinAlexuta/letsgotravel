@@ -1,0 +1,16 @@
+{
+  "data":[
+    {
+      "previewImageSrc": "src/app/shared/images/primeng-galleria-photos/bg1.jpg",
+      "thumbnailImageSrc": "src/app/shared/images/primeng-galleria-photos/bg1.jpg",
+      "alt": "Incepe sa calatoresti acum!",
+      "title": "Vezi ofertele noastre!"
+    },
+    {
+      "previewImageSrc": "src/app/shared/images/primeng-galleria-photos/Bora-Bora-1920-x-606.jpg",
+      "thumbnailImageSrc": "src/app/shared/images/primeng-galleria-photos/Bora-Bora-1920-x-606.jpg",
+      "alt": "Viseaza, calatoreste, povesteste!",
+      "title": "Cauta destinatia potrivita!"
+    }
+  ]
+}
