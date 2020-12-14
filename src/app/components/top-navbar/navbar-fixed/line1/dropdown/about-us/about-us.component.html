@@ -2,15 +2,16 @@
 <br>
 
 <div class="container">
-
     <div class="row">
         <h3>Despre noi</h3>
     </div>
+</div>
 
+<div class="container">
     <nav aria-label="breadcrumb" style="padding: 10px; margin: auto;">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a class="" aria-current="page" routerLink="/home" routerLinkActive="home" href="#" style="text-decoration: none;">
+                <a class="" aria-current="page" routerLink="/home" href="#" style="text-decoration: none;">
                     <i class="menu-item-icon fas fa-globe-europe" style="padding-right: 3px; text-decoration: none;"
                         aria-hidden="true">
                     </i>
@@ -22,19 +23,21 @@
             </li>
         </ol>
     </nav>
+</div>
 
+<div class="container">
     <div class="row">
         <div class="col">
-                Let's Go Travel
-                <br>
-                Punct de lucru / Sediu social:
-                <br>
-                Str. Serbanescu Alexandru Cpt. Av., nr. 2, 
-                <br>
-                bloc 6/A, sc. 1, ap. 1,
-                <br>
-                 Sector 1, Bucuresti, Romania
-                <br>
+            Let's Go Travel
+            <br>
+            Punct de lucru / Sediu social:
+            <br>
+            Str. Serbanescu Alexandru Cpt. Av., nr. 2,
+            <br>
+            bloc 6/A, sc. 1, ap. 1,
+            <br>
+            Sector 1, Bucuresti, Romania
+            <br>
         </div>
         <div class="col">
             Nr. Inreg. Reg. Comertului: J40/13349/2016
@@ -59,7 +62,7 @@
         </div>
     </div>
 </div>
-
+    
 <br>
 
 <div class="container">
@@ -241,7 +244,7 @@
                             <i class="menu-item-icon fas fa-umbrella-beach" style="padding-right: 3px;"></i> ofertele </a>
                          noastre</strong> si vezi ce ti se potriveste.
                          <br><br>
-                         Sau cere o oferta personalizata aici.                        
+                         Sau cere o oferta personalizata <strong>aici</strong>.
                     <br><br>                    
                 </div>
             </div>
@@ -253,7 +256,15 @@
     <br>
     <br>
 
-    <h3 style="text-align: center;">ACREDITARILE  <span>  </span> NOASTRE</h3>
+</div>
+
+<div class="container">
+    
+    <h3 style="text-align: center;">
+        <a class="dropdown-item nav-link" [routerLink]="['/our-accreditations']" href="#">
+            ACREDITARILE <span> </span> NOASTRE
+        </a>
+    </h3>
 
     <br>
     <br>
@@ -267,7 +278,10 @@
                     <h5 class="card-title">Licenta de turism</h5>
                     <!-- <p class="card-text">This is text</p> -->
                 </div>
-                <img src="assets\lgt\images\accreditations\Licenta-724x1024.jpg" class="card-img-top" alt="...">
+                <a class="" aria-current="page" routerLink="/tourism-license" href="#" style="text-decoration: none;">
+                    <img src="assets\lgt\images\accreditations\Licenta-724x1024.jpg" 
+                    class="card-img-top" alt="Licenta de turism">
+                </a>                
             </div>
         </div>
 
@@ -277,7 +291,10 @@
                     <h5 class="card-title">Brevet de turism</h5>
                     <!-- <p class="card-text">This is text</p> -->
                 </div>
-                <img src="assets\lgt\images\accreditations\brevet_LGT.jpg" class="card-img-top" alt="...">
+                <a class="" aria-current="page" routerLink="/tourism-patent" href="#" style="text-decoration: none;">
+                    <img src="assets\lgt\images\accreditations\brevet_LGT.jpg" 
+                    class="card-img-top" alt="Brevet de turism">
+                </a>
             </div>
         </div>
 
@@ -287,7 +304,10 @@
                     <h5 class="card-title">Polita de asigurare</h5>
                     <!-- <p class="card-text">This is text</p> -->
                 </div>
-                <img src="assets\lgt\images\accreditations\OMNIASIG-INSOLVENTA-54623-TRAVE-INSURANCE-LGT-SRL-POLITA-2020-1-page-001-1-725x1024.jpg" class="card-img-top" alt="...">
+                <a class="" aria-current="page" routerLink="/insurance-policy" href="#" style="text-decoration: none;">
+                    <img src="assets\lgt\images\accreditations\OMNIASIG-INSOLVENTA-54623-TRAVE-INSURANCE-LGT-SRL-POLITA-2020-1-page-001-1-725x1024.jpg"
+                        class="card-img-top" alt="Polita de asigurare">
+                </a>                
             </div>
         </div>   
 
@@ -304,7 +324,10 @@
                     <h5 class="card-title">Certificat de inregistrare</h5>
                     <!-- <p class="card-text">This is text</p> -->
                 </div>
-                <img src="assets\lgt\images\accreditations\CUI_LGT.jpg" class="card-img-top" alt="...">
+                <a class="" aria-current="page" routerLink="/tax-registration-certificate" href="#" style="text-decoration: none;">
+                    <img src="assets\lgt\images\accreditations\CUI_LGT.jpg" 
+                    class="card-img-top" alt="Certificat de inregistrare">
+                </a>
             </div>
         </div>
     
@@ -314,6 +337,4 @@
     <br>
 
 </div>
-
-
 

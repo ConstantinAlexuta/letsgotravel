@@ -9,6 +9,11 @@ import { FrameworkContractComponent } from './framework-contract/framework-contr
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 import { RouterModule } from '@angular/router';
+import { OurAccreditationsComponent } from './our-accreditations/our-accreditations.component';
+import { TourismLicenseComponent } from './our-accreditations/tourism-license/tourism-license.component';
+import { TourismPatentComponent } from './our-accreditations/tourism-patent/tourism-patent.component';
+import { InsurancePolicyComponent } from './our-accreditations/insurance-policy/insurance-policy.component';
+import { TaxRegistrationCertificateComponent } from './our-accreditations/tax-registration-certificate/tax-registration-certificate.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,7 @@ import { RouterModule } from '@angular/router';
     ReliableCompanyComponent, 
     TermsAndConditionsComponent, 
     FrameworkContractComponent, 
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent, OurAccreditationsComponent, TourismLicenseComponent, TourismPatentComponent, InsurancePolicyComponent, TaxRegistrationCertificateComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +31,14 @@ import { RouterModule } from '@angular/router';
         { path: 'reliable-company', component: ReliableCompanyComponent },
         { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
         { path: 'framework-contract', component: FrameworkContractComponent },
-        { path: 'privacy-policy', component: PrivacyPolicyComponent }
+        { path: 'privacy-policy', component: PrivacyPolicyComponent },
+
+        { path: 'our-accreditations', component: OurAccreditationsComponent },
+
+        { path: 'tourism-license', component: TourismLicenseComponent },
+        { path: 'tourism-patent', component: TourismPatentComponent },
+        { path: 'insurance-policy', component: InsurancePolicyComponent },
+        { path: 'tax-registration-certificate', component: TaxRegistrationCertificateComponent }
     ])
   ],
   exports: [
