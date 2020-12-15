@@ -1,3 +1,4 @@
+import { IconsAssociatedModule } from './../../icons-associated/icons-associated.module';
 import { SuperAdminModule } from './super-admin/super-admin.module';
 import { AdminModule } from './admin/admin.module';
 import { Line3Module } from './line3/line3.module';
@@ -23,7 +24,8 @@ import { LogoComponent } from './logo/logo.component';
     Line2Module,
     Line3Module,
     AdminModule,
-    SuperAdminModule
+    SuperAdminModule,
+    IconsAssociatedModule
   ],
   exports: [
     NavbarFixedComponent
