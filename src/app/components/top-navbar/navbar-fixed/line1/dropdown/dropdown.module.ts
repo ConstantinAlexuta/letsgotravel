@@ -14,6 +14,8 @@ import { TourismLicenseComponent } from './our-accreditations/tourism-license/to
 import { TourismPatentComponent } from './our-accreditations/tourism-patent/tourism-patent.component';
 import { InsurancePolicyComponent } from './our-accreditations/insurance-policy/insurance-policy.component';
 import { TaxRegistrationCertificateComponent } from './our-accreditations/tax-registration-certificate/tax-registration-certificate.component';
+import { SocialAndFiscalInformationComponent } from './social-and-fiscal-information/social-and-fiscal-information.component';
+import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { TaxRegistrationCertificateComponent } from './our-accreditations/tax-re
     ReliableCompanyComponent, 
     TermsAndConditionsComponent, 
     FrameworkContractComponent, 
-    PrivacyPolicyComponent, OurAccreditationsComponent, TourismLicenseComponent, TourismPatentComponent, InsurancePolicyComponent, TaxRegistrationCertificateComponent
+    PrivacyPolicyComponent, OurAccreditationsComponent, TourismLicenseComponent, TourismPatentComponent, InsurancePolicyComponent, TaxRegistrationCertificateComponent, SocialAndFiscalInformationComponent, PaymentMethodsComponent
   ],
   imports: [
     CommonModule,
@@ -38,11 +40,16 @@ import { TaxRegistrationCertificateComponent } from './our-accreditations/tax-re
         { path: 'tourism-license', component: TourismLicenseComponent },
         { path: 'tourism-patent', component: TourismPatentComponent },
         { path: 'insurance-policy', component: InsurancePolicyComponent },
-        { path: 'tax-registration-certificate', component: TaxRegistrationCertificateComponent }
+        { path: 'tax-registration-certificate', component: TaxRegistrationCertificateComponent },
+        { path: 'social-and-fiscal-information', component: SocialAndFiscalInformationComponent },
+        { path: 'payment-methods', component: PaymentMethodsComponent }
+        
     ])
   ],
   exports: [
-    DropdownComponent
+    DropdownComponent,
+    SocialAndFiscalInformationComponent,
+    PaymentMethodsComponent
   ]
 })
 export class DropdownModule { }
