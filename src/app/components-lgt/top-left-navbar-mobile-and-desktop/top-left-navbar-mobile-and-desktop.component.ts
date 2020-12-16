@@ -12,11 +12,29 @@ export class TopLeftNavbarMobileAndDesktopComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mobileResolution = 700;
+  public mobileMenuAriaExpanded: boolean = false;
+
+  public switchMobileMenuAriaExpanded(): boolean {
+    return this.mobileMenuAriaExpanded = false;
+  }
+
+  public closeMobileMenuAriaExpanded() {
+
+  }
+
+  mobileResolution = 7000;
   desktopResolution = 1200;
   public getWidth() {
   return window.innerWidth;
 }
+
+
+  isShowDiv = true;
+   
+  toggleDisplayDiv() {
+    this.isShowDiv = !this.isShowDiv;
+  }
+
 
 
 }

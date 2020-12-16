@@ -94,18 +94,38 @@
     <!-- navbar-expand-sm -->
     <div class="container-fluid
         hidden-lg
+        
         "
         *ngIf="getWidth() < mobileResolution"  
+        (click)="switchMobileMenuAriaExpanded()"
         >
+
+        <!-- data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent"
+        aria-controls="navbarToggleExternalContent"
+        aria-expanded="mobileMenuAriaExpanded"
+        aria-label="Toggle navigation" -->
         <button class="navbar-toggler
         hidden-lg 
-        " type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+
+        " type="button" 
+            (click)="toggleDisplayDiv()"
+            
+             >
+            <!-- (click)="toggleDisplayDiv()" -->
+            <!-- aria-expanded="mobileMenuAriaExpanded" -->
+            <!-- data-bs-target="#navbarToggleExternalContent" -->
+            <!-- aria-controls="navbarToggleExternalContent" -->
+            <!-- (click)="switchMobileMenuAriaExpanded()" -->
+            <!-- (click)="switchMobileMenuAriaExpanded()" -->
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- (click)="toggleDisplayDiv()" -->
 
-        <app-logo-small></app-logo-small>
+        <div (click)="toggleDisplayDiv()">
+            <app-logo-small></app-logo-small>
+        </div>
+        
 
         <div class="
         hidden-lg 
@@ -116,10 +136,15 @@
 </nav>
 
 <!-- Mobile Menu Content -->
-<div class="collapse 
-    hidden-lg" id="navbarToggleExternalContent"
-    *ngIf="getWidth() < mobileResolution"    
+<!-- class="collapse hidden-lg" -->
+<!-- id="navbarToggleExternalContent" -->
+<div  
+    
+    [hidden]="isShowDiv"
     >
+    <!-- *ngIf="switchMobileMenuAriaExpanded()" -->
+    <!-- *ngIf="mobileMenuAriaExpanded" -->
+
     <div class="bg-dark p-4">
         <!-- <h5 class="text-white h4">Collapsed content</h5> -->
         <!-- <span class="text-muted">NEW Toggleable via the navbar brand.</span> -->
@@ -128,30 +153,33 @@
         <div>
             <!-- <app-logo-small></app-logo-small> -->
         </div>
-        <div>
+        <!-- (click)="switchMobileMenuAriaExpanded()" -->
+        <div 
+        (click)="toggleDisplayDiv()"
+            >
             <app-home-menu></app-home-menu>
         </div>
-        <div>
+        <div (click)="toggleDisplayDiv()">
             <app-offers-menu></app-offers-menu>
         </div>
-        <div>
+        <div (click)="toggleDisplayDiv()">
             <app-contact-menu></app-contact-menu>
         </div>
-        <div style="padding-top: 12px;">
+        <div (click)="toggleDisplayDiv()" style="padding-top: 12px;">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx4">
                 <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
                     <app-phone-icon-and-text></app-phone-icon-and-text>
                 </li>
             </ul>
         </div>
-        <div style="padding-top: 12px;">
+        <div (click)="toggleDisplayDiv()" style="padding-top: 12px;">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx4">
                 <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
                     <app-email-icon-and-text></app-email-icon-and-text>
                 </li>
             </ul>
         </div>
-        <div style="padding-top: 12px;">
+        <div (click)="toggleDisplayDiv()" style="padding-top: 12px;">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx4">
                 <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
                     <app-icons-shortcut-all-without-phone-and-email></app-icons-shortcut-all-without-phone-and-email>
