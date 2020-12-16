@@ -49,7 +49,7 @@ import { WhatsappIconComponent } from '../icons-associated/icons/whatsapp-icon/w
     HomeCarouselBootstrapModule,
 
     RouterModule.forChild([
-        { path: 'home-view', component: HomeViewComponent },
+        { path: 'home', component: HomeViewComponent },
         { path: 'home-cards', component: HomeCardsComponent },
         { path: 'home-carousel-bootstrap', component: HomeCarouselBootstrapComponent }
   ])

@@ -16,7 +16,7 @@ import { OffersViewComponent } from './offers-view/offers-view.component';
     CommonModule,
 
     RouterModule.forChild([
-      { path: 'offers-view', component: OffersViewComponent }
+      { path: 'offers', component: OffersViewComponent }
     ])
   ],
   exports: [

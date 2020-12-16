@@ -21,7 +21,7 @@ import { IconsAssociatedModule } from '../icons-associated/icons-associated.modu
     IconsAssociatedModule,
 
     RouterModule.forChild([
-        { path: 'contact-view', component: ContactViewComponent }
+        { path: 'contact', component: ContactViewComponent }
   ])
   ],
   exports: [

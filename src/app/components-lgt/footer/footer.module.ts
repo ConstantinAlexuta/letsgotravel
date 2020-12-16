@@ -11,7 +11,7 @@ import { IconsAssociatedModule } from '../icons-associated/icons-associated.modu
   ],
   imports: [
     CommonModule,
-    IconsAssociatedModule
+    IconsAssociatedModule,
   ],
   exports: [
     FooterComponent
