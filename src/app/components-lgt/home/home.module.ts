@@ -31,6 +31,7 @@ import { PhoneIconAndTextComponent } from '../icons-associated/icons/phone-icon-
 import { PhoneIconComponent } from '../icons-associated/icons/phone-icon/phone-icon.component';
 import { WhatsappIconAndTextComponent } from '../icons-associated/icons/whatsapp-icon-and-text/whatsapp-icon-and-text.component';
 import { WhatsappIconComponent } from '../icons-associated/icons/whatsapp-icon/whatsapp-icon.component';
+import { HomeFooterComponent } from './home-footer/home-footer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { WhatsappIconComponent } from '../icons-associated/icons/whatsapp-icon/w
     LogoLargeComponent,
 
     HomeMenuComponent, 
-    HomeViewComponent    
+    HomeViewComponent, 
+    HomeFooterComponent    
   ],
   imports: [
     CommonModule,
@@ -60,7 +62,8 @@ import { WhatsappIconComponent } from '../icons-associated/icons/whatsapp-icon/w
 
     HomeMenuComponent, 
     HomeViewComponent,
-    
+    HomeFooterComponent,
+
     HomeCardsComponent,
     HomeCarouselBootstrapComponent,
 

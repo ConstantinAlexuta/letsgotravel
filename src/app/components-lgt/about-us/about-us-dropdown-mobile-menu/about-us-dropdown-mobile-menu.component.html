@@ -1,1 +1,89 @@
 <p>about-us-dropdown-mobile-menu works!</p>
+
+<!-- Split dropup button -->
+<!-- <div class="btn-group dropup">
+    <button type="button" class="btn btn-secondary">
+        Split dropup
+    </button>
+    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+        Dropdown menu links
+    </ul>
+</div> -->
+
+
+<!-- <div class="btn-group dropend">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropright
+    </button>
+    <ul class="dropdown-menu">
+
+    </ul>
+</div> -->
+
+
+<div class="btn-group dropend">
+    <!-- <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Despre noi
+    </button> -->
+
+    <!-- dropdown-toggle -->
+    <!-- <a class=" dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false" style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;">
+        <i class="menu-item-icon fas fa-atlas" style="padding-right: 5px;"></i>
+        Despre noi
+    </a> -->
+
+    <button type="button"  id="dLabel" 
+     class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropright
+    </button>
+    
+    <ul class="dropright-menu dropdown-menu-dark"  aria-labelledby="dLabel" aria-expanded="false">
+
+        <!-- Dropdown menu links -->
+        <li>
+            <a class="dropdown-item nav-link" [routerLink]="['/about-us']" href="#">
+                Despre noi
+            </a>
+        </li>
+        
+        <li>
+            <a class="dropdown-item nav-link" [routerLink]="['/reliable-company']" href="#">
+                Firma de incredere
+            </a>
+        </li>
+        
+        <li>
+            <a class="dropdown-item nav-link" [routerLink]="['/terms-and-conditions']" href="#">
+                Termeni si conditii
+            </a>
+        </li>
+        
+        <li>
+            <a class="dropdown-item nav-link" [routerLink]="['/framework-contract']" href="#">
+                Contract cadru
+            </a>
+        </li>
+        
+        <li>
+            <a class="dropdown-item nav-link" [routerLink]="['/privacy-policy']" href="#">
+                Politica de confidentialitate
+            </a>
+        </li>
+        
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        
+        <li>
+            <a class="dropdown-item nav-link" [routerLink]="['/our-accreditations']" href="#">
+                Acreditarile noastre
+            </a>
+        </li>
+
+    </ul>
+</div>

@@ -1,6 +1,3 @@
-// import { HomeModule } from './components/home/home.module';
-// import { TopNavbarMobileAndDesktopModule } from './components/top-navbar-mobile-and-desktop/top-navbar-mobile-and-desktop.module';
-// import { FooterModule } from './components/footer/footer.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
@@ -12,10 +9,6 @@ import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-// import { TopNavbarModule } from './components/top-navbar/top-navbar.module';
-// import { SharedModule } from './components/shared/shared.module';
-
 // import { ButtonModule } from 'primeng/button';
 // import { TooltipModule } from 'primeng/tooltip';
 // import { RadioButtonModule } from 'primeng/radiobutton';
@@ -23,37 +16,18 @@ import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageNotFoundComponent } from './components-lgt/page-not-found/page-not-found.component';
-import { MenuHomeCarouselBootstrapComponent } from './components-lgt/menus/menu-home-carousel-bootstrap/menu-home-carousel-bootstrap.component';
-import { MenuHomeCardsComponent } from './components-lgt/menus/menu-home-cards/menu-home-cards.component';
-import { FooterModule } from './components-lgt/footer/footer.module';
 import { TopLeftNavbarMobileAndDesktopModule } from './components-lgt/top-left-navbar-mobile-and-desktop/top-left-navbar-mobile-and-desktop.module';
-// import { MenuHomeCarouselBootstrapComponent } from './components/menus/menu-home-carousel-bootstrap/menu-home-carousel-bootstrap.component';
-// import { MenuHomeCardsComponent } from './components/menus/menu-home-cards/menu-home-cards.component';
+import { TopLeftNavbarMobileAndDesktopCommonModule } from './components-lgt/top-left-navbar-mobile-and-desktop-common/top-left-navbar-mobile-and-desktop-common.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    MenuHomeCarouselBootstrapComponent,
-    MenuHomeCardsComponent,
-    // PageNotFoundComponent,
-    // MenuHomeCarouselBootstrapComponent,
-    // MenuHomeCardsComponent
+    PageNotFoundComponent
   ],
   imports: [
     // SharedModule,
-    // TopNavbarModule,
-    // FooterModule,
-    // TopNavbarMobileAndDesktopModule,
-
-    // HomeModule,
-
-    FooterModule,    
     TopLeftNavbarMobileAndDesktopModule,
-
-
-
-
+    TopLeftNavbarMobileAndDesktopCommonModule,
 
     FormsModule, ReactiveFormsModule, 
     // LocationStrategy, HashLocationStrategy,

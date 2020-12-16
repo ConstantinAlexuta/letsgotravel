@@ -17,6 +17,18 @@ import { AboutUsDropdownMobileMenuComponent } from './about-us-dropdown-mobile-m
 
 import { RouterModule } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { AboutUsFooterComponent } from './about-us-footer/about-us-footer.component';
+import { FrameworkContractFooterComponent } from './framework-contract-footer/framework-contract-footer.component';
+import { OurAccreditationsFooterComponent } from './our-accreditations-footer/our-accreditations-footer.component';
+import { InsurancePolicyFooterComponent } from './insurance-policy-footer/insurance-policy-footer.component';
+import { TaxRegistrationCertificateFooterComponent } from './tax-registration-certificate-footer/tax-registration-certificate-footer.component';
+import { TourismLicenseFooterComponent } from './tourism-license-footer/tourism-license-footer.component';
+import { TourismPatentFooterComponent } from './tourism-patent-footer/tourism-patent-footer.component';
+import { PaymentMethodsFooterComponent } from './payment-methods-footer/payment-methods-footer.component';
+import { PrivacyPolicyFooterComponent } from './privacy-policy-footer/privacy-policy-footer.component';
+import { ReliableCompanyFooterComponent } from './reliable-company-footer/reliable-company-footer.component';
+import { SocialAndFiscalInformationFooterComponent } from './social-and-fiscal-information-footer/social-and-fiscal-information-footer.component';
+import { TermsAndConditionsFooterComponent } from './terms-and-conditions-footer/terms-and-conditions-footer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +46,19 @@ import { AboutUsComponent } from './about-us/about-us.component';
     TermsAndConditionsComponent, 
     AboutUsDropdownDesktopMenuComponent, 
     AboutUsDropdownMobileMenuComponent, 
+    
+    AboutUsFooterComponent, 
+    FrameworkContractFooterComponent, 
+    OurAccreditationsFooterComponent, 
+    InsurancePolicyFooterComponent, 
+    TaxRegistrationCertificateFooterComponent, 
+    TourismLicenseFooterComponent, 
+    TourismPatentFooterComponent, 
+    PaymentMethodsFooterComponent, 
+    PrivacyPolicyFooterComponent, 
+    ReliableCompanyFooterComponent, 
+    SocialAndFiscalInformationFooterComponent, 
+    TermsAndConditionsFooterComponent
   ],
   imports: [
     CommonModule,
@@ -69,7 +94,20 @@ import { AboutUsComponent } from './about-us/about-us.component';
     SocialAndFiscalInformationComponent, 
     TermsAndConditionsComponent, 
     AboutUsDropdownDesktopMenuComponent, 
-    AboutUsDropdownMobileMenuComponent
+    AboutUsDropdownMobileMenuComponent, 
+    
+    AboutUsFooterComponent, 
+    FrameworkContractFooterComponent, 
+    OurAccreditationsFooterComponent, 
+    InsurancePolicyFooterComponent, 
+    TaxRegistrationCertificateFooterComponent, 
+    TourismLicenseFooterComponent, 
+    TourismPatentFooterComponent, 
+    PaymentMethodsFooterComponent, 
+    PrivacyPolicyFooterComponent, 
+    ReliableCompanyFooterComponent, 
+    SocialAndFiscalInformationFooterComponent, 
+    TermsAndConditionsFooterComponent
   ]
 })
 export class AboutUsModule { }

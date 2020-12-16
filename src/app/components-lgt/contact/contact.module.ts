@@ -5,15 +5,17 @@ import { RouterModule } from '@angular/router';
 import { AskSomethingInfoComponent } from './ask-something-info/ask-something-info.component';
 import { ContactFormModule } from './contact-form/contact-form.module';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { ContactViewComponent } from '../contact-view/contact-view.component';
-import { ContactMenuComponent } from '../contact-menu/contact-menu.component';
 import { IconsAssociatedModule } from '../icons-associated/icons-associated.module';
+import { ContactFooterComponent } from './contact-footer/contact-footer.component';
+import { ContactMenuComponent } from './contact-menu/contact-menu.component';
+import { ContactViewComponent } from './contact-view/contact-view.component';
 
 @NgModule({
   declarations: [
     AskSomethingInfoComponent,
     ContactViewComponent,
-    ContactMenuComponent
+    ContactMenuComponent,
+    ContactFooterComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { IconsAssociatedModule } from '../icons-associated/icons-associated.modu
     AskSomethingInfoComponent,
     ContactFormComponent,
     ContactViewComponent,
-    ContactMenuComponent
+    ContactMenuComponent,
+    ContactFooterComponent
   ]
 })
 export class ContactModule { }

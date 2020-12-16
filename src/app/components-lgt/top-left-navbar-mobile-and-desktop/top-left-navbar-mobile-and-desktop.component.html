@@ -107,7 +107,7 @@
         </div>
         <!-- (click)="switchMobileMenuAriaExpanded()" -->
 
-
+        
         
         
         <div class="collapse navbar-collapse" id="navbarNavDropdown" style="align-self: center">
@@ -144,8 +144,11 @@
         
 
 
-
-
+        <div style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;
+            padding-left: 7px; padding-right: 7px;">
+            Mobile Menu (Temporar test info)
+        </div>
+        
         <div 
         (click)="toggleDisplayDiv()"
             >
@@ -156,6 +159,9 @@
         </div>
         <div (click)="toggleDisplayDiv()">
             <app-about-us-dropdown-desktop-menu></app-about-us-dropdown-desktop-menu>
+        </div>
+        <div (click)="toggleDisplayDiv()">
+            <app-about-us-dropdown-mobile-menu></app-about-us-dropdown-mobile-menu>
         </div>
         <div (click)="toggleDisplayDiv()">
             <app-contact-menu></app-contact-menu>

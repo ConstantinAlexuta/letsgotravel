@@ -4,13 +4,15 @@ import { RouterModule } from '@angular/router';
 
 import { OffersMenuComponent } from './offers-menu/offers-menu.component';
 import { OffersViewComponent } from './offers-view/offers-view.component';
+import { OffersFooterComponent } from './offers-footer/offers-footer.component';
 
 
 
 @NgModule({
   declarations: [
     OffersMenuComponent, 
-    OffersViewComponent
+    OffersViewComponent, 
+    OffersFooterComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { OffersViewComponent } from './offers-view/offers-view.component';
   ],
   exports: [
     OffersMenuComponent, 
-    OffersViewComponent
+    OffersViewComponent,
+    OffersFooterComponent
   ]
 })
 export class OffersModule { }
