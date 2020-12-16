@@ -1,5 +1,6 @@
+import { MenuModule } from './../../../menu/menu.module';
 import { ContactModule } from './contact/contact.module';
-import { DropdownModule } from './../line1/dropdown/dropdown.module';
+// import { DropdownModule } from './../line1/dropdown/dropdown.module';
 import { OffersModule } from './offers/offers.module';
 
 import { NgModule } from '@angular/core';
@@ -21,8 +22,9 @@ import { SuperAdminComponent } from '../super-admin/super-admin.component';
     CommonModule,
     HomeModule,
     OffersModule,
-    DropdownModule,
+    // DropdownModule,
     ContactModule,
+    MenuModule,
     RouterModule.forChild([
           { path: 'home', component: HomeComponent },
           { path: 'offers', component: OffersComponent },

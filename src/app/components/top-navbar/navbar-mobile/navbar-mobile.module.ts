@@ -5,7 +5,7 @@ import { NavbarMobileComponent } from './navbar-mobile.component';
 @NgModule({
   declarations: [NavbarMobileComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     NavbarMobileComponent

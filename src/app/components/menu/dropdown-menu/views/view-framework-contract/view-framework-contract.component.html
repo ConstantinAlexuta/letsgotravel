@@ -1,0 +1,1641 @@
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <h3>Contract Cadru</h3>
+    </div>
+</div>
+
+<div class="container">
+    <nav aria-label="breadcrumb" style="padding: 10px; margin: auto;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="" aria-current="page" routerLink="/home" href="#" style="text-decoration: none;">
+                    <i class="menu-item-icon fas fa-globe-europe" style="padding-right: 3px; text-decoration: none;"
+                        aria-hidden="true">
+                    </i>
+                    Home
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Contract Cadru
+            </li>
+        </ol>
+    </nav>
+</div>
+
+
+<!-- Datele fiscale -->
+<app-menu-social-and-fiscal-information></app-menu-social-and-fiscal-information>
+
+
+<div class="container">
+    <br>
+    <h3 style="text-align: center;">
+        Contract Cadru
+    </h3>
+    <br>
+
+    <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                    aria-expanded="true" aria-controls="collapse1">
+                    <strong>
+                        Contract de comercializare a pachetelor de servicii turistice
+                        <br>
+                        nr. ##BOOKING_CODE## din ##BOOKING_DATE##
+                    </strong>
+                </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Partile Contractante</strong>
+                    <br><br>
+                    <strong>Societatea SC Travel & Insurance LGT S.R.L.</strong>, cu sediul in Bucuresti, Strada
+                    Serbanescu Alexandru Nr. 2, Bl. 6/A, Ap. 1,
+                    Sector 1, inregistrata la Oficiul Registrului Comertului de pe langa Tribunalul Bucuresti sub nr.
+                    J40/13349/2016, cod de
+                    inregistrare fiscala 36621742, cont bancar RO67INGB0000999906281813 (RON) si
+                    RO58INGB0000999906365977 (EUR), deschis la
+                    ING Bank, titulara a Licentei de turism nr. 843/23.01.2019, pentru Agentia de turism Let’s Go Travel
+                    de tipul Agentie de
+                    Turism Organizatoare, Brevet de turism nr. 13859/01.07.2008, Tel:0747 548 548, e-mail:
+                    contact@lgt.ro, reprezentata prin
+                    Dl. Ion Alexuta, in calitate de administrator; denumita in continuare <strong>Agentia</strong>,
+                    <br><br>
+                    si
+                    <br><br>
+                    <strong>Calatorul/reprezentantul calatorului</strong>, domnul/doamna ##CLIENT_NAME##,
+                    domiciliat/domiciliata in ##CLIENT_ADDRESS##,
+                    telefon ##CLIENT_PHONE##, posesor/posesoare al/a buletinului/cartii de identitate . ##CLIENT_ID##,
+                    CNP:
+                    ##CLIENT_PERSONAL_ID##, au convenit la incheierea prezentului contract.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    I. Obiectul contractului
+                </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>I. Obiectul contractului</strong> il constituie vanzarea de catre Agentie a pachetului de
+                    servicii de calatorie mentionat mai jos
+                    si inscris in voucher, bilet de odihna, tratament, bilet de excursie, alt insris anexat la prezentul
+                    contract si
+                    eliberarea documentelor de plata si calatorie.
+                    <br><br>
+                    ##BOOKING_ITEMS_DETAILED_LIST##
+                    <br><br>
+                    Numele persoanelor inscrise in excursie:
+                    <br>
+                    ##PAX_NAMES_LIST##
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    II. Pretul
+                </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>II. Pretul</strong>
+                    <br>
+                    Pretul contractului este ##BOOKING_TOTAL## ##BOOKING_CURRENCY## si cuprinde costul serviciilor
+                    turistice efective si
+                    comisionul Agentiei
+                    <br>
+                    Pretul va fi platit dupa cum urmeaza:
+                    <br>
+                    Avans / Termene de plata: ##BOOKING_BALANCE_DUE_DATES##
+                    <br>
+                    Scadenta finala: ##BOOKING_BALANCE_DUE_DATE##
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    III. Numarul minim de persoane necesar pentru realizarea programului:
+                </button>
+            </h2>
+            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>III. Numarul minim de persoane necesar pentru realizarea programului:</strong>
+                    <br>
+                    <div class="row">
+                        <br>
+                        <div class="col" style="text-align: center;">
+                            <br>
+                            ##NR_MINIM_PERSOANE##
+                            <br>
+                            Agenţia,
+                            <br>
+                            Let’s Go Travel,
+                            <br>
+                            Reprezentantul
+                            <br>
+                            ##BOOKING_OPERATOR##
+                        </div>
+                        <div class="col" style="text-align: center;">
+                            <br>
+                            <br>
+                            Turist,
+                            <br>
+                            ##CLIENT_NAME##
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                    <strong>TERMENI SI CONDITII GENERALE</strong>
+                </button>
+            </h2>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading7">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                    1. Pachetul de servicii de calatorie
+                </button>
+            </h2>
+            <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            <strong>1. Pachetul de servicii de calatorie</strong> este asigurat de Agentia de turism
+                            organizatoare ##BOOKING_SUPPLIER##.Acesta este
+                            responsabil si solidar cu Agentia, sa asigure derularea operativa a programelor si
+                            serviciilor, cu respectarea in
+                            totalitate a serviciilor prevazute in program sau comanda Calatorului. In acest sens,
+                            calatorii au optiunea de a se
+                            adresa fie Agentiei pentru solutionarea unui posibil diferent, fie direct Agentiei de turism
+                            organizatoare in cazul
+                            intrarii acestuia in insolventa/faliment. In calitatea sa de agentie revanzatoare, Agentia,
+                            Travel & Insurance LGT SRL,
+                            este obligata sa informeze corect calatorii asupra serviciilor asigurate in program si
+                            conditiilor de participare la
+                            excursie. Acesta, la solicitarea calatorilor, poate sa ofere informatii detaliate despre
+                            Agentia de turism
+                            organizatoare.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading8">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                    2. Durata contractului
+                </button>
+            </h2>
+            <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <!-- <strong>2. Durata contractului</strong> -->
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            2.1. Contractul va intra in vigoare in momentul semnarii lui de catre calator sau prin
+                            acceptarea conditiilor
+                            contractuale de servicii de calatorie, inclusiv in cazul celor achizitionate la distanta
+                            prin telefon sau mijloace
+                            electronice.
+                        </li>
+                        <br>
+                        <li>
+                            2.2. In cazul in care prezentul contract este pus integral la dispozitia calatorului sub
+                            forma de catalog, pliant, alte
+                            inscrisuri, site-ul agentiei sau alte mijloace de comunicare electronica (e-mail, fax, etc),
+                            obligatia de informare a
+                            calatorului este considerata indeplinita prin inscrierea acestei informatii in oricare
+                            dintre documentele de calatorie
+                            sau documentele fiscale furnizate de agentie, nefiind necesara incheierea in forma scrisa a
+                            contractului de
+                            comercializare a pachetelor de servicii de calatorie, respectiv daca contractul prezentat
+                            calatorului in modalitatile
+                            prevazute mai sus, contine informatiile prevazute la art. 7 alin. (2) din Ordonanta
+                            Guvernului nr. 2/2018 republicata
+                            privind activitatea de comercializare a pachetelor de servicii de calatorie. Informatiile si
+                            fotografiile prezentate in
+                            cataloagele, ofertele speciale, site-urile, materialele publicitare prezinta si ilustreaza
+                            stilul hotelului,
+                            caracteristicile generale ale camerelor, imaginile fiind orientative si au caracter
+                            informativ. Camera primita de
+                            calator poate sa nu corespunda in toate cazurile cu fotografia din cataloage, oferte
+                            speciale, site-uri, materiale
+                            publicitare.
+                        </li>
+                        <br>
+                        <li>
+                            2.3. Contractul inceteaza de drept odata cu finalizarea prestarii efective a pachetului de
+                            servicii de calatorie inscris
+                            in documentele de calatorie.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading9">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                    3. Modalitati de plata
+                </button>
+            </h2>
+            <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            3.1. Plata serviciilor de calatorie externe aferente contractului se poate efectua intr-o
+                            singura moneda, in valuta
+                            specificata in contract sau in RON la cursul de referinta a BNR din ziua emiterii facturii,
+                            la care se adauga un procent
+                            de risc valutar de 2%.
+                        </li>
+                        <br>
+                        <li>
+                            3.2. Plata serviciilor de calatorie interne (cu locul de desfasurare in Romania) se poate
+                            efectua si cu vouchere de
+                            vacanta. Plata serviciilor de calatorie se face respectand prevederile OUG nr. 8/2009, a
+                            normelor metodologice si
+                            anexelor acesteia. In cazul in care calatorul renunta la pachetul de servicii de calatorie
+                            achizitionat cu vouchere de
+                            vacanta, agentia de turism ii poate oferi acestuia un pachet de servicii de calatorie la o
+                            valoare initiala, mai putin
+                            penalitatile aferente, calculate conform prevederilor pct. 6.1. sau ii poate oferii
+                            calatorului un pachet de servicii de
+                            calatorie la o valoare mai mare fata de pachetul achizitionat initial din care au fost
+                            scazute penalitatile aferente, cu
+                            plata diferentei de pret.
+                        </li>
+                        <br>
+                        <li>
+                            3.3. Depasirea termenului de plata determina aplicarea unei penalitati de 0,3% pentru
+                            fiecare zi de intarziere, procent
+                            aplicat la suma neachitata.
+                        </li>
+                        <br>
+                        <li>
+                            3.4. Conform OUG 8/2009, in cazul renuntarii definitive la pachetul de servicii de calatorie
+                            de catre calator, Agentia
+                            de turism nu poate restitui calatorului voucherele de vacanta sau contravaloarea acestora in
+                            bani. Voucherele de vacanta
+                            pot fi restituite calatorului de catre agentia de turism, in cazul renuntarii definitive la
+                            pachetul de servicii de
+                            calatorie, doar daca acestea nu au fost expediate emitentului de vouchere de vacanta conform
+                            procedurii legale stabilite
+                            prin HG nr. 215/2009 pentru aprobarea Normelor metodologice privind acordarea voucherelor de
+                            vacanta.
+                        </li>
+                        <br>
+                        <li>
+                            3.5. Pachetul de servicii de calatorie care poate fi achizitionat pe baza voucherelor de
+                            vacanta va cuprinde servicii de
+                            cazare (minim si obligatoriu), alimentatie publica, transport, tratament balnear, agrement,
+                            toate cu locul de
+                            desfasurare pe teritoriul Romaniei.
+                        </li>
+                        <br>
+                        <li>
+                            3.6. In cazul in care calatorul doreste sa efectueze plata prin transfer bancar, pentru
+                            serviciile achizitionate, toate
+                            costurile bancare vor revenii partii care initiaza plata, respectiv calatorului.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading10">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                    4. Drepturile si obligatiile Agentiei
+                </button>
+            </h2>
+            <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            4.1. In cazul modificarii uneia dintre prevederile esentiale ale contractului cum ar fi:
+                            serviciile incluse in pachet,
+                            datele de calatorie, modificarea categoriei unitatii de cazare, Agentia are obligatia de a
+                            informa calatorul cu cel
+                            putin 15 zile inainte de data inceperii calatoriei, cu exceptia cazurilor de la pct. 4.5.
+                            literele a), b), c), cand
+                            informarea se va face in timp util pentru a permite calatorului sa decida inceperea
+                            calatoriei.
+                        </li>
+                        <br>
+                        <li>
+                            4.2. In cazul achizitionarii unui pachet de servicii de calatorie avand in componenta si
+                            asigurarea transportului pe
+                            cale aeriana, Transportatorul Aerian, fara a cere acordul agentiei de turism care deruleaza
+                            programul de calatorie, are
+                            dreptul de a modifica orele de zbor. Prin urmare, Agentia nu este raspunzatoare pentru
+                            decolarea/aterizarea avioanelor
+                            la o alta ora decat cea inscrisa in programul de calatorie. Pentru aceste intarzieri,
+                            compania aeriana este obligata sa
+                            asiste calatorii conform Regulamentului Parlamentului European nr. 261/04 implementat prin
+                            HG nr. 1912/2006. Orice
+                            problema privind operarea zborului si actiunile adiacente acestuia intra sub competenta si
+                            responsabilitatea
+                            transportatorului, biletul de avion reprezentand contractul intre pasager si
+                            transportatorul. In cazul acestor pachete
+                            de servicii de calatorie, ziua de plecare si ziua de sosire nu sunt considerate zile
+                            turistice, acestea fiind destinate
+                            transportului. In cazul anularii zborului ca urmare a insolvabilitatii, falimentului,
+                            lichidarii sau incapacitatii de
+                            plata a Transportatorului Aerian, Agentia va depune toate diligentele si va actiona cu
+                            buna-credinta pentru a oferi
+                            alternative pentru efectuarea serviciilor. Cu toate acestea, Agentia este exonerata de orice
+                            raspundere pentru
+                            eventualele prejudicii, de orice natura, cauzate calatorilor, aceste daune fiind imputabile
+                            companiei aeriene in baza
+                            Regulamentului Parlamentului European nr. 261/04 implementat prin HG nr. 1912/2006.
+                        </li>
+                        <br>
+                        <li>
+                            4.3. In situatia achizitionarii unui produs de tip croaziera, linia de croaziera poate
+                            modifica din motive ce tin de
+                            siguranta navigarii numarul cabinei si locatia acesteia pe punti (o punte inferioara, una
+                            superioara, mai spre pupa sau
+                            spre prova, etc.), dar cu o cabina de aceeasi categorie ca cea rezervata initial, caz in
+                            care calatorul nu va fi
+                            despagubit in nici un mod avand in vedere ca este vorba de acelasi tip de cabina ca si cel
+                            rezervat. Alteori, destul de
+                            frecvent si prin simetrie, linia de croaziera poate modifica categoria cabinei (in special
+                            la cabinele din categoria
+                            Guarantee) cu o cabina superioara ca si cea rezervata initial (cabina exterioara / balcon in
+                            loc de cabina interioara,
+                            suita in loc de balcon, etc.), operatie denumita upgrade, caz in care calatorul nu va trebui
+                            sa plateasca diferenta de
+                            categorie, fiind un bonus din partea liniei.
+                        </li>
+                        <br>
+                        <li>
+                            4.4. Agentia poate modifica pretul contractului, in sensul majorarii sau micsorarii, dupa
+                            caz, aratand totodata modul de
+                            calcul al majorarilor sau micsorarilor de pret ale contractului si numai daca modificarea
+                            are loc ca urmare a
+                            schimbarilor legate de:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) pretul transportului de pasageri care rezulta din costul carburantilor sau al
+                                    altor surse de energie;
+                                </li>
+                                <br>
+                                <li>
+                                    b) nivelul taxelor sau al comisioanelor aplicabile serviciilor de calatorie incluse
+                                    in contract, impuse de parti terte
+                                    care nu sunt direct implicate in executarea pachetului, inclusiv taxele de
+                                    calatorie, taxele de aterizare sau
+                                    comisioanele de imbarcare sau debarcare in porturi si aeroporturi;
+                                </li>
+                                <br>
+                                <li>
+                                    c) cursul de schimb relevant pentru pachetul respectiv.
+                                </li>
+                                <br>
+                                <li>
+                                    Preturile stabilite in contract nu pot fi majorate, iin niciun caz, iin cursul celor
+                                    20 de zile calendaristice care
+                                    preced data plecarii.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            4.5. Agentia este raspunzatoare pentru buna executare a obligatiilor asumate prin contract,
+                            cu exceptia urmatoarelor
+                            cazuri:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) cand neindeplinirea sau indeplinirea defectuoasa a obligatiilor asumate prin
+                                    contract se datoreaza calatorului;
+                                </li>
+                                <br>
+                                <li>
+                                    b) cand neindeplinirea obligatiilor se datoreaza unor cauze de forta majora sau unor
+                                    imprejurari pe care nici Agentia,
+                                    nici prestatorii de servicii nu le puteau prevedea sau evita inclusiv, dar fara a se
+                                    limita la: modificarea companiei
+                                    aeriene, de orar sau de itinerar, intarzieri in traficul mijloacelor de transport,
+                                    defectarea mijlocului de transport,
+                                    accident, blocaje, lucrari sau reparatii pe drumurile publice, neindeplinirea
+                                    grupului minim urmare a unor renuntari de
+                                    ultima ora sau a neobtinerii vizelor de catre toti participantii. Agentia nu este
+                                    raspunzatoare pentru prejudiciile
+                                    cauzate calatorului ca urmare a intarzierilor curselor (inclusiv charter), a
+                                    pierderii de bagaje si a altor imprejurari
+                                    care revin exclusiv in sarcina transportatorului in temeiul actelor normative
+                                    specifice.
+                                </li>
+                                <br>
+                                <li>
+                                    c) cand neindeplinirea obligatiilor se datoreaza unui tert care nu are legatura cu
+                                    furnizarea serviciilor prevazute in
+                                    contract, iar cauzele care au determinat neindeplinirea obligatiilor au un caracter
+                                    imprevizibil si inevitabil;
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            4.6. Agentia, prin madatar, are obligatia sa furnizeze in scris calatorului (e-mail, fax sau
+                            sms), cu cel putin 3 zile
+                            inainte de data plecarii, urmatoarele informatii:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) orarele, locurile escalelor si legaturile, precum si, dupa caz, locul ce urmeaza
+                                    sa fie ocupat de calator in fiecare
+                                    dintre mijloacele de transport incluse;
+                                </li>
+                                <br>
+                                <li>
+                                    b) denumirea, sediul/adresa, numerele de telefon si de fax, adrese e-mail ale
+                                    reprezentantei locale a organizatorului
+                                    si/sau a detailistului ori, in lipsa acestora, un numar de apel de urgenta care sa
+                                    ii permita contractarea
+                                    organizatorului si/sau a intermediarului;
+                                </li>
+                                <br>
+                                <li>
+                                    c) pentru calatoriile minorilor neinsotiti de parinti, informatii care sa permita
+                                    parintilor stabilirea unui contact
+                                    direct cu copilul sau cu responsabilul de la locul cazarii copilului.
+                                </li>
+                                <br>
+                                <li>
+                                    d) obligatiile calatorului prevazute la pct. 5.12, 5.13, 5.14 din prezentul
+                                    contract.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            4.7. Agentia acorda asistenta adecvata fara intarzieri nejustificate calatorului aflat in
+                            dificultate, in cazul
+                            situatiilor de forta majora sau al unui eveniment pe care nici organizatorul, nici
+                            furnizorul sau prestatorul de
+                            servicii, cu tot efortul depus, nu il puteau prevedea sau evita, in special cu privire la:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) furnizarea de informatii corespunzatoare privind serviciile de sanatate,
+                                    autoritatile locale si asistenta consulara;
+                                </li>
+                                <br>
+                                <li>
+                                    b) efectuarea comunicarilor la distanta si sprijinirea calatorului in gasirea unor
+                                    servicii de calatorie alternative.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            Agentia are posibilitatea de a pretinde un comision rezonabil pentru o astfel de
+                            asistenta in cazul în care calatorul
+                            este cel care a provocat situatia de dificultate in mod intentionat sau din propria
+                            neglijenta. Comisionul nu depaseste
+                            in niciun caz costurile efective suportate de Agentie.
+                        </li>
+                        <br>
+                        <li>
+                            4.8. Agentia informeaza persoana care transfera contractul (cedentul), in conformitate cu
+                            pct. 5.1 din prezentul
+                            contract, cu privire la costurile efective ale transferului.
+                        </li>
+                        <br>
+                        <li>
+                            4.9. Atunci cand o parte semnificativa din serviciile de calatorie nu poate fi executata
+                            astfel cum s-a convenit prin
+                            prezentul contract, Agentia ofera, fara costuri suplimentare pentru calator, servicii
+                            alternative corespunzatoare pentru
+                            continuarea derularii pachetului, pe cat posibil echivalente sau de mai buna calitate decat
+                            cele specificate in
+                            contract, inclusiv in cazul in care intoarcerea calatorului la locul de plecare nu este
+                            asigurata astfel cum s-a
+                            convenit.
+                        </li>
+                        <br>
+                        <li>
+                            4.10. In cazul in care serviciile alternative propuse au drept consecinta un pachet de o
+                            calitate mai scazuta decat cea
+                            specificaa în prezentul contract, Agentia acorda calatorului o reducere adecvata a pretului.
+                        </li>
+                        <br>
+                        <li>
+                            Calatorul poate respinge serviciile alternative propuse doar in cazul in care acestea nu
+                            sunt comparabile cu ceea ce s-a
+                            convenit prin prezentul sau reducerea de pret acordata este inadecvata.
+                        </li>
+                        <br>
+                        <li>
+                            4.11. Daca este imposibil să se furnizeze servicii alternative sau calatorul respinge
+                            serviciile alternative propuse in
+                            conformitate cu pct. 4.10 al doilea paragraf din prezentul contract, calatorul are dreptul,
+                            dupa caz, la reducerea
+                            pretului si/sau la despagubiri, fara a inceta contractul de servicii privind pachetul de
+                            calatorie.
+                        </li>
+                        <br>
+                        <li>
+                            4.12. Daca pachetul include transportul de pasageri, Agentia asigura de asemenea, in
+                            cazurile prevazute la pct. 4.10 si
+                            4.11 din prezentul contract, repatrierea calatorului cu transport echivalent, fara
+                            intarzieri nejustificate si fara
+                            costuri suplimentare pentru calator.
+                        </li>
+                        <br>
+                        <li>
+                            4.13. In situatia de suprarezervare (overbooking) a unui hotel, determinata de activitatea
+                            hotelierilor, inainte sau
+                            dupa inceperea calatoriei, Agentia este obligata sa ofere o alta varianta de hotel in
+                            aceeasi zona sau intr-o zona cat
+                            mai apropiata, la aceeasi categorie sau de o categorie superioara fara sa modifice pretul.
+                            In cazul in care situatia de
+                            suprarezervare (overbooking) este anuntata calatorului sau reprezentantului acestuia,
+                            calatorul are dreptul sa accepte
+                            varianta propusa sau poate anula calatoria fara penalizari, fara insa a avea dreptul de a
+                            solicita despagubiri
+                            suplimentare.
+                        </li>
+                        <br>
+                        <li>
+                            4.14. Agenttia parte in contract este obligata sa acorde prompt asistenta calatorului aflat
+                            in dificultate, in cazul
+                            situatiior de forta majora sau a unui eveniment pe care nici agentia de turism, nici
+                            furnizorul sau prestatorul de
+                            servicii, cu tot efortul depus, nu il puteau prevedea sau evita.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading11">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                    5. Drepturile si obligatiile calatorului
+                </button>
+            </h2>
+            <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            5.1. In cazul in care calatorul nu poate sa participe la calatorie independent de motivele
+                            care stau la baza
+                            imposibilitatii de participare, acesta poate sa cesioneze contractul unei terte persoane
+                            care indeplineste toate
+                            conditiile aplicabile pachetului de servicii de calatorie contractat, cu obligatia de a
+                            anunta in scris Agentia cu cel
+                            putin 7 zile inaintea datei de plecare. In acest caz intre calatorul care nu poate participa
+                            la calatoria contractata
+                            (cedentul), terta persoana (cesionarul) si Agentia de turism (contractant cedat) urmeaza a
+                            se incheia un contract de
+                            cesiune cu privire la pachetul de servicii de calatorie contractate si cesionate.
+                            Resposabilitatea incheierii
+                            contractului de cesiune revine dupa caz fie cedentului, fie cesionarului, si niciodata
+                            Agentiei de turism
+                            (contractantului cedat). Calatorul care cedeaza pachetul sau de servicii, precum si
+                            cesionarul sunt responsabili in mod
+                            solidar la plata pretului calatoriei si a eventualelor costuri suplimentare aparute cu
+                            ocazia acestei cedari (taxa
+                            modificare nume, taxa anulare, etc). In cazul in care mijlocul de transport este avionul,
+                            cesionarea poate fi efectuata
+                            numai daca transportatorul aerian permite aceasta modificare.
+                        </li>
+                        <br>
+                        <li>
+                            5.2. Serviciile de calatorie achitate total sau partial cu vouchere de vacanta nu pot fi
+                            cesionate in conformitate cu
+                            prevederile art.7 alin.1 din OUG nr. 8/2009 privind acordarea voucherelor de vacanta.
+                        </li>
+                        <br>
+                        <li>
+                            5.3. In cazul sejururilor de odihna si/sau de tratament cu locul de desfasurare in Romania,
+                            calatorul are obligatia sa
+                            respecte urmatorul program de acordare a serviciilor: cazarea se face de regula la ora 18:00
+                            a zilei de intrare si se
+                            termina de regula la ora 12:00 a zilei de iesire, inscrise pe documentele de calatorie
+                            (voucher ori pe biletul de odihna
+                            si/sau de tratament, bilet de excursie, etc). Eventualele costuri suplimentare generate de
+                            neeliberarea spatiilor de
+                            cazare pana cel tarziu la orele specificate mai sus cad in sarcina exclusiva a calatorului.
+                        </li>
+                        <br>
+                        <li>
+                            5.4. In cazul in care calatorul a achizitionat un produs de tip “croaziera”, acesta trebuie
+                            sa ajunga in orasul de
+                            plecare cu cel putin o zi inainte de imbarcare pentru a evita neplacerile sau chiar
+                            pierderea croazierei.
+                        </li>
+                        <br>
+                        <li>
+                            5.5. In cazul in care preturile stabilite in contract sunt majorate cu peste 10%, indiferent
+                            de motivele majorarii,
+                            calatorul poate:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) sa accepte modificarea propusa; sau
+                                </li>
+                                <br>
+                                <li>
+                                    b) sa rezilieze contractul, fara a plati vreo penalitate de reziliere.
+                                </li>
+                                <br>
+                                <li>
+                                    In cazul in care reziliaza prezentul contract calatorul poate accepta un pachet de
+                                    substitutie, atunci cand acesta este
+                                    oferit de Agentie, daca este posibil, de o calitate echivalenta sau superioara.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            5.6. Calatorul este obligat sa comunice mandatarului , in termen rezonabil (comunicat de
+                            mandatar) de la primirea
+                            instiintarii prevazute la pct. 4.1 privind modificarea prevederilor esentiale ale
+                            contractului sau in timp util inainte
+                            de inceperea calatoriei, in cazul in care se aplica clauzele prevazute la artr. 4.5 lit. b)
+                            si c), hotararea sa de a
+                            opta pentru:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) rezilierea/denuntarea unilaterala a contractului fara plata penalitatilor; sau
+                                </li>
+                                <br>
+                                <li>
+                                    b) acceptarea noilor conditii ale contractului.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            5.7. In cazul in care calatorul decide sa participe la calatoria asupra careia s-au operat
+                            modificari in conditiile
+                            pct.4.1 se considera ca toate modificarile au fost acceptate si calatorul nu poate solicita
+                            despagubiri ulterioare
+                            datorate modificarilor de acest tip.
+                        </li>
+                        <br>
+                        <li>
+                            5.8. In cazul in care calatorul reziliaza/denunta unilateral contractul in temeiul pct. 5.6
+                            sau Agentia anuleaza
+                            calatoria inaintea datei de plecare, calatorul are dreptul:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) sa accepte la acelasi pret un alt pachet de servicii de calatorie de calitate
+                                    echivalenta sau superioara, propus de
+                                    Agentie prin mandatar;
+                                </li>
+                                <br>
+                                <li>
+                                    b) sa accepte un pachet de servicii de calatorie de calitate inferioara propus de
+                                    Agentie prin mandatar, cu rambursarea
+                                    diferentei de pret, in sensul rambursarii diferentei de pret dintre cele doua
+                                    pachete de calatorie, la momentul
+                                    incheierii noului contract de prestare de servicii;
+                                </li>
+                                <br>
+                                <li>
+                                    c) sa i se ramburseze toate sumele achitate in virtutea contractului.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            5.9. In toate cazurile mentionate la pct. 5.8 calatorul are dreptul sa solicite Agentiei si
+                            o despagubire, cuantumul
+                            acesteia poate fi stabilit prin acordul comun al partilor sau in baza unei hotarari a
+                            instantei de judecata, pentru
+                            neindeplinirea prevederilor contractului initial, cu exceptia cazurilor in care:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) anularea s-a facut datorita nerealizarii numarului minim de persoane mentionat in
+                                    contract, iar Agentia a informat in
+                                    scris calatorul cu cel putin:
+                                    <ol style="list-style-type:none;">
+                                        <br>
+                                        <li>
+                                            (i) 20 de zile inainte de inceperea executarii pachetului, in cazul
+                                            calatoriilor care dureaza mai mult de sase zile;
+                                        </li>
+                                        <br>
+                                        <li>
+                                            (ii) sapte zile inainte de inceperea executarii pachetului, in cazul
+                                            calatoriilor care dureaza intre doua si sase zile;
+                                        </li>
+                                        <br>
+                                        <li>
+                                            (iii) 48 de ore inainte de inceperea executarii pachetului, in cazul
+                                            calatoriilor care dureaza mai putin de doua zile;
+                                        </li>
+                                    </ol>
+                                </li>
+                                <br>
+                                <li>
+                                    b) anularea s-a datorat unui caz de forta majora (circumstante imprevizibile,
+                                    independente de vointa celui care le
+                                    invoca si ale caror consecinte nu au putut fi evitate in ciuda oricaror eforturi
+                                    depuse, in aceasta nefiind incluse
+                                    suprarezervarile, caz in care responsabilitatea revine companiei aeriene sau
+                                    unitatii de cazare) sau unor cauze dintre
+                                    cele prevazute la pct. 4.5 lit. b;
+                                </li>
+                                <br>
+                                <li>
+                                    c) anularea s-a facut din vina calatorului.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            5.10. Calatorul are dreptul sa rezilieze/denunte unilateral in orice moment, in tot sau in
+                            parte, contractul, iar in
+                            cazul in care incetarea ii este imputabila, este obligat sa despagubeasca Agentia pentru
+                            prejudiciul creat acesteia,
+                            conform prevederilor cap. VI, cu exceptia cazurilor de forta majora definite conform legii.
+                            Despagubirea se poate ridica
+                            la maximul pretului pachetului de servicii de calatorie contractat.
+                        </li>
+                        <br>
+                        <li>
+                            5.11. In cazul in care calatorul alege sa se mute la un alt hotel decat cel contractat
+                            initial si achitat,
+                            responsabilitatea financiara a renuntarii ii apartine. Agentia va rezolva cerintele
+                            calatorului in limita
+                            posibilitatilor, eventualele diferente de pret urmand a fi suportate de catre calator.
+                        </li>
+                        <br>
+                        <li>
+                            Daca calatorul solicita nemotivat schimbarea hotelului, structurii camerelor sau a oricarora
+                            dintre servicii, aceasta
+                            echivaleaza cu rezilierea/denuntarea unilaterala contractului, cu aplicarea penalitatilor
+                            prevazute la Cap. VI din
+                            prezentul contract si incheierea unui nou contract.
+                        </li>
+                        <br>
+                        <li>
+                            5.12. Calatorul este obligat sa achite la receptia unitatii hoteliere taxa de statiune, taxa
+                            de salubritate, precum si
+                            alte taxe locale, fara a putea pretinde despagubiri sau returnarea sumelor de la Agentie sau
+                            de la mandatar.
+                        </li>
+                        <br>
+                        <li>
+                            5.13. Calatorul este obligat sa prezinte la receptia unitatii hoteliere actele sale de
+                            identitate, precum si documentul
+                            de calatorie eliberat de Agentie (voucher, bilet de odihna si/sau de tratament, etc), in
+                            vederea acordarii serviciilor
+                            de calatorie. In cazul in care calatorul beneficiaza de bilete de odihna si tratament, este
+                            obligat sa prezinte la
+                            receptia unitatii hoteliere bilet de trimitere de la medicul de familie si dovada platii
+                            contributiilor pentru asigurari
+                            sociale, la zi.
+                        </li>
+                        <br>
+                        <li>
+                            5.14. Calatorul ia la cunostinta ca serviciile pe care le achizitioneaza, fara ca acestea sa
+                            faca parte din prezentul
+                            contract, sunt in stricta responsabilitate a prestatorului local, sunt guvernate de
+                            legislatia tarii de destinatie, iar
+                            Agentia nu are nici o responsabilitate asupra presatiilor in cauza.
+                        </li>
+                        <br>
+                        <li>
+                            Clasificarea unitatilor de cazare si a mijloacelor de transport sunt cele oficiale pentru
+                            fiecare tara in parte,
+                            calatorul ia act si este de acord cu aceasta.
+                        </li>
+                        <br>
+                        <li>
+                            5.15. Daca pentru efectuarea calatoriei este necesara indeplinirea de catre calator a unor
+                            formalitati suplimentare (de
+                            ex. calatoria impreuna cu minori, situatia in care numele calatorului este schimbat ca
+                            urmare a casatoriei/desfacerii
+                            ei, etc), calatorul are obligatia de a indeplini toate cerintele legale. Pentru o informare
+                            optima, Agentia recomanda si
+                            consultarea site-ului
+                            <a class="" href="http://www.politiadefrontiera.ro" target="_blank">
+                                http://www.politiadefrontiera.ro
+                            </a>
+                            . De asemenea, in cazul calatoriei in anumite destinatii care
+                            necesita obtinerea unei vize, Agentia recomanda consultarea site-ului:
+                            <a class="" href="http://www.mae.ro/node/1422" target="_blank">
+                                http://www.mae.ro/node/1422
+                            </a>
+                            , pentru informatii
+                            complete privind regimul vizelor. In cazul in care calatorul nu isi respecta obligatia de a
+                            se informa cu privire la
+                            formalitatile suplimentare necesare in vederea efectuarii calatoriei, care nu sunt in
+                            sarcina Agentiei (de ex.
+                            necesitatea obtinerii vizei sau necesitatea de a avea pasaport
+
+                            sau/si carte de identitate sau orice alte documente suplimentare – enumerarea fiind
+                            exemplificativa), Agentia este
+                            exonerata de orice raspundere in cazul imposibilitatii efectuarii calatoriei.
+                        </li>
+                        <br>
+                        <li>
+                            5.16. Calatorul are obligatia de a contacta mandatarul cu 24 ore inainte de plecare pentru
+                            reconfirmarea detaliilor de
+                            imbarcare (orar de zbor, loc imbarcare, etc.).
+                        </li>
+                        <br>
+                        <li>
+                            5.17. In cazul in care o singura persoana angajeaza servicii pentru un numar mai mare de
+                            calatori, termenii si
+                            conditiile generale se extind in mod automat asupra intregului grup pentru care au fost
+                            achitate serviciile.
+                        </li>
+                        <br>
+                        <li>
+                            5.18. Calatorul este obligat sa foloseasca mijloacele de transport, camera de hotel si
+                            bunurile din dotarea acesteia ca
+                            un bun proprietar si potrivit destinatiei lor. Agentia nu se face vinovata de eventualele
+                            pagube produse sau vatamari
+                            suferite de calator ca urmare a nerespectarii acestui aliniat.
+                        </li>
+                        <br>
+                        <li>
+                            5.19. Calatorul are obligatia sa respecte locul, data si ora plecarii atat la dus cat si la
+                            intors, precum si locurile,
+                            datele si orele stabilite pe parcursul programului de calatorie contractat. Toate
+                            cheltuielile si daunele produse ca
+                            urmare a nerespectarii de catre calator a prevederilor privind locurile de intalnire si
+                            orarele, vor fi suportate de
+                            catre acesta.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading12">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                    6. Renuntari, penalizari, despagubiri
+                </button>
+            </h2>
+            <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            6.1. In cazul in care calatorul renunta din vina sa la pachetul de servicii de calatorie
+                            care face obiectul
+                            contractului, el datoreaza Agentiei penalizari dupa cum urmeaza:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) penalitati egale cu suma mentionata ca avans al contractului, daca calatorul
+                                    renunta inaintea datei mentionate pentru
+                                    Rata I.
+                                </li>
+                                <br>
+                                <li>
+                                    b) penalitati egale cu suma mentionata ca avans al contractului plus sumele
+                                    mentionate la Rata I, Rata II si Rata III
+                                    daca termenul acestora este depasit in momentul renuntarii calatorului.
+                                </li>
+                                <br>
+                                <li>
+                                    c) 100% daca anularea se face:
+                                    <ol style="list-style-type:none;">
+                                        <br>
+                                        <li>
+                                            - nu se prezinta la program;
+                                        </li>
+                                        <br>
+                                        <li>
+                                            - intr-un interval mai mic de 16 zile calendaristice inainte de data
+                                            plecarii (ori in ziua plecarii);
+                                        </li>
+                                        <br>
+                                        <li>
+                                            - in cazul in care calatorul nu este lasat sa treaca una din frontierele de
+                                            pe traseul excursiei, din motive care sunt
+                                            legate exclusive de persoana sa sau din motive care nu pot fi imputate
+                                            agentiei;
+                                        </li>
+                                        <br>
+                                        <li>
+                                            - in cazul in care calatorul nu respecta conditiile generale ale agentiei,
+                                            prezinta acte incomplete sau false, nu are
+                                            pasaport sau nu achita integral excursia in termenele stipulate;
+                                        </li>
+                                    </ol>
+                                </li>
+                                <br>
+                                <li>
+                                    Aceste penalizari se aplica la pretul contractului, mentionat la articolul II, in
+                                    contract.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            6.2. Penalizarile echivalente cu pretul contractului se aplica si in cazul in care calatorul
+                            nu ajunge la timp la
+                            aeroport sau la locul de plecare/destinatie, daca nu poate pleca in calatorie pentru ca
+                            documentele personale, necesare
+                            in vederea efectuarii calatoriei nu sunt conforme normelor legale sau este in
+                            imposibilitatea de a parasi teritorului
+                            tarii fiind intors de catre politia de frontiera din alte motive ce tin de persoana
+                            acestuia.
+                        </li>
+                        <br>
+                        <li>
+                            6.3. In cazul in care plata pentru serviciile de calatorie interne a fost facuta cu, sau si
+                            cu vouchere de vacanta,
+                            penalizarea se va deduce in primul rand din valoarea voucherelor de vacanta. Daca
+                            penalizarea este mai mare decat
+                            valoarea voucherelor de vacanta, diferenta care depaseste valoarea voucherelor de vacanta se
+                            va retine din valoarea
+                            achitata prin alte instrumente de plata. In cazul in care valoarea voucherelor de vacanta
+                            este mai mare decat valoarea
+                            penalizarii, diferenta nu se restituie nici in vouchere de vacanta si nici in numerar in
+                            cazul in care calatorul nu
+                            doreste un alt serviciu. Daca calatorul isi manifesta dorinta de a achizitiona un alt
+                            serviciu de calatorie, pentru o
+                            perioada ulterioara, atunci diferenta dintre valoarea voucherelor si valoarea penalizarii se
+                            va utiliza pentru acest nou
+                            serviciu. Termenul in care calatorul poate solicita noul pachet de servicii de calatorie
+                            este de maxim 2 luni de la data
+                            rezilierii contractului / renuntarea la serviciile de calatorie initiale. In cazul in care
+                            calatorul nu isi exprima
+                            optiunea in aceasta perioada, Agentia de turism nu ii mai poate oferi acestuia nici un
+                            pachet de servicii de calatorie
+                            ulterior.
+                        </li>
+                        <br>
+                        <li>
+                            6.4. In cazul in care calatorul care a contractat un pachet de servicii de calatorie si a
+                            achitat un avans, nu se
+                            prezinta in termenul specificat in oferta, in bonul de comanda, in contract sau in termenul
+                            comunicat in scris pentru a
+                            achita ratele aferente sau restul de plata, contractul se considera reziliat de drept, iar
+                            Agentia are dreptul de a
+                            anula rezervarile efectuate in beneficiul calatorului, cu retinerea penalizarilor prevazute
+                            la pct.6.1.
+                        </li>
+                        <br>
+                        <li>
+                            6.5. Pentru biletele de odihna si/sau de tratament cumparate prin organizatii sindicale,
+                            Agentia va face restituiri
+                            numai in baza cererilor de renuntare contrasemnate si stampilate de reprezentantul
+                            organizatiei sindicale.
+                        </li>
+                        <br>
+                        <li>
+                            6.6. In cazul in care o ambasada refuza sa acorde viza de intrare pentru efectuarea
+                            pachetului de servicii, calatorului
+                            i se vor retine toate taxele datoratede Agentie prestatorilor directi, precum si
+                            cheltuielile de operare proprii
+                            acesteia.
+                        </li>
+                        <br>
+                        <li>
+                            6.7. In cazul in care calatorul care a intrat pe teritoriul statului in care se realizeaza
+                            pachetul de servicii de
+                            calatorie refuza sa se mai intoarca in Romania si autoritatile din tara respectiva fac
+                            cheltuieli de orice natura cu
+                            acesta, calatorul respectiv are obligatia de a suporta toate aceste cheltuieli.
+                        </li>
+                        <br>
+                        <li>
+                            6.8. Calatorul trebuie sa depuna in scris cererea de renuntare la pachetul de servicii de
+                            calatorie, la agentia de
+                            turism la care a achitat serviciile.
+                        </li>
+                        <br>
+                        <li>
+                            In caz contrar, cererea de renuntare nu este luata in considerare.
+                        </li>
+                        <br>
+                        <li>
+                            6.9. Agentia va acorda despagubiri in functie de gradul de nerespectare a obligatiilor din
+                            contract, conform
+                            prevederilor pct. 5.9.
+                        </li>
+                        <br>
+                        <li>
+                            6.10. Agentia nu raspunde in situatii de greva, conflicte politice si de razboi, catastrofe,
+                            de pericol public, atac
+                            terorist, embargou international, precum si in cazul in care companiile aeriene stabilesc
+                            limite de raspundere. Toate
+                            aceste situatii care nu sunt imputabile niciunei parti se considera situatii de forta majora
+                            si exonereaza de raspundere
+                            Agentia.
+                        </li>
+                        <br>
+                        <li>
+                            6.11. Toate sumele mentionate in prezentul capitol se vor retine de catre Agentie din
+                            avansul sau pretul total al
+                            pachetului de servicii de calatorie achitat de calator, fara a fi necesara interventia
+                            instantelor de judecata.
+                        </li>
+                        <br>
+                        <li>
+                            6.12. Penalizarile echivalente cu pretul contractului se aplica si in cazul in care
+                            calatorul nu ajunge la timp la
+                            aeroport sau la locul de plecare/ destinatie, daca nu poate pleca in calatorie pentru ca
+                            documentele personale, necesare
+                            in vederea efectuarii calatoriei nu sunt conforme normelor legale sau este in
+                            imposibilitatea de a parasi teritorului
+                            tarii fiind intors de catre politia de frontiera din alte motive ce tin de persoana
+                            acestuia.
+                        </li>
+                        <br>
+                        <li>
+                            6.13. In cazul pachetului de tip “concert / eveniment”, in situatia anularii evenimentului
+                            in sine din motive
+                            independente care tin de organizarea calatoriei (imbolnavirea artistilor, suspendarea
+                            zborurilor din cauze ce tin de
+                            siguranta pasagerilor, calamitati naturale, orice alte motive care nu intra in atributiunile
+                            agentiei de turism, aceasta
+                            nefiind organizatorul propriu zis al evenimentului), calatorului i se vor restitui banii pe
+                            serviciile neconsumate –
+                            respectiv biletul de intrare la eveniment. In niciun caz calatorul nu poate sa-si anuleze
+                            pachetul de servicii si sa
+                            pretinda alte despagubiri.
+                        </li>
+                        <br>
+                        <li>
+                            6.14. In cazul anularii evenimentului conform pct. 6.13, calatorul este de acord sa-si
+                            consume serviciile contractate ca
+                            pachet de Citybreak, acesta supunandu-se prevederilor prezentului capitol.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading13">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                    7. Reclamatii
+                </button>
+            </h2>
+            <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            7.1. Calatorul informeaza Agentia, prin mandatar, fara intarzieri nejustificate, in legatură
+                            cu orice neconformitate pe
+                            care o constata pe parcursul executarii unui serviciu de calatorie inclus in contractul
+                            privind pachetul de servicii de
+                            calatorie.
+                        </li>
+                        <br>
+                        <li>
+                            7.2. In cazul in care calatorul este nemultumit de serviciile de calatorie primite, acesta
+                            are obligatia de a intocmi o
+                            sesizare in scris la fata locului, clar si explicit, cu privire la deficientele constatate,
+                            legate de realizarea
+                            pachetului de servicii de calatorie contractat, ce se va transmite prompt atat
+                            reprezentantului Agentiei, cat si
+                            prestatorului de servicii de calatorie (conducerii hotelului, restaurantului,
+                            reprezentantilor locali ai
+                            turoperatorului).
+                        </li>
+                        <br>
+                        <li>
+                            7.3. Atat Agentia, cat si prestatorul de servicii de calatorie vor actiona imediat pentru
+                            solutionarea sesizarii. In
+                            cazul in care sesizarea nu este solutionata sau este solutionata partial, calatorul va
+                            depune la sediul Agentiei o
+                            reclamatie in scris, in termen de maximum 5 zile calendaristice de la incheierea calatoriei,
+                            Agentia urmand ca, in
+                            termen de 30 zile calendaristice, sa comunice calatorului despagubirile care i se cuvin,
+                            dupa caz.
+                        </li>
+                        <br>
+                        <li>
+                            7.4. In cazul in care Calatorul nu isi indeplineste obligatiile mentionate la pct.7.2 si 7.3
+                            de mai sus, Agentia este
+                            exonerata de orice raspundere cu privire la deficientele semnalate.
+                        </li>
+                        <br>
+                        <li>
+                            Datele de contact ale Agentiei mandatate pentru asistenta:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    Telefon: _________
+                                </li>
+                                <br>
+                                <li>
+                                    Fax: _____________
+                                </li>
+                                <br>
+                                <li>
+                                    E-mail: ___________
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            Datele de contact ale Agentiei organizatoare pentru asistenta:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    Telefon: _________
+                                </li>
+                                <br>
+                                <li>
+                                    Fax: _____________
+                                </li>
+                                <br>
+                                <li>
+                                    E-mail: ___________
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            7.5. Daca oricare dintre serviciile de calatorie nu se executa in conformitate cu cerintele
+                            prezentului contract,
+                            Agentia remediaza neconformitatea, cu exceptia unuia din urmatoarele cazuri:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) neconformitatea nu poate fi remediata;
+                                </li>
+                                <br>
+                                <li>
+                                    b) remedierea implica cheltuieli disproportionate, tinand cont de anvergura
+                                    neconformitatii si de valoarea serviciilor
+                                    de calatorie afectate.
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            Daca Agentia, in conformitate cu primul paragraf lit. a) sau b) din prezentul alineat, nu
+                            remediaza neconformitatea,
+                            calatorul are dreptul de a beneficia de o reducere corespunzatoare a pretului pentru orice
+                            perioada in care a existat o
+                            neconformitate, cu exceptia cazului in care Agentia dovedeste ca neconformitatea este
+                            imputabila calatorului.
+                        </li>
+                        <br>
+                        <li>
+                            7.6. In cazul in care neconformitatea afecteaza in mod substantial executarea pachetului,
+                            iar Agentia a omis sa o
+                            remedieze intr-un termen rezonabil stabilit de catre calator, acesta poate rezilia prezentul
+                            contract fara plata unor
+                            penalitati de reziliere si, dupa caz, poate sa ceara, reducerea pretului si/sau despagubiri.
+                        </li>
+                        <br>
+                        <li>
+                            7.7. Calatorul ia act si accepta interdictia de a face publicitate negativa Agentiei si
+                            serviciilor prestate de aceasta,
+                            fara ca procedura de inregistrare si solutionare a reclamatiilor prevazuta in capitolul VII
+                            sa fi fost indeplinita.
+                            Nerespectarea acestei prevederi da dreptul Agentiei sa solicite instantei despagubiri
+                            corespunzatoare prejudiciului
+                            suferit.
+                        </li>
+                        <br>
+                        <li>
+                            7.8. Vor fi luate in considerare numai reclamatiile facute in nume personal.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading14">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                    8. Asigurari
+                </button>
+            </h2>
+            <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            Calatorul este asigurat pentru rambursarea cheltuielilor de repatriere si/sau a sumelor
+                            achitate de el in cazul
+                            insolvabilitatii sau falimentului Agentiei la Societatea de Asigurare SC OMNIASIG Vienna
+                            Insurance Grup SA cu sediul in
+                            Mun. Bucuresti, Aleea Alexandru, Nr. 51, Sector 1 , telefon 0214057420 , fax 0213114495,
+                            Numarul asigurarii agentiei
+                            este 50929, valabila pana pe 4.12.2020.
+                        </li>
+                        <br>
+                        <li>
+                            Conditiile in care calatorul va fi despagubit de catre societatea de asigurare sunt:
+                        </li>
+                        <br>
+                        <li>
+                            8.1. In cazul in care Agentia nu efectueaza repatrierea calatorului, acesta are obligatia de
+                            a anunta imediat societatea
+                            de asigurare prin telefon, fax sau e-mail. In aceasta situatie societatea de asigurare nu
+                            are obligatia de a achita
+                            imediat contravaloarea cheltuielilor de repatriere, ci de a o rambursa dupa intoarcerea
+                            calatorului in Romania, in
+                            conditiile politei de asigurare incheiate intre Agentie si societatea de asigurare.
+                        </li>
+                        <br>
+                        <li>
+                            8.2. In cazul in care calatorul solicita Agentiei contravaloarea sumelor achitate si/sau a
+                            cheltuielilor de repatriere,
+                            acesta trebuie sa trimita documentele justificative catre Agentie prin scrisoare recomandata
+                            cu confirmare de primire.
+                            Calatorul are obligatia sa pastreze fotocopii de pe respectivele documente justificative.
+                            Calatorul poate solicita
+                            Agentiei rambursarea sumelor achitate si/sau a cheltuielilor de repatriere, in termen de 15
+                            (cincisprezece) zile
+                            calendaristice de la data incheierii derularii pachetului de servicii de calatorie sau de la
+                            data repatrierii.
+                        </li>
+                        <br>
+                        <li>
+                            8.3. Calatorul are obligatia de a notifica societatii de asigurare, prin scrisoare
+                            recomandata cu confirmare de primire,
+                            in legatura cu solicitarea adresata Agentiei privind rambursarea sumelor achitate si/sau a
+                            cheltuielilor de repatriere,
+                            in termen de 5 (cinci) zile calendaristice de la data confirmarii de primire prevazute la
+                            pct. 8.2.
+                        </li>
+                        <br>
+                        <li>
+                            8.4. In cazul in care, in termen de 15 (cincisprezece) zile calendaristice de la data
+                            confirmarii de primire a
+                            documentelor justificative de catre Agentie, calatorul nu a primit sumele solicitate de la
+                            aceasta, are loc evenimentul
+                            asigurat.
+                        </li>
+                        <br>
+                        <li>
+                            8.5. In termen de 10 (zece) zile calendaristice de la data producerii evenimentului
+                            asigurat, calatorul are obligatia de
+                            a transmite societatii de asigurare, prin scrisoare recomandata cu confirmare de primire,
+                            cererea de despagubire
+                            insotita de documentele justificative.
+                        </li>
+                        <br>
+                        <li>
+                            8.6. Documentele justificative constau in:
+                            <ol style="list-style-type:none;">
+                                <br>
+                                <li>
+                                    a) contractul de comercializare a pachetului de servicii de calatorie;
+                                </li>
+                                <br>
+                                <li>
+                                    b) confirmarile de primire precizate la pct. 8.2, 8.3 si 8.5 din prezentul capitol;
+                                </li>
+                                <br>
+                                <li>
+                                    c) fotocopiile de pe documentele de plata a avansului (chitante, ordine de plata
+                                    etc.), in cazul cererilor de rambursare
+                                    a sumelor achitate de calator;
+                                </li>
+                                <br>
+                                <li>
+                                    d) fotocopiile de pe documentele de transport si cazare, in cazul cererilor de
+                                    rambursare a cheltuielilor de repatriere
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            Societatea de asigurare are dreptul sa solicite calatorului si alte documente justificative.
+                        </li>
+                        <br>
+                        <li>
+                            8.7. Despagubirea nu poate depasi suma achitata de calator in contractul de comercializare a
+                            pachetului de servicii de
+                            calatorie, precum si sumele necesare repatrierii acestuia, cu respectarea prevederilor
+                            pct.10.2.
+                        </li>
+                        <br>
+                        <li>
+                            8.8. Despagubirea va fi platita in termen de 30 (treizeci) de zile calendaristice de la data
+                            primirii de catre
+                            societatea de asigurare a documentelor justificative de la calator.
+                        </li>
+                        <br>
+                        <li>
+                            8.9. In cazul in care dupa plata despagubirii Agentia plateste debitul catre calator, acesta
+                            are obligatia de a restitui
+                            asiguratorului despagubirea primita, in termen de 5 (cinci) zile lucratoare de la data
+                            primirii de la Agentie a sumelor
+                            reprezentand debitul.
+                        </li>
+                        <br>
+                        <li>
+                            8.10. Facultativ, calatorul are posibilitatea incheierii unui contract de asigurare, care sa
+                            acopere taxele de transfer,
+                            sau a unui contract de asistenta care sa acopere taxele de repatriere in caz de accidente,
+                            de boala sau deces, a unui
+                            contract de asigurare pentru bagaje, a unui contract de asigurare pentru servicii medicale
+                            la destinatie ori a unei
+                            asigurari storno.
+                        </li>
+                        <br>
+                        <li>
+                            8.11. Agentia de turism nu se face vinovata de eventuala nerespectare a obligatiilor
+                            stipulate in politele de asigurare
+                            contractate, deoarece aceasta este doar intermediar intre calator si asigurator.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading15">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                    9. Documentele contractului
+                </button>
+            </h2>
+            <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            Documentele contractului se constituie ca anexa la acesta si sunt urmatoarele:
+                        </li>
+                        <br>
+                        <li>
+                            a) voucherul, biletul de odihna-tratament, biletul de excursie, bonul de comanda dupa caz;
+                        </li>
+                        <br>
+                        <li>
+                            b) programul pachetului de servicii de calatorie;
+                        </li>
+                        <br>
+                        <li>
+                            c) cataloagele/pliantele/ofertele Agentiei puse la dispozitia calatorului in format tiparit
+                            sau pe suport electronic la
+                            adresa
+                            <a class="" href="https://www.lgt.ro" target="_blank">
+                                https://www.lgt.ro
+                            </a>
+                            ;
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading16">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                    10. Procedura de solutionare alternative a litigiilor (“SAL”)
+                </button>
+            </h2>
+            <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            10.1. Solutionarea alternativa a litigiilor (”SAL”) reprezintă un mecanism alternativ
+                            sistemului judiciar, prin care
+                            consumatorilor li se ofera posibilitatea de solutionare a litigiilor pe care le pot avea cu
+                            comerciantii, atunci cand se
+                            confrunta cu o problema legata de achizitionarea unui produs sau serviciu. Astfel,
+                            reclamatiile impotriva comerciantilor
+                            sunt prezentate voluntar de catre consumatori, urmand a fi solutionate intr-un mod
+                            independent, impartial, transparent,
+                            rapid si echitabil.
+                        </li>
+                        <br>
+                        <li>
+                            10.2. Directia de solutionare alternativa a litigiilor (Directia SAL) din cadrul Autoritatii
+                            Nationale pentru Protectia
+                            Consumatorilor (”ANPC”), are competenta sa solutioneze alternativ litigii nationale si
+                            transfrontaliere izvorate din
+                            contractele de vanzari sau din contractele de prestari servicii incheiate cu un comerciant
+                            care desfasoara activitati în
+                            Romania, in sectoarele de activitate în care ANPC este competenta.
+                        </li>
+                        <br>
+                        <li>
+                            10.3. Cererea de aplicare SAL, Lista de consilieri SAL, Procedura SAL, si legislatia
+                            aplicabila poate fi consultata aici
+                            –
+                            <a class="" href="http://www.anpc.gov.ro/categorie/1271/sal" target="_blank">
+                                http://www.anpc.gov.ro/categorie/1271/sal
+                            </a>
+                            .
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading17">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                    11. Dispozitii finale
+                </button>
+            </h2>
+            <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol style="list-style-type:none;">
+                        <br>
+                        <li>
+                            11.1. Contractul impreuna cu termenii si conditiile generale au fost incheiate in doua
+                            exemplare, cate unul pentru
+                            fiecare parte.
+                        </li>
+                        <br>
+                        <li>
+                            11.2. Comercializarea pachetelor de servicii de calatorie se va face in conformitate cu
+                            termenii si conditiile generale
+                            si cu respectarea prevederilor Ordonantei Guvernului nr. 2/2018.
+                        </li>
+                        <br>
+                        <li>
+                            11.3. Agentia recomanda incheierea unei asigurari storno pentru a acoperi eventualele
+                            penalitati de anulare; calatorii
+                            se pot informa in agentii despre cazurile acoperite de asigurarea storno. Asigurarea se va
+                            incheia si achita la momentul
+                            semnarii contractului de comercializare a pachetului de servicii de calatorie si plata
+                            avansului pachetului, fiind
+                            valabila de la data incheierii si pana in ziua plecarii. Clientul doreste/ nu doreste
+                            asigurare storno (asigurare
+                            complexa de calatorie care include si asigurarea storno – “Turist Plus Premium”): da
+                        </li>
+                        <br>
+                        <li>
+                            11.4. Informatiile prelucrate sunt destinate utilizarii de catre operator ssi pot fi
+                            dezvaluite partenerilor nostri
+                            contractuali, companiilor din grup, imputernicitilor nostri si autoritatilor publice
+                            centrale/locale, potrivit legii.
+                            Datele sunt transferate in strainatate, in statul de destinatie ales de dvs. si in Regatul
+                            Unit din motive de
+                            centralizare. Conform Legii nr. 677/2001, beneficiati de dreptul de acces la date, de
+                            interventie asupra datelor,
+                            dreptul de opozitie ssi de dreptul de a nu fi supus unei decizii individuale. Aveti dreptul
+                            sa va opuneti, in mod
+                            gratuit si fara nicio justificare, in orice moment, prelucrarii datelor dumneavoastra in
+                            scopuri de marketing. Pentru
+                            exercitarea drepturilor legale specifice, va puteti adresa cu o cerere scrisa, datata si
+                            semnata, pe adresa operatorului
+                            sau la adresa de e-mail juridic@lgt.ro. De asemenea, va este recunoscut dreptul de a va
+                            adresa justitiei si/sau
+                            autoritatii nationale de supraveghere (www.dataprotection.ro). Prin semnarea
+                            contractului/solicitarii, in mod liber,
+                            informat si in cunostinta de cauza, declarati ca sunteti de acord cu colectarea, prelucrarea
+                            si transferul datelor cu
+                            caracter personal de catre operator, in conditiile acestei informari.
+                        </li>
+                        <br>
+                        <li>
+                            Calatorul declara ca a fost informat in mod expres de catre Agentie, prin mandatar,
+                            respectiv a luat la cunostinta si
+                            este de acord cu POLITICA DE CONFIDENTIALITATE CU PRIVIRE LA PRELUCRAREA DATELOR CU CARACTER
+                            PERSONAL disponibila si
+                            afisata in Agentie,
+
+                            cat si pe site-ul Agentiei la
+                            <a class="" href="https://www.dertour.ro/prelucrare-date-caracter-personal" target="_blank">
+                                https://www.dertour.ro/prelucrare-date-caracter-personal
+                            </a>
+                            , in contextul intrarii in vigoare
+                            a Regulamentului European privind protectia datelor nr.679/2016 (”GDPR”). Prin semnarea
+                            contractului, calatorul declara
+                            in mod expres si este de acord inclusiv ca datele sale cu caracter personal sa fie
+                            transferate catre parteneri din tari
+                            terte, respectiv din afara spatiului european sau din afara spatiului economic european,
+                            doar in scopul realizarii
+                            obiectului prezentului Contract, respectiv in vederea achizitionarii serviciilor de
+                            calatorie mentionate la art. I.
+                        </li>
+                        <br>
+                        <li>
+                            11.5. Calatorul declara ca Agentia l-a informat complet cu privire la conditiile generale de
+                            comercializare a pachetelor
+                            de servicii de calatorie in conformitate cu prevederile Ordonantei Guvernului nr.2/2018.
+                            Prin semnarea prezentului
+                            contract sau prin acceptarea pachetelor de servicii de calatorie, inclusiv in cazul celor
+                            achizitionate la distanta prin
+                            telefon sau mijloace electronice, calatorul isi exprima acordul si luarea la cunostinta cu
+                            privire la conditiile
+                            generale de comercializare a pachetelor de servicii de calatorie, mentionate in oferta.
+                        </li>
+                        <br>
+                        <li>
+                            11.6. Calatorul declara ca Agentia, prin mandatar, l-a informat in prealabil cu privire la
+                            situatia generala a tarii de
+                            destinatie, iar calatorul si-a asumat raspunderea de a verifica alertele de calatorie la
+                            www.mae.ro/travel-alerts.
+                        </li>
+                        <br>
+                        <li>
+                            11.7. Clauzele din prezentul contract au aplicabilitate generala, iar in situatia in care,
+                            in cadrul anexelor, exista
+                            termeni si conditii specifice anumitor servicii de calatorie, respectivele conditii vor
+                            prevala fata de clauzele acestui
+                            contract.
+                        </li>
+                        <br>
+                        <li>
+                            11.8. Litigiile care nu pot fi solutionate pe cale amiabila vor fi solutionate pe cale
+                            judecatoreasca, instanta
+                            competenta fiind Judecatoria Sector 1.
+                        </li>
+                        <br>
+                        <li>
+                            11.9. Contractul va fi interpretat conform legilor din Romania.
+                        </li>
+                        <br>
+                        <li>
+                            In conformitate cu Art. 1203 din Noul Cod civil, partile confirma si accepta in mod expres
+                            Termenii si conditiile
+                            generale considerate a fi clauze neuzuale: 3.1., 3.2., 4.3.-4.6., 4.9.-4.12, 5.3.,
+                            5.6.-5.10, cap. VI, 7.2.-7.3., 8.2.,
+                            8.3., 8.5., 8.7., 8.8., 11.8
+                        </li>
+                        <br>
+                        <li>
+                            11.10.
+
+                            Agentia recomanda incheierea unei asigurari storno pentru a acoperi eventualele penalitati
+                            de anulare; turistii se pot
+                            informa in agentii despre cazurile acoperite de asigurarea storno. Asigurarea se va incheia
+                            si achita la momentul
+                            semnarii contractului de comercializare a pachetului de servicii turistice si plata
+                            avansului pachetului turistic, fiind
+                            valabila de la data incheierii si pana in ziua plecarii.
+                            Clientul doreste/ nu doreste asigurare storno (asigurare complexa de calatorie care include
+                            si asigurarea storno ):
+                            ##ASIGURARE_DA_NU##
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+</div>

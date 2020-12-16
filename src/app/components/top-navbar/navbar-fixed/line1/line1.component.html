@@ -1,16 +1,21 @@
 <!-- <div class="container-fluid"> -->
 <div class="container-fluid">
     <div>
-    
+
         <!-- <a class="navbar-brand" href="#">Navbar w/ text</a> -->
-    
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
+
+
         <!-- navbar-nav flex-row -->
         <div class="collapse navbar-collapse navbar-nav flex-row" id="navbarText">
+
+            <app-menu-home></app-menu-home>
+
+
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx4">
 
@@ -21,100 +26,38 @@
                     </a>
                 </li> -->
 
-                <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
+                <!-- <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
                     <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="home"
                         href="#">
                         <i class="menu-item-icon fas fa-globe-europe" style="padding-right: 3px;" aria-hidden="true"></i>
                          Home</a>
-                </li>
-                <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
-                    <a class="nav-link" routerLink="/offers" routerLinkActive="offers" href="#">
-                        <i class="menu-item-icon fas fa-umbrella-beach" style="padding-right: 3px;"></i> Oferte</a>
-                </li>
-                <li class="nav-item mx4 " style="padding-left: 10px; padding-right: 10px;">
-                    <app-dropdown></app-dropdown>
-                </li>
-    
+                </li> -->
+
+
+
+
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link" href="#"></a>
-                    <app-navbar-fixed-line1-dropdown1></app-navbar-fixed-line1-dropdown1>                
-                </li>
-                 -->
-                <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
-                    <a class="nav-link"routerLink="/contact" routerLinkActive="contact">Contact</a>
-                </li>
-    
+                    <app-navbar-fixed-line1-dropdown1></app-navbar-fixed-line1-dropdown1>
+                </li> -->
+
+
+                 <!-- <app-menu-dropdown></app-menu-dropdown> -->
+
+                 <app-menu-contact></app-menu-contact>
+
                 <!-- <li class="nav-item">
-                    <a class="nav-link" 
+                    <a class="nav-link"
                     routerLink="/admin" routerLinkActive="admin">Admin</a>
                 </li> -->
-    
+
                 <!-- <li class="nav-item">
-                    <a class="nav-link" 
+                    <a class="nav-link"
                     routerLink="/super-admin" routerLinkActive="super-admin">Super Admin</a>
                 </li> -->
-    
+
             </ul>
-            <!-- <span class="navbar-text">
-                Navbar text with an inline element
-            </span> -->
-    
-    
-            <!-- <ul class="navbar-nav" aria-expanded="true" >
-    
-                <li class="nav-item">
-                    <a class="nav-link" href="tel:+40747548548" style="text-decoration: none">
-                        <i class="fa fa-phone" aria-hidden="true" alt="Phone Number">
-                        </i>
-                        0747 548 548 
-                    </a>
-                </li>
-    
-                <li class="nav-item">
-                    <a class="nav-link" href="mailto:contact@lgt.ro" style="text-decoration: none" target="_blank">
-                        <i class="fa fa-envelope" aria-hidden="true" alt="e-mail">
-                        </i>
-                        contact@lgt.ro
-                    </a>
-                </li>
-    
-                <li class="nav-item">
-                    <a class="nav-link" href="https://wa.me/40747548548" target="_blank">
-                        <i class="fab fa-whatsapp">
-                            Whatsapp
-                        </i>
-                    </a>
-                </li>
-    
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.facebook.com/LetsGoTravelRomania/" target="_blank">
-                        <i class="fab fa-facebook-f">
-                            Facebook
-                        </i>
-                    </a>
-                </li>
-    
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.instagram.com/letsgotravelromania/" target="_blank">
-                        <i class="fab fa-instagram">
-                            Instagram
-                        </i>
-                    </a>
-                </li>
-    
-                <li class="nav-item">
-                    <a class="nav-link"
-                        href="https://www.google.ro/maps/place/Let's+Go+Travel+LGT.ro/@44.4816399,26.1007365,17.75z/data=!4m5!3m4!1s0x40b20264d153ffff:0xa795d86b37911227!8m2!3d44.4817986!4d26.1009262"
-                        target="_blank">
-                        <i class="fa fa-map-marker" aria-hidden="true">
-                            Map
-                        </i>
-                    </a>
-                </li>
-    
-            </ul> -->
-    
-    
+
         </div>
     </div>
 </div>

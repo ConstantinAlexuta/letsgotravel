@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SideBarRightComponent } from './side-bar-right.component';
-import { LogoComponent } from './logo/logo.component';
 import { SearchComponent } from './search/search.component';
 import { Line1Component } from './line1/line1.component';
 import { Line2Component } from './line2/line2.component';
@@ -13,9 +12,9 @@ import { SocialComponent } from './social/social.component';
 
 
 @NgModule({
-  declarations: [SideBarRightComponent, LogoComponent, SearchComponent, Line1Component, Line2Component, Line3Component, Line4Component, SocialComponent],
+  declarations: [SideBarRightComponent, SearchComponent, Line1Component, Line2Component, Line3Component, Line4Component, SocialComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ], exports: [
     SideBarRightComponent
   ]

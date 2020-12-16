@@ -10,16 +10,13 @@ import { CommonModule } from '@angular/common';
 
 import { NavbarFixedComponent } from './navbar-fixed.component';
 
-import { LogoComponent } from './logo/logo.component';
-
-
 @NgModule({
   declarations: [
-    NavbarFixedComponent, 
-    LogoComponent
+    NavbarFixedComponent
   ],
   imports: [
     CommonModule,
+
     Line1Module,
     Line2Module,
     Line3Module,
