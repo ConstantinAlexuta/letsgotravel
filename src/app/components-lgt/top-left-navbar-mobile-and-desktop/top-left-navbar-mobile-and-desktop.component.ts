@@ -22,7 +22,7 @@ export class TopLeftNavbarMobileAndDesktopComponent implements OnInit {
 
   }
 
-  mobileResolution = 7000;
+  mobileResolution = 700;
   desktopResolution = 1200;
   public getWidth() {
   return window.innerWidth;
