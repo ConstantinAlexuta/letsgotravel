@@ -1,82 +1,91 @@
 <!-- Desktop and Mobile NavBar Together -->
-<nav class="navbar navbar-dark bg-dark ">
+<nav class="navbar 
+     
+    navbar-dark 
+    bg-dark
+    ">
+    <!-- fixed-top -->
 
     <!-- Desktop Menu -->
     <div class="container-fluid 
         navbar-expand-lg
-        hidden-xs hidden-sm
-        ">
+        
+        hidden-sm
+        "
+         *ngIf="getWidth() > mobileResolution"
+        >
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
 
         <!-- <app-logo></app-logo> -->
         
+        <div class="container">
+            <div class="col">
 
-        
-
-        <div class="col">
-            <div>
-                <div class="col">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        <!-- <app-logo-small></app-logo-small> -->
-                    </button>
-                </div>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <!-- Menu Desktop LGT -->
-                <!-- <app-logo-small></app-logo-small> -->
-                <div style="padding-top: 12px;">
-                    <ul class="navbar-nav me-auto mb-lg-0 mx4">
-                        <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
-                            <app-logo-small></app-logo-small>
-                        </li>
-                    </ul>
-                </div>
-                <div style="padding-top: 12px;">
-                    <ul class="navbar-nav me-auto  mb-lg-0 mx4">
-                        <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
-                            <app-home-menu></app-home-menu>
-                        </li>
-                    </ul>
-                </div>
-                <div style="padding-top: 12px;">
-                    <ul class="navbar-nav me-auto  mb-lg-0 mx4">
-                        <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
-                            <app-offers-menu></app-offers-menu>
-                        </li>
-                    </ul>
-                </div>
-                <div style="padding-top: 12px;">
-                    <ul class="navbar-nav me-auto  mb-lg-0 mx4">
-                        <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
-                            <app-contact-menu></app-contact-menu>
-                        </li>
-                    </ul>
-                </div>
-                <div style="padding-top: 12px;">
-                    <ul class="navbar-nav me-auto  mb-lg-0 mx4">
-                        <li class="nav-item mx4" style="padding-left: 10px; padding: 10px;">
-                            <app-phone-icon-and-text></app-phone-icon-and-text>
-                        </li>
-                    </ul>
-                </div>
-                <div style="padding-top: 12px;">
-                    <ul class="navbar-nav me-auto  mb-lg-0 mx4">
-                        <li class="nav-item mx4" style="padding-left: 10px; padding: 10px;">
-                            <app-email-icon-and-text></app-email-icon-and-text>
-                        </li>
-                    </ul>
-                </div>
-                <div style="padding-top: 12px;">
-                    <ul class="navbar-nav me-auto  mb-lg-0 mx4">
-                        <li class="nav-item mx4" style="padding-left: 10px; padding: 10px;">
-                            <app-icons-shortcut-all-without-phone-and-email></app-icons-shortcut-all-without-phone-and-email>
-                        </li>
-                    </ul>
+                <div>
+                    <div class="col">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            <!-- <app-logo-small></app-logo-small> -->
+                        </button>
+                    </div>
                 </div>
             
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <!-- Menu Desktop LGT -->
+                    <!-- <app-logo-small></app-logo-small> -->
+                    <div style="padding-top: 12px;">
+                        <ul class="navbar-nav me-auto mb-lg-0 mx4">
+                            <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
+                                <!-- <app-logo-small></app-logo-small> -->
+                                <app-logo-large></app-logo-large>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="padding-top: 12px;">
+                        <ul class="navbar-nav me-auto  mb-lg-0 mx4">
+                            <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
+                                <app-home-menu></app-home-menu>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="padding-top: 12px;">
+                        <ul class="navbar-nav me-auto  mb-lg-0 mx4">
+                            <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
+                                <app-offers-menu></app-offers-menu>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="padding-top: 12px;">
+                        <ul class="navbar-nav me-auto  mb-lg-0 mx4">
+                            <li class="nav-item mx4" style="padding-left: 10px; padding-right: 10px;">
+                                <app-contact-menu></app-contact-menu>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="padding-top: 12px;">
+                        <ul class="navbar-nav me-auto  mb-lg-0 mx4">
+                            <li class="nav-item mx4" style="padding-left: 10px; padding: 10px;">
+                                <app-phone-icon-and-text></app-phone-icon-and-text>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="padding-top: 12px;">
+                        <ul class="navbar-nav me-auto  mb-lg-0 mx4">
+                            <li class="nav-item mx4" style="padding-left: 10px; padding: 10px;">
+                                <app-email-icon-and-text></app-email-icon-and-text>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="padding-top: 12px;">
+                        <ul class="navbar-nav me-auto  mb-lg-0 mx4">
+                            <li class="nav-item mx4" style="padding-left: 10px; padding: 10px;">
+                                <app-icons-shortcut-all-without-phone-and-email></app-icons-shortcut-all-without-phone-and-email>
+                            </li>
+                        </ul>
+                    </div>
+            
+                </div>
             </div>
         </div>
     </div>
@@ -84,10 +93,12 @@
     <!-- Mobile Menu Button -->
     <!-- navbar-expand-sm -->
     <div class="container-fluid
-        hidden-lg hidden-xl
-    ">
+        hidden-lg
+        "
+        *ngIf="getWidth() < mobileResolution"  
+        >
         <button class="navbar-toggler
-        hidden-lg hidden-xl
+        hidden-lg 
         " type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -97,7 +108,7 @@
         <app-logo-small></app-logo-small>
 
         <div class="
-        hidden-lg hidden-xl
+        hidden-lg 
         " style="align-self: center; text-align: center;">
             <!-- <app-menu-logo-small></app-menu-logo-small> -->
         </div>
@@ -106,7 +117,9 @@
 
 <!-- Mobile Menu Content -->
 <div class="collapse 
-hidden-lg hidden-xl" id="navbarToggleExternalContent">
+    hidden-lg" id="navbarToggleExternalContent"
+    *ngIf="getWidth() < mobileResolution"    
+    >
     <div class="bg-dark p-4">
         <!-- <h5 class="text-white h4">Collapsed content</h5> -->
         <!-- <span class="text-muted">NEW Toggleable via the navbar brand.</span> -->

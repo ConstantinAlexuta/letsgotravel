@@ -12,4 +12,11 @@ export class TopLeftNavbarMobileAndDesktopComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mobileResolution = 700;
+  desktopResolution = 1200;
+  public getWidth() {
+  return window.innerWidth;
+}
+
+
 }
