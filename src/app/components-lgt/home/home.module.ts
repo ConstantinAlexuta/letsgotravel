@@ -33,6 +33,10 @@ import { WhatsappIconAndTextComponent } from '../icons-associated/icons/whatsapp
 import { WhatsappIconComponent } from '../icons-associated/icons/whatsapp-icon/whatsapp-icon.component';
 import { HomeFooterComponent } from './home-footer/home-footer.component';
 import { LogoSmallMobileComponent } from './logo-small-mobile/logo-small-mobile.component';
+import { IconsAllShortOnlyIconsMobileComponent } from '../icons-associated/icons-all-short-only-icons-mobile/icons-all-short-only-icons-mobile.component';
+import { IconsAllShortOnlyPhoneEmailWhatsappComponent } from '../icons-associated/icons-all-short-only-phone-email-whatsapp/icons-all-short-only-phone-email-whatsapp.component';
+import { IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent } from '../icons-associated/icons-splited-for-mobile-menu-phone-and-email-text-others-icons/icons-splited-for-mobile-menu-phone-and-email-text-others-icons.component';
+import { IconsAllShortOnlyPhoneEmailWhatsappMapComponent } from '../icons-associated/icons-all-short-only-phone-email-whatsapp-map/icons-all-short-only-phone-email-whatsapp-map.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +94,12 @@ import { LogoSmallMobileComponent } from './logo-small-mobile/logo-small-mobile.
     IconsLargeIconsAndTextAllWithoutPhoneAndEmailComponent, 
     IconsShortOnlyIconsOnlyPhoneAndEmailComponent, 
     IconsLargeIconsAndTextOnlyPhoneAndEmailComponent, 
-    IconsAndTextPhoneAndEmailOthersShortOnlyIconsComponent
+    IconsAndTextPhoneAndEmailOthersShortOnlyIconsComponent, 
+    
+    IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent, 
+    IconsAllShortOnlyIconsMobileComponent, 
+    IconsAllShortOnlyPhoneEmailWhatsappComponent, 
+    IconsAllShortOnlyPhoneEmailWhatsappMapComponent
   ]
 })
 export class HomeModule { }

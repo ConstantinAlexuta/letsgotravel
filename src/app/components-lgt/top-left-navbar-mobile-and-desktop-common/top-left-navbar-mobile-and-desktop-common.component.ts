@@ -18,7 +18,7 @@ export class TopLeftNavbarMobileAndDesktopCommonComponent implements OnInit {
   }
 
 
-    mobileResolutionSetting = 700;
+    mobileResolutionSetting = 800;
   desktopResolution = 1200;
   isMobile = false;
   public getWidth() {
