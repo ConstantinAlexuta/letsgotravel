@@ -32,6 +32,7 @@ import { PhoneIconComponent } from '../icons-associated/icons/phone-icon/phone-i
 import { WhatsappIconAndTextComponent } from '../icons-associated/icons/whatsapp-icon-and-text/whatsapp-icon-and-text.component';
 import { WhatsappIconComponent } from '../icons-associated/icons/whatsapp-icon/whatsapp-icon.component';
 import { HomeFooterComponent } from './home-footer/home-footer.component';
+import { LogoSmallMobileComponent } from './logo-small-mobile/logo-small-mobile.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HomeFooterComponent } from './home-footer/home-footer.component';
 
     HomeMenuComponent, 
     HomeViewComponent, 
-    HomeFooterComponent    
+    HomeFooterComponent, 
+    LogoSmallMobileComponent    
   ],
   imports: [
     CommonModule,
@@ -58,6 +60,7 @@ import { HomeFooterComponent } from './home-footer/home-footer.component';
   ],
   exports: [
     LogoSmallComponent, 
+    LogoSmallMobileComponent,
     LogoLargeComponent,
 
     HomeMenuComponent, 

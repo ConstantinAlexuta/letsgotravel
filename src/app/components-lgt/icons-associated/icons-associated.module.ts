@@ -25,6 +25,7 @@ import { IconsAndTextPhoneAndEmailOthersShortOnlyIconsComponent } from './icons-
 
 import { IconsModule } from './icons/icons.module';
 import { IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent } from './icons-splited-for-mobile-menu-phone-and-email-text-others-icons/icons-splited-for-mobile-menu-phone-and-email-text-others-icons.component';
+import { IconsAllShortOnlyIconsMobileComponent } from './icons-all-short-only-icons-mobile/icons-all-short-only-icons-mobile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent } from '
     IconsLargeIconsAndTextAllWithoutPhoneAndEmailComponent, 
     IconsShortOnlyIconsOnlyPhoneAndEmailComponent, 
     IconsLargeIconsAndTextOnlyPhoneAndEmailComponent, 
-    IconsAndTextPhoneAndEmailOthersShortOnlyIconsComponent, IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent
+    IconsAndTextPhoneAndEmailOthersShortOnlyIconsComponent, IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent, IconsAllShortOnlyIconsMobileComponent
   ],
   imports: [
     CommonModule,
