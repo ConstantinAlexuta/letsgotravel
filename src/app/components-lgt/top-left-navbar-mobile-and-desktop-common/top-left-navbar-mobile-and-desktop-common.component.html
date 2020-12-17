@@ -5,16 +5,18 @@
 
     <div class="container">
 
+        <!-- class=""col-xs-offset-8 -->
         <div *ngIf="!isMobile"
-        class="col-xs-offset-8" style="align-content: center; padding-right: 10px; padding-left: 10px;"
+        class="" style="align-content: center; padding-right: 10px; padding-left: 10px;"
             >
             <!-- data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05"
             aria-expanded="ariaExpanded" aria-label="Toggle navigation" -->
             <app-logo-small></app-logo-small>
         </div>
 
+        <!-- padding-right: 3px; padding-left: 3px; -->
         <div  *ngIf="isMobile"
-        class="" style="align-content: center; padding-right: 3px; padding-left: 3px;"
+        class="" style="align-content: center; "
             data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05"
             aria-expanded="ariaExpanded" aria-label="Toggle navigation">
             <app-logo-small-mobile></app-logo-small-mobile>
