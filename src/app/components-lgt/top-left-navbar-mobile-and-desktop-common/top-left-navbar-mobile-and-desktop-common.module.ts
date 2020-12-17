@@ -5,12 +5,14 @@ import { HomeModule } from '../home/home.module';
 import { OffersModule } from '../offers/offers.module';
 import { AboutUsModule } from '../about-us/about-us.module';
 import { ContactModule } from '../contact/contact.module';
+import { FooterMobileComponent } from './footer-mobile.component';
 
 
 
 @NgModule({
   declarations: [
-    TopLeftNavbarMobileAndDesktopCommonComponent
+    TopLeftNavbarMobileAndDesktopCommonComponent,
+    FooterMobileComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { ContactModule } from '../contact/contact.module';
     ContactModule
   ],
   exports: [
-    TopLeftNavbarMobileAndDesktopCommonComponent
+    TopLeftNavbarMobileAndDesktopCommonComponent,
+    FooterMobileComponent
   ]
 })
 export class TopLeftNavbarMobileAndDesktopCommonModule { }
