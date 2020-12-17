@@ -9,13 +9,15 @@ import { IconsAssociatedModule } from '../icons-associated/icons-associated.modu
 import { ContactFooterComponent } from './contact-footer/contact-footer.component';
 import { ContactMenuComponent } from './contact-menu/contact-menu.component';
 import { ContactViewComponent } from './contact-view/contact-view.component';
+import { ContactFooterThinComponent } from './contact-footer-thin/contact-footer-thin.component';
 
 @NgModule({
   declarations: [
     AskSomethingInfoComponent,
     ContactViewComponent,
     ContactMenuComponent,
-    ContactFooterComponent
+    ContactFooterComponent,
+    ContactFooterThinComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { ContactViewComponent } from './contact-view/contact-view.component';
     ContactFormComponent,
     ContactViewComponent,
     ContactMenuComponent,
-    ContactFooterComponent
+    ContactFooterComponent,
+    ContactFooterThinComponent
   ]
 })
 export class ContactModule { }

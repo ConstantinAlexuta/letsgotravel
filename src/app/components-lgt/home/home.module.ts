@@ -37,6 +37,7 @@ import { IconsAllShortOnlyIconsMobileComponent } from '../icons-associated/icons
 import { IconsAllShortOnlyPhoneEmailWhatsappComponent } from '../icons-associated/icons-all-short-only-phone-email-whatsapp/icons-all-short-only-phone-email-whatsapp.component';
 import { IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent } from '../icons-associated/icons-splited-for-mobile-menu-phone-and-email-text-others-icons/icons-splited-for-mobile-menu-phone-and-email-text-others-icons.component';
 import { IconsAllShortOnlyPhoneEmailWhatsappMapComponent } from '../icons-associated/icons-all-short-only-phone-email-whatsapp-map/icons-all-short-only-phone-email-whatsapp-map.component';
+import { HomeFooterThinComponent } from './home-footer-thin/home-footer-thin.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { IconsAllShortOnlyPhoneEmailWhatsappMapComponent } from '../icons-associ
     HomeMenuComponent, 
     HomeViewComponent, 
     HomeFooterComponent, 
-    LogoSmallMobileComponent    
+    HomeFooterThinComponent, 
+    LogoSmallMobileComponent  
   ],
   imports: [
     CommonModule,
@@ -69,7 +71,8 @@ import { IconsAllShortOnlyPhoneEmailWhatsappMapComponent } from '../icons-associ
 
     HomeMenuComponent, 
     HomeViewComponent,
-    HomeFooterComponent,
+    HomeFooterComponent, 
+    HomeFooterThinComponent, 
 
     HomeCardsComponent,
     HomeCarouselBootstrapComponent,

@@ -41,6 +41,18 @@ import { PrivacyPolicyMenuComponent } from './privacy-policy-menu/privacy-policy
 import { ReliableCompanyMenuComponent } from './reliable-company-menu/reliable-company-menu.component';
 import { SocialAndFiscalInformationMenuComponent } from './social-and-fiscal-information-menu/social-and-fiscal-information-menu.component';
 import { TermsAndConditionsMenuComponent } from './terms-and-conditions-menu/terms-and-conditions-menu.component';
+import { AboutUsFooterThinComponent } from './about-us-footer-thin/about-us-footer-thin.component';
+import { FrameworkContractFooterThinComponent } from './framework-contract-footer-thin/framework-contract-footer-thin.component';
+import { OurAccreditationsFooterThinComponent } from './our-accreditations-footer-thin/our-accreditations-footer-thin.component';
+import { InsurancePolicyFooterThinComponent } from './insurance-policy-footer-thin/insurance-policy-footer-thin.component';
+import { TaxRegistrationCertificateFooterThinComponent } from './tax-registration-certificate-footer-thin/tax-registration-certificate-footer-thin.component';
+import { TourismLicenseFooterThinComponent } from './tourism-license-footer-thin/tourism-license-footer-thin.component';
+import { TourismPatentFooterThinComponent } from './tourism-patent-footer-thin/tourism-patent-footer-thin.component';
+import { PaymentMethodsFooterThinComponent } from './payment-methods-footer-thin/payment-methods-footer-thin.component';
+import { PrivacyPolicyFooterThinComponent } from './privacy-policy-footer-thin/privacy-policy-footer-thin.component';
+import { ReliableCompanyFooterThinComponent } from './reliable-company-footer-thin/reliable-company-footer-thin.component';
+import { SocialAndFiscalInformationFooterThinComponent } from './social-and-fiscal-information-footer-thin/social-and-fiscal-information-footer-thin.component';
+import { TermsAndConditionsFooterThinComponent } from './terms-and-conditions-footer-thin/terms-and-conditions-footer-thin.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +94,21 @@ import { TermsAndConditionsMenuComponent } from './terms-and-conditions-menu/ter
     PaymentMethodsMenuComponent, 
     PrivacyPolicyMenuComponent, 
     ReliableCompanyMenuComponent, 
-    SocialAndFiscalInformationMenuComponent, TermsAndConditionsMenuComponent
+    SocialAndFiscalInformationMenuComponent, 
+    
+    TermsAndConditionsMenuComponent, 
+    AboutUsFooterThinComponent, 
+    FrameworkContractFooterThinComponent, 
+    OurAccreditationsFooterThinComponent, 
+    InsurancePolicyFooterThinComponent, 
+    TaxRegistrationCertificateFooterThinComponent, 
+    TourismLicenseFooterThinComponent, 
+    TourismPatentFooterThinComponent, 
+    PaymentMethodsFooterThinComponent, 
+    PrivacyPolicyFooterThinComponent, 
+    ReliableCompanyFooterThinComponent, 
+    SocialAndFiscalInformationFooterThinComponent, 
+    TermsAndConditionsFooterThinComponent
   ],
   imports: [
     CommonModule,
@@ -143,7 +169,21 @@ import { TermsAndConditionsMenuComponent } from './terms-and-conditions-menu/ter
     PaymentMethodsMenuComponent, 
     PrivacyPolicyMenuComponent, 
     ReliableCompanyMenuComponent, 
-    SocialAndFiscalInformationMenuComponent
+    SocialAndFiscalInformationMenuComponent, 
+    
+    TermsAndConditionsMenuComponent, 
+    AboutUsFooterThinComponent, 
+    FrameworkContractFooterThinComponent, 
+    OurAccreditationsFooterThinComponent, 
+    InsurancePolicyFooterThinComponent, 
+    TaxRegistrationCertificateFooterThinComponent, 
+    TourismLicenseFooterThinComponent, 
+    TourismPatentFooterThinComponent, 
+    PaymentMethodsFooterThinComponent, 
+    PrivacyPolicyFooterThinComponent, 
+    ReliableCompanyFooterThinComponent, 
+    SocialAndFiscalInformationFooterThinComponent, 
+    TermsAndConditionsFooterThinComponent
   ]
 })
 export class AboutUsModule { }

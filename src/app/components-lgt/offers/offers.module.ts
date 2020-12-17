@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { OffersMenuComponent } from './offers-menu/offers-menu.component';
 import { OffersViewComponent } from './offers-view/offers-view.component';
 import { OffersFooterComponent } from './offers-footer/offers-footer.component';
+import { OffersFooterThinComponent } from './offers-footer-thin/offers-footer-thin.component';
 
 
 
@@ -12,7 +13,8 @@ import { OffersFooterComponent } from './offers-footer/offers-footer.component';
   declarations: [
     OffersMenuComponent, 
     OffersViewComponent, 
-    OffersFooterComponent
+    OffersFooterComponent, 
+    OffersFooterThinComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { OffersFooterComponent } from './offers-footer/offers-footer.component';
   exports: [
     OffersMenuComponent, 
     OffersViewComponent,
-    OffersFooterComponent
+    OffersFooterComponent, 
+    OffersFooterThinComponent
   ]
 })
 export class OffersModule { }
