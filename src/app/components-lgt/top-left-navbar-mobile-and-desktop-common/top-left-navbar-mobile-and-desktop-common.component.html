@@ -1,140 +1,153 @@
+<nav  *ngIf="isMobile" class="navbar navbar-dark bg-dark text-center"
+    style="align-content: center;">
+    <div class="container" style="text-align: center; padding-top: 15px;">
+        <div class="" style="margin: 0 auto;">
+            <app-logo-large></app-logo-large>
+        </div>
+    </div>
+</nav>
+
+
+
 <!-- fixed-top -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark
-    "
- aria-label="Fifth navbar example"
- id="top_left_navbar_mobile_and_desktop_common">
+    " aria-label="Fifth navbar example" id="top_left_navbar_mobile_and_desktop_common">
     <!-- <div class="container-fluid"> -->
-    
-    
+
+
 
     <div class="container">
 
         <!-- class=""col-xs-offset-8 -->
-        <div *ngIf="!isMobile"
-        class="" style="align-content: center; padding-right: 10px; padding-left: 10px;"
-            >
+        <div   *ngIf="!isMobile" class="" style="align-content: center; padding-right: 10px; padding-left: 10px;">
             <!-- data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05"
             aria-expanded="ariaExpanded" aria-label="Toggle navigation" -->
             <app-logo-small></app-logo-small>
         </div>
 
         <!-- padding-right: 3px; padding-left: 3px; -->
-        <div  *ngIf="isMobile"
-        class="" style="align-content: center; "
-            data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05"
-            aria-expanded="ariaExpanded" aria-label="Toggle navigation">
+        <!-- <div *ngIf="isMobile" class="" style="align-content: center; " data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="ariaExpanded"
+            aria-label="Toggle navigation">
             <app-logo-small-mobile></app-logo-small-mobile>
-        </div> 
+        </div> -->
 
-        <div *ngIf="isMobile">
-            <!-- <app-icons-all-short-only-phone-email-whatsapp-map></app-icons-all-short-only-phone-email-whatsapp-map> -->
-            <app-icons-all-short-only-phone-email-whatsapp></app-icons-all-short-only-phone-email-whatsapp>
-            <!-- <app-map-icon></app-map-icon> -->
-            <!-- <app-icons-short-only-icons-only-phone-and-email></app-icons-short-only-icons-only-phone-and-email> -->
-            <!-- <app-icons-all-short-only-icons></app-icons-all-short-only-icons> -->
-            <!-- <app-icons-short-only-icons-only-phone-and-email></app-icons-short-only-icons-only-phone-and-email> -->
+        <div *ngIf="isMobile" class="container" style="margin: 0 auto;">
+            <div class="container" style="font-size: 1.5em; margin: 0 auto;">
+                <div class=" px2 ">
+                    <app-phone-icon></app-phone-icon>
+                </div>
+                <div class=" px2">
+                    <app-email-icon></app-email-icon>
+                </div>
+                <div class=" px2">
+                    <app-whatsapp-icon></app-whatsapp-icon>
+                </div>
+                <div class=" px2">
+                    <app-facebook-icon></app-facebook-icon>
+                </div>
+                <div class=" px2">
+                    <app-instagram-icon></app-instagram-icon>
+                </div>
+                <div class=" px2">
+                    <app-map-icon></app-map-icon>
+                </div>
+
+                <!-- <a class="navbar-brand" href="#">Let's Go Travel</a> -->
+                <!-- button class="navbar-toggler fa fa-bars fa-2" -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="ariaExpanded" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="font-size: 1.1em;"></span>
+                </button>
+
+            </div>
         </div>
-        
 
-        <!-- <a class="navbar-brand" href="#">Let's Go Travel</a> -->
-        <button class="navbar-toggler fa fa-bars fa-2" type="button"
-         data-bs-toggle="collapse"
-          data-bs-target="#navbarsExample05"
-            aria-controls="navbarsExample05" aria-expanded="ariaExpanded" aria-label="Toggle navigation">
-            <!-- <span class="navbar-toggler-icon"></span> -->
-        </button>
-        
         <div class="collapse navbar-collapse px-3
-        col-xs-offset-4"
-         id="navbarsExample05"
-         
-         >
-        <!-- *ngIf="ngIfAriaExpanded" -->
-            
+        col-xs-offset-4" id="navbarsExample05">
+            <!-- *ngIf="ngIfAriaExpanded" -->
+
             <ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
-                
-                <li class="  nav-item px-2 py-2 active" (click)="toggleDisplayDiv()"
-                data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+
+                <li class="  nav-item px-2 py-2 active" (click)="toggleDisplayDiv()" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show">
                     <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
                     <app-home-menu></app-home-menu>
-                    
+
                 </li>
-                <li class="nav-item px-2 py-2"  (click)="toggleDisplayDiv()" 
-                 data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show">
                     <!-- <a class="nav-link" href="#">Link</a> -->
                     <app-offers-menu></app-offers-menu>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li> -->
-                <li class="px-2 nav-item dropdown "   (click)="toggleDisplayDiv()"
-                style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;">
+                <li class="px-2 nav-item dropdown " (click)="toggleDisplayDiv()"
+                    style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;">
                     <a class="px-2 nav-link dropdown-toggle bg-dark" href="#" id="dropdown05" data-bs-toggle="dropdown"
                         aria-expanded="false">Despre noi</a>
 
-                    <ul class="px-4 dropdown-menu dropdown-menu-lg bg-dark dropdown-menu-custom-width-from-css" 
-                    data-bs-offset="5000"
-                    data-bs-boundary="app_privacy_policy_footer_element"
-                    aria-labelledby="dropdown05"
-                    style=" text-decoration: none; text-decoration-color: darkgray; color: darkgray;">
+                    <ul class="px-4 dropdown-menu dropdown-menu-lg bg-dark dropdown-menu-custom-width-from-css"
+                        data-bs-offset="5000" data-bs-boundary="app_privacy_policy_footer_element"
+                        aria-labelledby="dropdown05"
+                        style=" text-decoration: none; text-decoration-color: darkgray; color: darkgray;">
                         <li class=" px-2">
                             <hr class="dropdown-divider">
                         </li>
-                        <li class=" px-2 py-2"  (click)="toggleDisplayDiv()"
-                        style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
-                         data-toggle="collapse"
-                         data-bs-toggle="collapse"
-                         data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                        <li class=" px-2 py-2" (click)="toggleDisplayDiv()"
+                            style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
+                            data-toggle="collapse" data-bs-toggle="collapse" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">
                             <app-about-us-footer></app-about-us-footer>
                         </li>
-                        <li class=" px-2 py-2"  (click)="toggleDisplayDiv()"
-                        style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
-                        data-bs-toggle="collapse"
-                         data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                        <li class=" px-2 py-2" (click)="toggleDisplayDiv()"
+                            style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
+                            data-bs-toggle="collapse" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                             <app-reliable-company-footer></app-reliable-company-footer>
                         </li>
-                        <li class=" px-2 py-2"  (click)="toggleDisplayDiv()"
-                        style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
-                         data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                        <li class=" px-2 py-2" (click)="toggleDisplayDiv()"
+                            style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                             <app-terms-and-conditions-footer></app-terms-and-conditions-footer>
                         </li>
-                        <li class=" px-2 py-2"  (click)="toggleDisplayDiv()"
-                        style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
-                         data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                        <li class=" px-2 py-2" (click)="toggleDisplayDiv()"
+                            style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                             <app-framework-contract-footer></app-framework-contract-footer>
                         </li>
-                        <li class=" px-2 py-2"  (click)="toggleDisplayDiv()"
-                        style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
-                         data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                        <li class=" px-2 py-2" (click)="toggleDisplayDiv()"
+                            style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                             <app-privacy-policy-footer></app-privacy-policy-footer>
                         </li>
                         <li class=" px-2">
                             <hr class="dropdown-divider">
                         </li>
-                        <li class=" px-2 py-2"  (click)="toggleDisplayDiv()"
-                        style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
-                         data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                        <li class=" px-2 py-2" (click)="toggleDisplayDiv()"
+                            style="text-decoration: none; text-decoration-color: darkgray; color: darkgray;"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                             <app-our-accreditations-footer></app-our-accreditations-footer>
-                        </li>   
+                        </li>
                         <li class=" px-2">
                             <hr class="dropdown-divider">
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()"
-                data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show">
                     <app-contact-menu></app-contact-menu>
                 </li>
                 <li *ngIf="!isSmallDesktop || isMobile" class="nav-item px-3 py-2" (click)="toggleDisplayDiv()"
-                data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                    data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                     <app-phone-icon-and-text></app-phone-icon-and-text>
                 </li>
                 <li *ngIf="!isSmallDesktop || isMobile" class="nav-item px-3 py-2" (click)="toggleDisplayDiv()"
-                data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                    data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                     <app-email-icon-and-text></app-email-icon-and-text>
                 </li>
-                <li *ngIf="!isMediumDesktop || isMobile" class="nav-item px-3 py-2"  (click)="toggleDisplayDiv()" style="padding: 7px;"
-                data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                <li *ngIf="!isMediumDesktop || isMobile" class="nav-item px-3 py-2" (click)="toggleDisplayDiv()"
+                    style="padding: 7px;" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                     <app-icons-shortcut-all-without-phone-and-email></app-icons-shortcut-all-without-phone-and-email>
                 </li>
             </ul>
