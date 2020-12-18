@@ -6,6 +6,7 @@ import { OffersMenuComponent } from './offers-menu/offers-menu.component';
 import { OffersViewComponent } from './offers-view/offers-view.component';
 import { OffersFooterComponent } from './offers-footer/offers-footer.component';
 import { OffersFooterThinComponent } from './offers-footer-thin/offers-footer-thin.component';
+import { OffersViewAllListedComponent } from './offers-view-all-listed/offers-view-all-listed.component';
 
 
 
@@ -14,7 +15,7 @@ import { OffersFooterThinComponent } from './offers-footer-thin/offers-footer-th
     OffersMenuComponent, 
     OffersViewComponent, 
     OffersFooterComponent, 
-    OffersFooterThinComponent
+    OffersFooterThinComponent, OffersViewAllListedComponent
   ],
   imports: [
     CommonModule,
