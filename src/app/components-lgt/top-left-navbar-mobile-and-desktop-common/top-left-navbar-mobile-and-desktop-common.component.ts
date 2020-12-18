@@ -28,7 +28,7 @@ export class TopLeftNavbarMobileAndDesktopCommonComponent implements OnInit {
 
     // nu functioneaza // trebuie adaugati lisener de windows size
 
-    mobileResolutionSetting = 800;
+    mobileResolutionSetting = 600;
     smallDesktopResolutionSetting = 1300;
     mediumDesktopResolutionSetting = 1500;
 
