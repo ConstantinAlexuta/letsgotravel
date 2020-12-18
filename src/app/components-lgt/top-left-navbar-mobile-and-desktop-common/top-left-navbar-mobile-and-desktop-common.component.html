@@ -1,4 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+<!-- fixed-top -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark
+    "
+ aria-label="Fifth navbar example">
     <!-- <div class="container-fluid"> -->
     
     
@@ -121,15 +124,15 @@
                 data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                     <app-contact-menu></app-contact-menu>
                 </li>
-                <li class="nav-item px-3 py-2" (click)="toggleDisplayDiv()"
+                <li *ngIf="!isSmallDesktop" class="nav-item px-3 py-2" (click)="toggleDisplayDiv()"
                 data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                     <app-phone-icon-and-text></app-phone-icon-and-text>
                 </li>
-                <li class="nav-item px-3 py-2" (click)="toggleDisplayDiv()"
+                <li *ngIf="!isSmallDesktop" class="nav-item px-3 py-2" (click)="toggleDisplayDiv()"
                 data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                     <app-email-icon-and-text></app-email-icon-and-text>
                 </li>
-                <li class="nav-item px-3 py-2"  (click)="toggleDisplayDiv()" style="padding: 7px;"
+                <li *ngIf="!isMediumDesktop" class="nav-item px-3 py-2"  (click)="toggleDisplayDiv()" style="padding: 7px;"
                 data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                     <app-icons-shortcut-all-without-phone-and-email></app-icons-shortcut-all-without-phone-and-email>
                 </li>

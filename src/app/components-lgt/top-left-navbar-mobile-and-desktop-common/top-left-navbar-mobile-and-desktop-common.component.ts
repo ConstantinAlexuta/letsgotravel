@@ -12,15 +12,32 @@ export class TopLeftNavbarMobileAndDesktopCommonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
     if(this.getWidth() < this.mobileResolutionSetting) {
         this.isMobile = true;
     }
+
+    if(this.getWidth() < this.smallDesktopResolutionSetting) {
+        this.isSmallDesktop = true;
+    }
+
+    if(this.getWidth() < this.mediumDesktopResolutionSetting) {
+        this.isMediumDesktop = true;
+    }
   }
 
+    // nu functioneaza // trebuie adaugati lisener de windows size
 
     mobileResolutionSetting = 800;
+    smallDesktopResolutionSetting = 1300;
+    mediumDesktopResolutionSetting = 1500;
+
   desktopResolution = 1200;
-  isMobile = false;
+
+    isMobile = false;
+   isSmallDesktop = false;
+   isMediumDesktop = false;
+
   public getWidth() {
       return window.innerWidth;
   }
