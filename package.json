@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^11.0.4",
+    "@angular/animations": "^11.0.5",
     "@angular/cdk": "^11.0.2",
     "@angular/common": "^11.0.4",
     "@angular/compiler": "^11.0.4",
@@ -36,11 +36,13 @@
     "jquery": "^3.5.1",
     "nodemailer": "^6.4.17",
     "popper.js": "^1.16.1",
+    "primeflex": "^2.0.0",
     "primeicons": "^4.1.0",
     "primeng": "^11.0.0",
     "rxjs": "~6.6.0",
+    "tsd": "^0.14.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "^0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1100.4",
