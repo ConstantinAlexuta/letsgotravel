@@ -112,7 +112,7 @@ import { TermsAndConditionsFooterThinComponent } from './terms-and-conditions-fo
   ],
   imports: [
     CommonModule,
-
+    
     RouterModule.forChild([
         { path: 'about-us', component: AboutUsComponent },
         { path: 'reliable-company', component: ReliableCompanyComponent },

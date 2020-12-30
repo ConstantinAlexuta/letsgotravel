@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { offers } from 'src/app/models/offers';
 
 @Component({
   selector: 'app-offers-view-all-listed-bootstrap',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersViewAllListedBootstrapComponent implements OnInit {
 
+  offers = offers;
+  
+
+  
   constructor() { }
 
   ngOnInit(): void {

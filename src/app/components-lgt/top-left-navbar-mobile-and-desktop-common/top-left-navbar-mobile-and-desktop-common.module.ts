@@ -6,6 +6,7 @@ import { OffersModule } from '../offers/offers.module';
 import { AboutUsModule } from '../about-us/about-us.module';
 import { ContactModule } from '../contact/contact.module';
 import { FooterMobileComponent } from './footer-mobile.component';
+import { OffersPurchasedModule } from '../offers-purchased/offers-purchased.module';
 
 
 
@@ -20,7 +21,9 @@ import { FooterMobileComponent } from './footer-mobile.component';
     HomeModule,
     OffersModule,
     AboutUsModule,
-    ContactModule
+    ContactModule,
+
+    OffersPurchasedModule
   ],
   exports: [
     TopLeftNavbarMobileAndDesktopCommonComponent,

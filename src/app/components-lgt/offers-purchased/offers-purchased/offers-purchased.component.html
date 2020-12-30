@@ -1,0 +1,53 @@
+<div class="container pt-3">
+
+    <table class="table table-bordered table-inverse">
+
+        <tr>
+            <th>id</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>offerType</th>
+            <th>offerID</th>
+            <th>offerTitle</th>
+            <th>offerDestinationCountry</th>
+            <th>offerDestinationCity</th>
+            <th>offerDestinationHotel</th>
+            <th>offerDestinationServicesIncluded</th>
+            <th>offerStartDate</th>
+            <th>offerEndDate</th>
+            <th class="text-right">purchasePricePerPerson</th>
+            <th class="text-right">purchasePriceTotal</th>
+            <th>purchaseDate</th>
+            <th>requestToBeCalledOnPhone</th>
+        </tr>
+
+        <tr *ngFor="let offerPurchased of offersPurchased">
+            <td>
+                <a [routerLink]="['/offers-purchased', offerPurchased.id]">
+                    Purchased offert {{offerPurchased.id}}
+                </a>
+            </td>
+            <td>{{offerPurchased.firstName}}</td>
+            <td>{{offerPurchased.lastName}}</td>
+            <td>{{offerPurchased.email}}</td>
+            <td>{{offerPurchased.phone}}</td>
+            <td>{{offerPurchased.offerType}}</td>
+            <td>{{offerPurchased.offerID}}</td>
+            <td>{{offerPurchased.offerTitle}}</td>
+            <td>{{offerPurchased.offerDestinationCountry}}</td>
+            <td>{{offerPurchased.offerDestinationCity}}</td>
+            <td>{{offerPurchased.offerDestinationHotel}}</td>
+            <td>{{offerPurchased.offerDestinationServicesIncluded}}</td>
+            <td>{{offerPurchased.offerStartDate}}</td>
+            <td>{{offerPurchased.offerEndDate}}</td>
+            <td class="text-right">{{offerPurchased.purchasePricePerPerson}}</td>
+            <td class="text-right">{{offerPurchased.purchasePriceTotal}}</td>
+            <td>{{offerPurchased.purchaseDate}}</td>
+            <td>{{offerPurchased.requestToBeCalledOnPhone}}</td>
+        </tr>
+
+    </table>
+
+</div>

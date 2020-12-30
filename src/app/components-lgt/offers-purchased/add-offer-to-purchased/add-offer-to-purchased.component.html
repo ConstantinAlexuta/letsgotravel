@@ -1,0 +1,104 @@
+<div class="container py-4">
+
+    <h3>Purchase the offer</h3>
+
+    <form [formGroup]="offerToPurchaseForm" (ngSubmit)="onSubmit()" novalidate>
+
+        <div class="form-group">
+            <label>First name</label>
+            <input type="text" class="form-control" formControlName="firstName" required autofocus />
+        </div>
+
+        <div class="form-group">
+            <label>Last name</label>
+            <input type="text" class="form-control" formControlName="lastName" required />
+        </div>
+
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="text" class="form-control" formControlName="email" required />
+        </div>
+
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="text" class="form-control" formControlName="phone" required />
+        </div>
+
+        <div class="form-group">
+            <label>Offer type</label>
+            <select class="form-control" formControlName="offerType" required>
+                <!-- <option value="Select the offer type"></option> -->
+                <option *ngFor="let offerType of offerTypes" [value]="offerType">{{offerType}}</option>
+            </select>
+            <!-- <input type="text" class="form-control" formControlName="offerType" required /> -->
+        </div>
+
+        <div class="form-group">
+            <label>Offer ID</label>
+            <input type="text" class="form-control" formControlName="offerID" required />
+        </div>
+
+        <div class="form-group">
+            <label>Offer title</label>
+            <input type="text" class="form-control" formControlName="offerTitle" required />
+        </div>
+
+        <div class="form-group">
+            <label>Offer destination country</label>
+            <input type="text" class="form-control" formControlName="offerDestinationCountry" required />
+        </div>
+
+        <div class="form-group">
+            <label>Offer destination city</label>
+            <input type="text" class="form-control" formControlName="offerDestinationCity" required />
+        </div>
+
+        <div class="form-group">
+            <label>Offer destination hotel</label>
+            <input type="text" class="form-control" formControlName="offerDestinationHotel" required />
+        </div>
+
+        <div class="form-group">
+            <label>Offer destination services included</label>
+            <input type="text" class="form-control" formControlName="offerDestinationServicesIncluded" required />
+        </div>
+
+        <div class="form-group">
+            <label>Offer start date</label>
+            <input type="text" class="form-control" formControlName="offerStartDate" required />
+        </div>
+
+        <div class="form-group">
+            <label>Offer end date</label>
+            <input type="text" class="form-control" formControlName="offerEndDate" required />
+        </div>
+
+        <div class="form-group">
+            <label>Purchase price per person</label>
+            <input type="text" class="form-control" formControlName="purchasePricePerPerson" required />
+        </div>
+
+        <div class="form-group">
+            <label>Purchase price total</label>
+            <input type="text" class="form-control" formControlName="purchasePriceTotal" required />
+        </div>
+
+        <div class="form-group">
+            <label>Purchase date</label>
+            <input type="text" class="form-control" formControlName="purchaseDate" required />
+        </div>
+
+        <div class="form-group">
+            <label>Request to be called on phone</label>
+            <input type="text" class="form-control" formControlName="requestToBeCalledOnPhone" />
+        </div>
+
+        <button type="submit" class="btn btn-primary"> Purchase offer</button>
+
+        <div *ngIf="validMessage!=''">
+            <br>
+            <h5 class="has-info">{{validMessage}}</h5>
+        </div>
+
+    </form>
+</div>

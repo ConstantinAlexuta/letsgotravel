@@ -39,6 +39,9 @@ import { IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent } from '
 import { IconsAllShortOnlyPhoneEmailWhatsappMapComponent } from '../icons-associated/icons-all-short-only-phone-email-whatsapp-map/icons-all-short-only-phone-email-whatsapp-map.component';
 import { HomeFooterThinComponent } from './home-footer-thin/home-footer-thin.component';
 
+import { TestsComponent } from './../../components-lgt/tests/tests.component';
+
+
 @NgModule({
   declarations: [
     LogoSmallComponent, 
@@ -48,7 +51,9 @@ import { HomeFooterThinComponent } from './home-footer-thin/home-footer-thin.com
     HomeViewComponent, 
     HomeFooterComponent, 
     HomeFooterThinComponent, 
-    LogoSmallMobileComponent  
+    LogoSmallMobileComponent,
+    
+    TestsComponent
   ],
   imports: [
     CommonModule,
@@ -102,7 +107,9 @@ import { HomeFooterThinComponent } from './home-footer-thin/home-footer-thin.com
     IconsSplitedForMobileMenuPhoneAndEmailTextOthersIconsComponent, 
     IconsAllShortOnlyIconsMobileComponent, 
     IconsAllShortOnlyPhoneEmailWhatsappComponent, 
-    IconsAllShortOnlyPhoneEmailWhatsappMapComponent
+    IconsAllShortOnlyPhoneEmailWhatsappMapComponent,
+    
+    TestsComponent
   ]
 })
 export class HomeModule { }

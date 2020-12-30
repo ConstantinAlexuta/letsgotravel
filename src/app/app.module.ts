@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './components-lgt/page-not-found/page-not-
 import { TopLeftNavbarMobileAndDesktopModule } from './components-lgt/top-left-navbar-mobile-and-desktop/top-left-navbar-mobile-and-desktop.module';
 import { TopLeftNavbarMobileAndDesktopCommonModule } from './components-lgt/top-left-navbar-mobile-and-desktop-common/top-left-navbar-mobile-and-desktop-common.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { TopLeftNavbarMobileAndDesktopCommonModule } from './components-lgt/top-
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    
     AppRoutingModule,
     NgbModule
   ],

@@ -12,6 +12,8 @@ import { OffersViewAllListedPrimeNgComponent } from './offers-view-all-listed-pr
 import { OffersViewAllListedPrimeNgModule } from './offers-view-all-listed-prime-ng/offers-view-all-listed-prime-ng.module';
 import { OffersViewAllListedBootstrapComponent } from './offers-view-all-listed-bootstrap/offers-view-all-listed-bootstrap.component';
 import { OfferViewComponent } from './offer-view/offer-view.component';
+import { OffersViewAllListedBootstrapAdminRightComponent } from './offers-view-all-listed-bootstrap-admin-right/offers-view-all-listed-bootstrap-admin-right.component';
+import { OffersViewAllListedBootstrapSuperAdminLeftComponent } from './offers-view-all-listed-bootstrap-super-admin-left/offers-view-all-listed-bootstrap-super-admin-left.component';
 
 
 
@@ -24,7 +26,7 @@ import { OfferViewComponent } from './offer-view/offer-view.component';
     OffersViewAllListedComponent, 
     OffersViewAllListedNgBootstrapComponent, 
     OffersViewAllListedBootstrapComponent, 
-    OfferViewComponent
+    OfferViewComponent, OffersViewAllListedBootstrapAdminRightComponent, OffersViewAllListedBootstrapSuperAdminLeftComponent
   ],
   imports: [
     CommonModule,
