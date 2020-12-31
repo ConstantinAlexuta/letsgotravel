@@ -10,6 +10,7 @@ import { OfferPurchasedFooterComponent } from './offer-purchased-footer/offer-pu
 import { AddOfferToPurchasedComponent } from './add-offer-to-purchased/add-offer-to-purchased.component';
 import { AddOfferToPurchasedFooterComponent } from './add-offer-to-purchased-footer/add-offer-to-purchased-footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from '../auth/auth.guard';
  
 
 
@@ -26,15 +27,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-
+  
     RouterModule.forChild([
-        { path: 'add-offer-to-purchase', component: AddOfferToPurchasedComponent },
-
-        // { path: 'offer-purchased/:id', component: OfferPurchasedComponent },
-        // { path: 'offer-purchased', component: OfferPurchasedComponent },
-
-        { path: 'offers-purchased/:id', component: OfferPurchasedComponent },
-        { path: 'offers-purchased', component: OffersPurchasedComponent }
+        { 
+          path: 'add-offer-to-purchase', 
+          component: AddOfferToPurchasedComponent 
+        },
+        { 
+          path: 'offers-purchased/:id', 
+          component: OfferPurchasedComponent, 
+          canActivate: [AuthGuard] 
+        },
+        { 
+          path: 'offers-purchased', 
+          component: OffersPurchasedComponent, 
+          canActivate: [AuthGuard] 
+        }
   ])
   ],
   providers: [

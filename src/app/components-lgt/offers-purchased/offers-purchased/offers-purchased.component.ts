@@ -16,8 +16,8 @@ export class OffersPurchasedComponent implements OnInit {
     this.getOffersPurchased();
   }
 
-  getOffersPurchased() {
-    this.offersPurchasedService.getOffersPurchased().subscribe(
+  async getOffersPurchased() {
+    await this.offersPurchasedService.getOffersPurchased().subscribe(
       data => { this.offersPurchased = data },
       err => console.error(err),
       () => console.log('offersPurchased loaded')

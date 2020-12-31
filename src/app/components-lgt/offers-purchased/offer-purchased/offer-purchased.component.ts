@@ -21,8 +21,8 @@ export class OfferPurchasedComponent implements OnInit {
     await this.getOfferPurchased(this.activatedRoute.snapshot.params.id);
   }
 
-  getOfferPurchased(id: number) {
-    this.offersPurchasedService.getOfferPurchased(id).subscribe(
+  async getOfferPurchased(id: number) {
+    await this.offersPurchasedService.getOfferPurchased(id).subscribe(
       data => { this.offerPurchased = data; },
       err => console.error(err),
       () => console.log('offerPurchased loaded')

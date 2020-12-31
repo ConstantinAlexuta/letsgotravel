@@ -18,12 +18,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageNotFoundComponent } from './components-lgt/page-not-found/page-not-found.component';
 import { TopLeftNavbarMobileAndDesktopModule } from './components-lgt/top-left-navbar-mobile-and-desktop/top-left-navbar-mobile-and-desktop.module';
 import { TopLeftNavbarMobileAndDesktopCommonModule } from './components-lgt/top-left-navbar-mobile-and-desktop-common/top-left-navbar-mobile-and-desktop-common.module';
+import { CallbackComponent } from './components-lgt/callback/callback.component';
+import { AuthService } from './components-lgt/auth/auth.service';
+import { AuthGuard } from './components-lgt/auth/auth.guard';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CallbackComponent
   ],
   imports: [
     // SharedModule,
@@ -42,6 +46,7 @@ import { TopLeftNavbarMobileAndDesktopCommonModule } from './components-lgt/top-
     NgbModule
   ],
   providers: [
+    AuthService, AuthGuard
     // { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]

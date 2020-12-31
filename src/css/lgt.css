@@ -1,0 +1,29 @@
+html {
+  height: 100%;
+}
+
+body {
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  text-rendering: optimizeLegibility;
+  position: relative;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Courier New", sans-serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  /* background: linear-gradient(150deg, #d5e3f1 15%, #fffbd9 70%, #ffdfcb 94%); */
+  /* background: linear-gradient(150deg, #ddf8b2 15%, #fffbd9 70%, #f3d0ba 94%); */
+  /* background: linear-gradient(150deg, #edf7ca 15%, #f8f5d6 10%, #f3e3d9 14%); */
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+  /* border: 1px solid #2f465d; */
+}

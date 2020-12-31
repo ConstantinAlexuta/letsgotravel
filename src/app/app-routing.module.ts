@@ -1,3 +1,4 @@
+import { CallbackComponent } from './components-lgt/callback/callback.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -7,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
     // { path: 'home', component: HomeComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'callback', component: CallbackComponent }   //  callback match the URL from auth0 dashboard site
     // { path: '**', component: PageNotFoundComponent },
 ];
 

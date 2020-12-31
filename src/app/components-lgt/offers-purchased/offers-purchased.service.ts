@@ -13,16 +13,35 @@ const httpOptions = {
 })
 export class OffersPurchasedService {
 
-  constructor(private httpClient: HttpClient) { }
+   constructor(private httpClient: HttpClient) { }
 
   private path: string = "/server/api/v1/offers-purchased";
 
+  // token: string = localStorage.getItem('access_token')!;
+  // headersAuthorization = { headers: new HttpHeaders().set('Authorization', 'Bearer ' + this.token) };
+
+  // // async 
+  // getOffersPurchased() {
+  //   // await
+  //    return  this.httpClient.get(this.path, this.headersAuthorization);
+  // }
+
+  // getOfferPurchased(id: number) {
+  //   return this.httpClient.get(this.path + "/" + id, this.headersAuthorization);
+  // }
+
   getOffersPurchased() {
-    return this.httpClient.get(this.path);
+    let token = localStorage.getItem('access_token');
+    return this.httpClient.get(this.path, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
+    });
   }
 
   getOfferPurchased(id: number) {
-    return this.httpClient.get(this.path + "/" + id);
+    let token = localStorage.getItem('access_token');
+    return this.httpClient.get(this.path + "/" + id, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
+    });
   }
 
   createOfferPurchased(offerPurchased: any) {
