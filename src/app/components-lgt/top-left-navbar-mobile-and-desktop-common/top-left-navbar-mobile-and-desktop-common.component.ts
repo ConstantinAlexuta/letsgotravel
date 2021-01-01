@@ -63,4 +63,10 @@ export class TopLeftNavbarMobileAndDesktopCommonComponent implements OnInit {
 
   }
 
+
+  showManagerNavBarLine: boolean = false;
+  onClickManagerNavBarLink() {
+    this.showManagerNavBarLine = !this.showManagerNavBarLine;
+  }
+
 }

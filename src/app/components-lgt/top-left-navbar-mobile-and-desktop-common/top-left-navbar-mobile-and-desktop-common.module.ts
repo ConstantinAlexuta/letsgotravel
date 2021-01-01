@@ -7,6 +7,7 @@ import { AboutUsModule } from '../about-us/about-us.module';
 import { ContactModule } from '../contact/contact.module';
 import { FooterMobileComponent } from './footer-mobile.component';
 import { OffersPurchasedModule } from '../offers-purchased/offers-purchased.module';
+import { ManagerModule } from '../manager/manager.module';
 
 
 
@@ -21,6 +22,7 @@ import { OffersPurchasedModule } from '../offers-purchased/offers-purchased.modu
     HomeModule,
     OffersModule,
     AboutUsModule,
+    ManagerModule,
     ContactModule,
 
     OffersPurchasedModule

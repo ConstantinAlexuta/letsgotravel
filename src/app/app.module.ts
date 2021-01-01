@@ -27,7 +27,7 @@ import { AuthGuard } from './components-lgt/auth/auth.guard';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    CallbackComponent
+    CallbackComponent,
   ],
   imports: [
     // SharedModule,
