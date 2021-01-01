@@ -17,6 +17,13 @@ import { ManagerOffersEditFooterComponent } from './offers/manager-offers-edit-f
 import { RouterModule } from '@angular/router';
 import { ManagerAddOffersComponent } from './offers/manager-add-offers/manager-add-offers.component';
 import { ManagerAddOffersFooterComponent } from './offers/manager-add-offers-footer/manager-add-offers-footer.component';
+import { OffersBasicsDataModule } from './offers-basics-data/offers-basics-data.module';
+import { OffersBasicsDataFooterComponent } from './offers-basics-data/offers-basics-data-footer/offers-basics-data-footer.component';
+import { OffersBasicsDataComponent } from './offers-basics-data/offers-basics-data/offers-basics-data.component';
+import { OffersIncludedServiceFooterComponent } from './offers-basics-data/offers-included-service-footer/offers-included-service-footer.component';
+import { OffersIncludedServiceComponent } from './offers-basics-data/offers-included-service/offers-included-service.component';
+import { OffersServiceTypeFooterComponent } from './offers-basics-data/offers-service-type-footer/offers-service-type-footer.component';
+import { OffersServiceTypeComponent } from './offers-basics-data/offers-service-type/offers-service-type.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +46,7 @@ import { ManagerAddOffersFooterComponent } from './offers/manager-add-offers-foo
   ],
   imports: [
     CommonModule,
+    OffersBasicsDataModule,
 
     RouterModule.forChild([
         { path: 'manager', component: ManagerComponent },
@@ -48,6 +56,10 @@ import { ManagerAddOffersFooterComponent } from './offers/manager-add-offers-foo
         { path: 'manager-add-offers', component: ManagerAddOffersComponent },
         { path: 'manager-view-offers', component: ManagerOffersViewComponent },
         { path: 'manager-edit-offers', component: ManagerOffersEditComponent }
+
+        // { path: 'manager-offers-basic-dates', component: OffersBasicsDataComponent },
+        // { path: 'manager-offers-service-types', component: OffersBasicsDataComponent },
+        // { path: 'manager-offers-included-services', component: OffersBasicsDataComponent }
   ])
   ],
   exports: [
@@ -66,7 +78,14 @@ import { ManagerAddOffersFooterComponent } from './offers/manager-add-offers-foo
     ManagerOffersEditComponent, 
     ManagerOffersEditFooterComponent, 
     ManagerAddOffersComponent, 
-    ManagerAddOffersFooterComponent
+    ManagerAddOffersFooterComponent,
+
+    OffersBasicsDataComponent, 
+    OffersBasicsDataFooterComponent, 
+    OffersServiceTypeComponent, 
+    OffersServiceTypeFooterComponent, 
+    OffersIncludedServiceComponent, 
+    OffersIncludedServiceFooterComponent
   ]
 })
 export class ManagerModule { }

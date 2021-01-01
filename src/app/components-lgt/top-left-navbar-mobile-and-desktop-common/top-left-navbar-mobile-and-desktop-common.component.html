@@ -221,8 +221,31 @@
                             <app-manager-offers-edit-footer></app-manager-offers-edit-footer>
                         </li>
 
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">
+                            <app-offers-basics-data-footer  (click)="onClickManagerNavBarMoreBasicsDetailsLink()"></app-offers-basics-data-footer>
+                        </li>
+
                     </ul>
                 </div>
+
+                <!-- manager user MORE ON BASICS Offerts details-->
+                <div class="row" [hidden]="!showManagerNavBarLineMoreBasicsDetails">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
+                
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">
+                            <app-offers-service-type-footer></app-offers-service-type-footer>
+                        </li>
+                
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">
+                            <app-offers-included-service-footer></app-offers-included-service-footer>>
+                        </li>
+                
+                    </ul>
+                </div>
+
             </div>
 
             
