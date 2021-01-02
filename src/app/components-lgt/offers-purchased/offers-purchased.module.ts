@@ -10,7 +10,7 @@ import { OfferPurchasedFooterComponent } from './offer-purchased-footer/offer-pu
 import { AddOfferToPurchasedComponent } from './add-offer-to-purchased/add-offer-to-purchased.component';
 import { AddOfferToPurchasedFooterComponent } from './add-offer-to-purchased-footer/add-offer-to-purchased-footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuard } from '../auth/auth.guard';
+// import { AuthGuard } from '../auth/auth.guard';
  
 
 
@@ -36,12 +36,12 @@ import { AuthGuard } from '../auth/auth.guard';
         { 
           path: 'offers-purchased/:id', 
           component: OfferPurchasedComponent, 
-          canActivate: [AuthGuard] 
+          // canActivate: [AuthGuard] 
         },
         { 
           path: 'offers-purchased', 
           component: OffersPurchasedComponent, 
-          canActivate: [AuthGuard] 
+          // canActivate: [AuthGuard] 
         }
   ])
   ],

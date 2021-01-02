@@ -1,0 +1,21 @@
+<div class="container py-5">
+
+    <table class="table">
+
+        <thead class="table-light">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Details</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let serviceType of serviceTypes">
+                <td>{{serviceType.id}}</td>
+                <td>{{serviceType.name}}</td>
+                <td>{{serviceType.details}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

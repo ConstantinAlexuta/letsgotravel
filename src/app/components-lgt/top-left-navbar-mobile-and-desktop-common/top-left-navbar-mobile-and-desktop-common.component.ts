@@ -64,14 +64,24 @@ export class TopLeftNavbarMobileAndDesktopCommonComponent implements OnInit {
   }
 
 
-  showManagerNavBarLine: boolean = false;
-  onClickManagerNavBarLink() {
-    this.showManagerNavBarLine = !this.showManagerNavBarLine;
+  showManagerNavBar: boolean = false;
+  showBasicsDataNavBar: boolean = false;
+
+  onClickHideOptionsNavBar() {
+    this.showManagerNavBar = false;
+    this.showBasicsDataNavBar = false;
   }
 
-  showManagerNavBarLineMoreBasicsDetails: boolean = false;
-  onClickManagerNavBarMoreBasicsDetailsLink() {
-    this.showManagerNavBarLineMoreBasicsDetails = !this.showManagerNavBarLineMoreBasicsDetails;
+  onClickHideBasicsDataNavBar() {
+    this.showBasicsDataNavBar = false;
+  }
+
+  onClickShowHideManagerNavBar() {
+    this.showManagerNavBar = !this.showManagerNavBar;
+  }
+
+  onClickShowHideBasicsDataNavBar() {
+    this.showBasicsDataNavBar = !this.showBasicsDataNavBar;
   }
 
 }

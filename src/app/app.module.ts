@@ -19,8 +19,8 @@ import { PageNotFoundComponent } from './components-lgt/page-not-found/page-not-
 import { TopLeftNavbarMobileAndDesktopModule } from './components-lgt/top-left-navbar-mobile-and-desktop/top-left-navbar-mobile-and-desktop.module';
 import { TopLeftNavbarMobileAndDesktopCommonModule } from './components-lgt/top-left-navbar-mobile-and-desktop-common/top-left-navbar-mobile-and-desktop-common.module';
 import { CallbackComponent } from './components-lgt/callback/callback.component';
-import { AuthService } from './components-lgt/auth/auth.service';
-import { AuthGuard } from './components-lgt/auth/auth.guard';
+// import { AuthService } from './components-lgt/auth/auth.service';
+// import { AuthGuard } from './components-lgt/auth/auth.guard';
 
 
 @NgModule({
@@ -46,7 +46,7 @@ import { AuthGuard } from './components-lgt/auth/auth.guard';
     NgbModule
   ],
   providers: [
-    AuthService, AuthGuard
+    // AuthService, AuthGuard
     // { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]

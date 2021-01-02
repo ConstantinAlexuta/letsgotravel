@@ -31,17 +31,19 @@ export class OffersPurchasedService {
   // }
 
   getOffersPurchased() {
-    let token = localStorage.getItem('access_token');
-    return this.httpClient.get(this.path, {
-      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
-    });
+    return this.httpClient.get(this.path);
+    // let token = localStorage.getItem('access_token');
+    // return this.httpClient.get(this.path, {
+    //   headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
+    // });
   }
 
   getOfferPurchased(id: number) {
-    let token = localStorage.getItem('access_token');
-    return this.httpClient.get(this.path + "/" + id, {
-      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
-    });
+    return this.httpClient.get(this.path + "/" + id);
+    // let token = localStorage.getItem('access_token');
+    // return this.httpClient.get(this.path + "/" + id, {
+    //   headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
+    // });
   }
 
   createOfferPurchased(offerPurchased: any) {
