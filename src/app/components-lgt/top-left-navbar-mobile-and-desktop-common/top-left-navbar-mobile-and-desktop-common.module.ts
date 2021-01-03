@@ -1,3 +1,4 @@
+import { LgtUserModule } from './../user/lgt-user.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopLeftNavbarMobileAndDesktopCommonComponent } from './top-left-navbar-mobile-and-desktop-common.component';
@@ -24,6 +25,7 @@ import { ManagerModule } from '../manager/manager.module';
     AboutUsModule,
     ManagerModule,
     ContactModule,
+    // LgtUserModule,
 
     OffersPurchasedModule
   ],

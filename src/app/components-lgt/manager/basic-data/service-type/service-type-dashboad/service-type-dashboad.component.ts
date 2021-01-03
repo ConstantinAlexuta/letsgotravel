@@ -7,6 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceTypeDashboadComponent implements OnInit {
 
+
+  navBarDetails: string[][] = [
+    [
+      "New one",
+      "/service-types/new-one"
+    ],
+    [
+      "New more",
+      "/service-types/new-more"
+    ],
+    [
+      "View all",
+      "/service-types"
+    ],
+    [
+      "Edit all",
+      "/service-types/edit"
+    ]
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

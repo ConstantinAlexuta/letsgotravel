@@ -31,6 +31,12 @@ import { BasicDataDashboadFooterComponent } from './basic-data/basic-data-dashbo
 import { ManagerDashboadComponent } from './manager-dashboad/manager-dashboad.component';
 import { ManagerDashboadFooterComponent } from './manager-dashboad-footer/manager-dashboad-footer.component';
 import { RouterModule } from '@angular/router';
+import { ManagerOffersAddMoreFooterComponent } from './manager-offers/manager-offers-add-more-footer/manager-offers-add-more-footer.component';
+import { ManagerOffersAddOneFooterComponent } from './manager-offers/manager-offers-add-one-footer/manager-offers-add-one-footer.component';
+import { ManagerOffersEditMoreFooterComponent } from './manager-offers/manager-offers-edit-more-footer/manager-offers-edit-more-footer.component';
+import { ManagerOffersEditOneFooterComponent } from './manager-offers/manager-offers-edit-one-footer/manager-offers-edit-one-footer.component';
+import { ManagerOffersViewAllFooterComponent } from './manager-offers/manager-offers-view-all-footer/manager-offers-view-all-footer.component';
+import { ManagerOffersViewOneFooterComponent } from './manager-offers/manager-offers-view-one-footer/manager-offers-view-one-footer.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +82,14 @@ import { RouterModule } from '@angular/router';
     ManagerOffersAddOneComponent, 
     ManagerOffersAddMoreComponent, 
     ManagerOffersEditOneComponent, 
-    ManagerOffersEditMoreComponent,
+    ManagerOffersEditMoreComponent, 
+
+    ManagerOffersViewAllFooterComponent, 
+    ManagerOffersAddOneFooterComponent, 
+    ManagerOffersAddMoreFooterComponent, 
+    ManagerOffersEditOneFooterComponent, 
+    ManagerOffersEditMoreFooterComponent, 
+    ManagerOffersViewOneFooterComponent,
 
     ManagerDashboadComponent, 
     ManagerDashboadFooterComponent

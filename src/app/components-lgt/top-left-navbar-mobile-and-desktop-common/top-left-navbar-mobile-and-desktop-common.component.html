@@ -183,6 +183,14 @@
                             style="padding: 7px;" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
                             <app-icons-shortcut-all-without-phone-and-email (click)="onClickHideOptionsNavBar()"></app-icons-shortcut-all-without-phone-and-email>
                         </li>
+
+                        <!-- <li *ngIf="!isMediumDesktop || isMobile" class="nav-item px-3 py-2" (click)="toggleDisplayDiv()" style="padding: 7px;"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                            <app-icons-shortcut-all-without-phone-and-email (click)="onClickHideOptionsNavBar()">
+                            </app-icons-shortcut-all-without-phone-and-email>
+                            
+                        </li> -->
+
                     </ul>
                 </div>
 
@@ -198,6 +206,37 @@
                         <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" (click)="onClickHideBasicsDataNavBar()" data-bs-toggle="collapse"
                             data-bs-target=".navbar-collapse.show">
                             <app-manager-offers-dashboad-footer></app-manager-offers-dashboad-footer>
+                        </li>
+
+
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" (click)="onClickHideBasicsDataNavBar()"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                            <app-manager-offers-view-all-footer></app-manager-offers-view-all-footer>
+                        </li>
+
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" (click)="onClickHideBasicsDataNavBar()"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                            <app-manager-offers-view-one-footer></app-manager-offers-view-one-footer>
+                        </li>
+
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" (click)="onClickHideBasicsDataNavBar()"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                            <app-manager-offers-add-one-footer></app-manager-offers-add-one-footer>
+                        </li>
+
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" (click)="onClickHideBasicsDataNavBar()"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                            <app-manager-offers-add-more-footer></app-manager-offers-add-more-footer>
+                        </li>
+
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" (click)="onClickHideBasicsDataNavBar()"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                            <app-manager-offers-edit-one-footer></app-manager-offers-edit-one-footer>
+                        </li>
+
+                        <li class="nav-item px-2 py-2" (click)="toggleDisplayDiv()" (click)="onClickHideBasicsDataNavBar()"
+                            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
+                            <app-manager-offers-edit-more-footer></app-manager-offers-edit-more-footer>
                         </li>
 
                     </ul>

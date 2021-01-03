@@ -27,13 +27,18 @@ import { RouterModule } from '@angular/router';
     CommonModule,
 
     RouterModule.forChild([
-      { path: 'service-type-dashboad', component: ServiceTypeDashboadComponent },        
-      { path: 'service-types/new-one', component: ServiceTypeAddOneComponent },
-      { path: 'service-types/new-more', component: ServiceTypeAddMoreComponent },
-      { path: 'service-types/:id/edit', component: ServiceTypeEditOneComponent },
-      { path: 'service-types/:id', component: ServiceTypeViewOneComponent },
-      { path: 'service-types/edit', component: ServiceTypeEditMoreComponent },
-      { path: 'service-types', component: ServiceTypeViewAllComponent }
+      { 
+        path: 'service-type-dashboad', 
+        component: ServiceTypeDashboadComponent,
+        children: [
+          { path: 'service-types/new-one', component: ServiceTypeAddOneComponent },
+          { path: 'service-types/new-more', component: ServiceTypeAddMoreComponent },
+          { path: 'service-types/:id/edit', component: ServiceTypeEditOneComponent },
+          { path: 'service-types/:id', component: ServiceTypeViewOneComponent },
+          { path: 'service-types/edit', component: ServiceTypeEditMoreComponent },
+          { path: 'service-types', component: ServiceTypeViewAllComponent }
+        ]
+      },        
     ])
   ],
   exports: [

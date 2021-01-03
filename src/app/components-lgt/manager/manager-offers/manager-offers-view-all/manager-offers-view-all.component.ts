@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { data } from 'jquery';
+import { ManagerOffersService } from '../manager-offers.service';
 
 @Component({
   selector: 'app-manager-offers-view-all',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerOffersViewAllComponent implements OnInit {
 
-  constructor() { }
+  public offers!: any;
+
+  constructor(
+    private managerOffersService: ManagerOffersService
+  ) { }
 
   ngOnInit(): void {
+    this.getOffers();
+  }
+
+  async getOffers () {
+    await this.managerOffersService.getOffers().subscribe(
+      data => { this.offers = data },
+      err => console.error(err),
+      () => console.log('Offers loaded.')
+    );
   }
 
 }
