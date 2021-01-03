@@ -16,6 +16,7 @@ import { ManagerOffersEditOneFooterComponent } from './manager-offers-edit-one-f
 import { ManagerOffersEditMoreFooterComponent } from './manager-offers-edit-more-footer/manager-offers-edit-more-footer.component';
 import { ManagerOffersViewOneFooterComponent } from './manager-offers-view-one-footer/manager-offers-view-one-footer.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -38,10 +39,12 @@ import { ManagerOffersViewOneFooterComponent } from './manager-offers-view-one-f
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     RouterModule.forChild([
       { path: 'manager-offers-dashboad', component: ManagerOffersDashboadComponent },     
-         
+
       { path: 'manager-offers/new-one', component: ManagerOffersAddOneComponent },
       { path: 'manager-offers/new-more', component: ManagerOffersAddMoreComponent },
 

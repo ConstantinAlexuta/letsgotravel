@@ -39,4 +39,10 @@ export class ManagerOffersService {
     });
   }
 
+  deleteOffer(id: number) {
+    console.log('in ManagerOffersService: offer with id = ' + id + ' was deleted');
+    return this.httpClient.delete(this.path + "/" + id, httpOptions);
+    
+  }
+
 }

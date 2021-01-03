@@ -2,6 +2,23 @@
 
     <div>
 
+        <button class="btn btn-primary px-4 mx-4 py-2 my-2" [routerLink]="['/manager-offers']">
+            Back to all
+        </button>
+
+        <button class="btn btn-primary px-4 mx-4 py-2 my-2" [routerLink]="['/manager-offers', offer.id ,'/edit']">
+            Edit
+        </button>
+
+        <button class="btn btn-primary px-4 mx-4 py-2 my-2" [routerLink]="['/manager-offers']"
+        (click)="deleteOffer(offer.id)">
+            Delete
+        </button>
+
+    </div>
+
+    <div>
+
         <div class="form-group">
             <label>Offer ID</label>
             <div class="form-control">{{offer.id}}</div>

@@ -14,6 +14,7 @@
             <th class="text-right">Stars</th>
             <th>Service type</th>
             <th>Plane tickets</th>
+            <th></th>
         </tr>
 
         <tr *ngFor="let offer of offers">
@@ -36,6 +37,13 @@
             <td>{{offer.destinationHotelStars}}</td>
             <td>{{offer.destinationHotelServicesType}}</td>
             <td>{{offer.includedServicesPlaneTickets}}</td>
+            <td>
+                <button 
+                class="btn btn-primary"
+                [routerLink]="['/manager-offers', offer.id ,'/edit']">
+                    Edit
+                </button>
+            </td>
         </tr>
 
     </table>

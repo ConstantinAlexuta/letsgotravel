@@ -1,1 +1,82 @@
-<p>manager-offers-add-one works!</p>
+<div class="container py-4 my-4">
+
+    <h3>Add a new offer</h3>
+
+    <form [formGroup]="offerFormGroup" (ngSubmit)="onSubmit()" novalidate>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="originalLgtUrl" required autofocus/>
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="destinationCountry" required />
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="destinationDistrict" required />
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="destinationDistrictZone" required />
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="destinationCity" required />
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="destinationCityZone" required />
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="destinationHotelName" required />
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="destinationHotelStars" required />
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="destinationHotelServicesType" required />
+        </div>
+
+        <div class="form-group">
+            <label>lgturl</label>
+            <input type="text" class="form-control" formControlName="includedServicesPlaneTickets" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Save offer
+        </button>
+
+        <div *ngIf="validMessage != ''">
+            <br>
+            <h5 class="has-info">{{validMessage}}</h5>
+        </div>
+
+        <div *ngIf="isSavedSuccessfully">
+            <button class="btn btn-primary px-4 mx-4 py-2 my-2" [routerLink]="['/manager-offers']">
+                Back to all offers
+            </button>
+        
+            <button class="btn btn-primary px-4 mx-4 py-2 my-2" [routerLink]="['/manager-offers', savedOfferId]">
+                View the saved offer
+            </button>
+
+            <button class="btn btn-primary px-4 mx-4 py-2 my-2" [routerLink]="['/manager-offers', savedOfferId ,'/edit']">
+                Edit the saved offer
+            </button>
+        </div>
+
+    </form>
+
+</div>

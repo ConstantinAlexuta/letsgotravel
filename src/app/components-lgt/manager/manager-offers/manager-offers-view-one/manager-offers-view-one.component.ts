@@ -30,4 +30,9 @@ export class ManagerOffersViewOneComponent implements OnInit {
     );
   }
 
+  deleteOffer(id: number) {
+    this.managerOffersService.deleteOffer(id);
+    console.log('in component: offer with id = ' + id + ' was deleted');
+  }
+
 }
