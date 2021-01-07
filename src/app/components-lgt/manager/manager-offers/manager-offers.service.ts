@@ -1,5 +1,7 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { Offer } from 'src/app/shared/interfaces/offer-interface';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,7 +20,7 @@ export class ManagerOffersService {
 
   private path: string = "/server/api/v1/offers";
 
-  getOffers() {
+  getOffers(): Observable<Offer> {
     return this.httpClient.get(this.path);
   }
 

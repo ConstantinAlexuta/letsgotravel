@@ -37,6 +37,14 @@ import { ManagerOffersEditMoreFooterComponent } from './manager-offers/manager-o
 import { ManagerOffersEditOneFooterComponent } from './manager-offers/manager-offers-edit-one-footer/manager-offers-edit-one-footer.component';
 import { ManagerOffersViewAllFooterComponent } from './manager-offers/manager-offers-view-all-footer/manager-offers-view-all-footer.component';
 import { ManagerOffersViewOneFooterComponent } from './manager-offers/manager-offers-view-one-footer/manager-offers-view-one-footer.component';
+import { DestinationCategoryAddMoreComponent } from './basic-data/destination-category/destination-category-add-more/destination-category-add-more.component';
+import { DestinationCategoryAddOneComponent } from './basic-data/destination-category/destination-category-add-one/destination-category-add-one.component';
+import { DestinationCategoryDashboadFooterComponent } from './basic-data/destination-category/destination-category-dashboad-footer/destination-category-dashboad-footer.component';
+import { DestinationCategoryDashboadComponent } from './basic-data/destination-category/destination-category-dashboad/destination-category-dashboad.component';
+import { DestinationCategoryEditMoreComponent } from './basic-data/destination-category/destination-category-edit-more/destination-category-edit-more.component';
+import { DestinationCategoryEditOneComponent } from './basic-data/destination-category/destination-category-edit-one/destination-category-edit-one.component';
+import { DestinationCategoryViewAllComponent } from './basic-data/destination-category/destination-category-view-all/destination-category-view-all.component';
+import { DestinationCategoryViewOneComponent } from './basic-data/destination-category/destination-category-view-one/destination-category-view-one.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +100,16 @@ import { ManagerOffersViewOneFooterComponent } from './manager-offers/manager-of
     ManagerOffersViewOneFooterComponent,
 
     ManagerDashboadComponent, 
-    ManagerDashboadFooterComponent
+    ManagerDashboadFooterComponent,
+     
+    DestinationCategoryDashboadComponent, 
+    DestinationCategoryDashboadFooterComponent, 
+    DestinationCategoryViewAllComponent, 
+    DestinationCategoryViewOneComponent, 
+    DestinationCategoryAddOneComponent, 
+    DestinationCategoryAddMoreComponent, 
+    DestinationCategoryEditOneComponent, 
+    DestinationCategoryEditMoreComponent
   ]
 })
 export class ManagerModule { }

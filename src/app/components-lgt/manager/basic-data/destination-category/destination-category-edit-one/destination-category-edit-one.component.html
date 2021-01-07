@@ -1,0 +1,56 @@
+<div class="container py-4 my-4">
+
+    <h3 class="my-4">Edit this existing item</h3>
+
+    <form [formGroup]="destinationCategoryEditFormGroup" (ngSubmit)="onSubmit()" novalidate>
+
+        <div class="form-group">
+            <label>Id</label>
+            <input type="text" class="form-control form-control-sm" formControlName="id" required autofocus 
+            value="{{destinationCategory.id}}" readonly="readonly" />
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control form-control-sm" formControlName="name" required autofocus 
+            value="{{destinationCategory.name}}"/>
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control form-control-sm" formControlName="description" required 
+            value="{{destinationCategory.description}}"/>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-outline-secondary px-4 mx-4 my-4"
+        (click)="onSubmit()">
+            Save
+        </button>
+        destinationCategoryEditFormGroup.valid {{destinationCategoryEditFormGroup.valid}}
+
+        <div *ngIf="validMessage != ''">
+            <br>
+            <h5 class="has-info">{{validMessage}}</h5>
+        </div>
+
+        <div *ngIf="isSavedSuccessfully">
+            <button class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" [routerLink]="['../view-all']">
+                Back to all
+            </button>
+
+            <button class="btn btn-outline-secondary px-4 mx-4 py-2 my-2"
+                [routerLink]="['/manager-offers', savedItemId]">
+                View the saved item
+            </button>
+
+            <button class="btn btn-outline-secondary px-4 mx-4 py-2 my-2"
+                [routerLink]="['/manager-offers', savedItemId ,'/edit']">
+                Edit the saved item
+            </button>
+        </div>
+
+    </form>
+
+</div>

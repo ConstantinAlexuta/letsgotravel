@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { ManagerOffersDashboadComponent } from './manager-offers-dashboad/manager-offers-dashboad.component';
 import { ManagerOffersDashboadFooterComponent } from './manager-offers-dashboad-footer/manager-offers-dashboad-footer.component';
 import { ManagerOffersViewAllComponent } from './manager-offers-view-all/manager-offers-view-all.component';
@@ -43,7 +44,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
 
     RouterModule.forChild([
-      { path: 'manager-offers-dashboad', component: ManagerOffersDashboadComponent },     
+      { path: 'manager-offers', component: ManagerOffersDashboadComponent },     
 
       { path: 'manager-offers/new-one', component: ManagerOffersAddOneComponent },
       { path: 'manager-offers/new-more', component: ManagerOffersAddMoreComponent },

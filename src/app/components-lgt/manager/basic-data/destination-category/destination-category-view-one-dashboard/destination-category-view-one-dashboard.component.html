@@ -1,0 +1,196 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="container-fluid">
+
+            <!-- <a class="navbar-brand" href="#" [routerLink]="['view-all']">
+                {{pageBrandItem}}
+            </a> -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <form class="form-inline my-2 my-lg-0">
+
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link"
+                        [routerLink]="['edit']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        Edit
+                    </button>
+
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" [routerLink]="['../', activeId - 1]"
+                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        
+                        data-bs-toggle="modal" data-bs-target="#deleteModal"
+                        
+                        >
+                        Delete {{currentId}}
+                    </button>
+                    <!-- (click)="onDeleteOne(+currentId+0)" -->
+                    <!-- data-bs-toggle="modal" data-bs-target="#deleteModal" -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">
+                                        Are you sure you want to delete this item? 
+                                        <br>This action is ireversibile.
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- This action is ireversibile. -->
+                                    Take care to not have other items that depend on this one.
+                                    <br/>Better choose to edit or to put in status not used. 
+                                    <br/>(status is a feature on development pending)                                    
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button type="button" class="btn btn-primary mx-3"  data-bs-dismiss="modal"
+                                        (click)="onDeleteOne(+currentId+0)"
+                                        data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">Delete</button>
+
+                                    <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteConfirmationModalLabel">
+                                        Deleted confirmed
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- This action is ireversibile. -->
+                                    Item {{itemClassName}}: {{itemDeleted | json}} was deleted.
+                                    <br />
+                                    <p *ngIf="!isItemDeletedFromDataBase">
+                                        Error on deleting. Item with id {{itemDeletedId}} still exist in database!
+                                    </p>
+                                    <br/>
+                                    <p *ngIf="isItemDeletedFromDataBase">
+                                        Success! Item with id {{itemDeletedId}} doesn't exist in database!
+                                    </p>
+                                    <br/>
+                                </div>
+                                <div class="modal-footer">
+                    
+                                    <button type="button" class="btn btn-primary mx-3" data-bs-dismiss="modal"
+                                        (click)="onDeleteItemConfirmation()">Close</button>
+                    
+                                    <!-- <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- {{activeId}} {{activeId}} {{ nextId }}  {{nextIdExistingInDataBase}}
+
+                    {{pickUpNextOne}}
+                    {{destinationCategoriesTEST}}
+                    {{destinationCategories.length}}
+                    da:{{destinationCategories[activeId].id}}
+                    {{maxSize}} -->
+
+                    <!-- {{destinationCategories | json}} -->
+
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" (click)="onClickNext()"
+                        [routerLink]="['../', activeId - 1]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        Prev
+                    </button>
+
+                    <!-- [routerLink]="['../destination-category/view-one', activeId+1, 'view']" -->
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
+                        (click)="onClickNext()"
+                        [routerLink]="['../', activeId + 1]"
+                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        >
+                        Next
+                    </button>
+
+                    <!-- <button class="btn btn-outline-secondary ml-3 pl-3 my-2 my-sm-0 nav-link" (click)="onClickNext()"
+                        [routerLink]="['../', activeId + 1]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        Go to id:
+                    </button> -->
+
+                    <!-- [(ngModel)]="EnteredIdInGoTo" -->
+                    <!-- <input                     
+                    class="btn btn-outline-secondary mr-3 pr-3 my-2 my-sm-0 nav-link"
+                    type="number"
+                    [placeholder]="activeId"
+                    style="max-width: 70px;"
+                    
+                    /> -->
+
+                    <!-- {{EnteredIdInGoTo}} -->
+                    <!-- (click)="onEnterGoToIdRoute()" -->
+
+                    <!-- max-height: 25px; -->
+
+                    <!-- {{currentId}} -->
+
+                    <!-- <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link"
+                        [routerLink]="['view-one/1']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">
+                        View
+                        <input type="text" class="form-control  w-25" style="max-width: 20px; max-height: 25px;">
+                    </button> -->
+
+                    <!-- <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link "
+                        [routerLink]="['add-one']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Add one</button>
+
+                    <button class="btn btn-outline-secondary mx-3 px-2 my-2 my-sm-0 nav-link "
+                        [routerLink]="['add-more']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Add more</button> -->
+
+                    <!-- <button class="btn btn-outline-secondary mx-3 px-2 my-2 my-sm-0 nav-link "
+                        [routerLink]="['edit-more']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Edit
+                        more</button> -->
+
+                    <!-- <button class="btn  dropdown mx-3 px-2 my-1 my-sm-0 nav-link " routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">
+
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span style="height: 3.5em;">Go to</span>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item px-1 mx-1"
+                                    [routerLink]="['../destination-category']">Destination categories</a>
+                            </li>
+                            <li><a class="dropdown-item px-1 mx-1" [routerLink]="['../service-types']">Service types</a>
+                            </li>
+                            <li><a class="dropdown-item px-1 mx-1" [routerLink]="['../included-services']">Included
+                                    services</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item px-1 mx-1" [routerLink]="['../manager-offers']">Manage
+                                    offers</a></li>
+                        </ul>
+                    </button> -->
+
+                </form>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div>
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,8 @@
+export interface DestinationCategories {
+  [index: string]:
+        {
+            id?: number;
+            name?: string;
+            description?: string;
+        };
+ }

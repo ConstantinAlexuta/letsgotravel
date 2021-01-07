@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,33 +22,29 @@ import { CallbackComponent } from './components-lgt/callback/callback.component'
 // import { AuthService } from './components-lgt/auth/auth.service';
 // import { AuthGuard } from './components-lgt/auth/auth.guard';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageNotFoundComponent,
-    CallbackComponent,
-  ],
+  declarations: [AppComponent, PageNotFoundComponent, CallbackComponent],
   imports: [
     // SharedModule,
     TopLeftNavbarMobileAndDesktopModule,
     TopLeftNavbarMobileAndDesktopCommonModule,
 
-    FormsModule, ReactiveFormsModule, 
+    FormsModule,
+    ReactiveFormsModule,
     // LocationStrategy, HashLocationStrategy,
     // ButtonModule, TooltipModule, RadioButtonModule, InputSwitchModule,
 
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
+
     AppRoutingModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     // AuthService, AuthGuard
     // { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

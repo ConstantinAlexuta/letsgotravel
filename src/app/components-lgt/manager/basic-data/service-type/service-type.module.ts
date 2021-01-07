@@ -28,7 +28,7 @@ import { RouterModule } from '@angular/router';
 
     RouterModule.forChild([
       { 
-        path: 'service-type-dashboad', 
+        path: 'service-types', 
         component: ServiceTypeDashboadComponent,
         children: [
           { path: 'service-types/new-one', component: ServiceTypeAddOneComponent },

@@ -1,0 +1,33 @@
+
+<div class="container" style="align-items: center; align-content: center; align-self: center;">
+    <div class="table table-responsive px-3 py-4" >
+    
+        <div class="table mb-0">
+    
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr *ngFor="let destinationCategory of destinationCategories">
+                    <td>{{destinationCategory.id}}</td>
+                    <!-- <td [routerLink]="['../view-one', destinationCategory.id]" -->
+                    <td [routerLink]="['../view-one', destinationCategory.id]"
+                        style="color: blue;">
+                        {{destinationCategory.name}}
+                    </td>
+                    <td>{{destinationCategory.description}}</td>
+                </tr>
+            </tbody>
+    
+        </div>
+    
+    </div>
+</div>
+
+
+

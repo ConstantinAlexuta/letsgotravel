@@ -27,7 +27,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
 
     RouterModule.forChild([
-      { path: 'included-service-dashboad', component: IncludedServiceDashboadComponent },        
+      { path: 'included-services', component: IncludedServiceDashboadComponent },        
       { path: 'included-services/new-one', component: IncludedServiceAddOneComponent },
       { path: 'included-services/new-more', component: IncludedServiceAddMoreComponent },
       { path: 'included-services/:id/edit', component: IncludedServiceEditOneComponent },

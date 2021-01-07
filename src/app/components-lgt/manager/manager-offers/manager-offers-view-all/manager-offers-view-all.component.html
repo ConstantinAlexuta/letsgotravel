@@ -1,51 +1,94 @@
-<div class="container py-2 my-2 mx-2 px-2">
+<!-- <div class="container py-2 my-2 mx-2 px-2"> -->
+<div>
+    <div class="card">
 
-    <table class="table table-bordered table-inverse">
+        <div class="card-header">
+            {{pageTitle}}
+        </div>
 
-        <tr>
-            <th class="text-right">Id</th>
-            <th>link</th>
-            <th>Country</th>
-            <th>District</th>
-            <th>District zone</th>
-            <th>City</th>
-            <th>City zone</th>
-            <th>Hotel name</th>
-            <th class="text-right">Stars</th>
-            <th>Service type</th>
-            <th>Plane tickets</th>
-            <th></th>
-        </tr>
+        <div class="card-body">
+            
+            <div class="row">
+                <div class="col-md-1">
+                    Filter by:
+                </div>
+                <div class="col-md-2">
+                    <input type="text" [(ngModel)]="listFilter" placeholder="view all"/>
+                </div>
 
-        <tr *ngFor="let offer of offers">
-            <td>{{offer.id}}</td>
-            <td>
-                <a href="{{offer.originalLgtUrl}}" target="_blank">
-                    lgturl
-                </a>
-            </td>
-            <td>{{offer.destinationCountry}}</td>
-            <td>{{offer.destinationDistrict}}</td>
-            <td>{{offer.destinationDistrictZone}}</td>
-            <td>{{offer.destinationCity}}</td>
-            <td>{{offer.destinationCityZone}}</td>
-            <td>
-                <a [routerLink]="[ '/manager-offers', offer.id ]" routerLinkActive="active">
-                    {{offer.destinationHotelName}}
-                </a>
-            </td>
-            <td>{{offer.destinationHotelStars}}</td>
-            <td>{{offer.destinationHotelServicesType}}</td>
-            <td>{{offer.includedServicesPlaneTickets}}</td>
-            <td>
-                <button 
-                class="btn btn-primary"
-                [routerLink]="['/manager-offers', offer.id ,'/edit']">
-                    Edit
-                </button>
-            </td>
-        </tr>
+                <div class="col-md-2" *ngIf="listFilter">
+                    Filtered by: {{listFilter}}
+                </div>
+            </div>
 
-    </table>
+        </div>
+
+        <!-- table-inverse -->
+        <div class="table-responsive">
+
+            <div class="table mb-0" *ngIf="offers && offers.length">
+
+                <thead>
+                    <tr>
+                        <th class="text-right">Id</th>
+                        <th>link</th>
+                        <th>First page image</th>
+                        <th>Country</th>
+                        <th>District</th>
+                        <th>District zone</th>
+                        <th>City</th>
+                        <th>City zone</th>
+                        <th>Hotel name</th>
+                        <th class="text-right">Stars</th>
+                        <th>Service type</th>
+                        <th>Plane tickets</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let offer of offers">
+                        <td>{{offer.id}}</td>
+                        <td>
+                            <a href="{{offer.originalLgtUrl}}" target="_blank">
+                                lgturl
+                            </a>
+                        </td>
+                        <td>
+                            <!-- && offer.firstImageUrl -->
+                            <!-- [src]="../assets/lgt/firstImage/img.png" -->
+                            <img *ngIf="showFirstPageImage"
+                            
+                            alt="image description"
+                            [title]="offer.destinationHotelName"
+                            [style.width.px]="firstImageWidth"
+                            [style.margin.px]="firstImageMargin">
+                        </td>
+                        <td>{{offer.destinationCountry | uppercase}}</td>
+                        <td>{{offer.destinationDistrict}}</td>
+                        <td>{{offer.destinationDistrictZone}}</td>
+                        <td>{{offer.destinationCity | uppercase}}</td>
+                        <td>{{offer.destinationCityZone}}</td>
+                        <td>
+                            <a [routerLink]="[ '/manager-offers', offer.id ]" routerLinkActive="active">
+                                {{offer.destinationHotelName}}
+                            </a>
+                        </td>
+                        <td>{{offer.destinationHotelStars}}</td>
+                        <td>{{offer.destinationHotelServicesType}}</td>
+                        <td>{{offer.includedServicesPlaneTickets}}</td>
+                        <!-- <td>
+                            <button class="btn btn-primary" [routerLink]="['/manager-offers', offer.id ,'/edit']">
+                                Edit
+                            </button>
+                        </td> -->
+                    </tr>
+                </tbody>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

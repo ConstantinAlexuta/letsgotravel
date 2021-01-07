@@ -11,7 +11,7 @@
         </button>
 
         <button class="btn btn-primary px-4 mx-4 py-2 my-2" [routerLink]="['/manager-offers']"
-        (click)="deleteOffer(offer.id)">
+        (click)="deleteOffer()">
             Delete
         </button>
 
@@ -31,7 +31,7 @@
 
         <div class="form-group">
             <label>Country</label>
-            <div class="form-control">{{offer.destinationCountry}}</div>
+            <div class="form-control">{{offer.destinationCountry | uppercase}}</div>
         </div>
 
         <div class="form-group">
@@ -46,7 +46,7 @@
 
         <div class="form-group">
             <label>City</label>
-            <div class="form-control">{{offer.destinationCity}}</div>
+            <div class="form-control">{{offer.destinationCity | uppercase}}</div>
         </div>
 
         <div class="form-group">

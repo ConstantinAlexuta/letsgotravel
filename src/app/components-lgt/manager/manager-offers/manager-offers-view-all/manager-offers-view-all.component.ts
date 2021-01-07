@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from 'jquery';
+import { Offer } from 'src/app/shared/interfaces/offer-interface';
 import { ManagerOffersService } from '../manager-offers.service';
 
 @Component({
@@ -8,6 +8,10 @@ import { ManagerOffersService } from '../manager-offers.service';
   styleUrls: ['./manager-offers-view-all.component.scss']
 })
 export class ManagerOffersViewAllComponent implements OnInit {
+
+  pageTitle: string = "View all offers";
+
+  listFilter: string = "";
 
   public offers!: any;
 
@@ -26,5 +30,29 @@ export class ManagerOffersViewAllComponent implements OnInit {
       () => console.log('Offers loaded.')
     );
   }
+
+  showFirstPageImage: boolean = true;
+  firstImageWidth: number = 50;
+  firstImageMargin: number = 2;
+
+  testOffer: Offer = {
+    id: 0,
+    originalLgtUrl: "string",
+    firstImageUrl: "string",
+    destinationCountry: "string",
+    destinationDistrict: "string",
+    destinationDistrictZone: "string",
+    destinationCity: "string",
+    destinationCityZone: "string",
+    destinationHotelName: "string",
+    destinationHotelStars: "string",
+    destinationHotelServicesType: "string",
+    includedServicesPlaneTickets: true
+  };
+
+  
+
+
+
 
 }

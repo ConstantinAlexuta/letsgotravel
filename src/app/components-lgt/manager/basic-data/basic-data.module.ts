@@ -21,6 +21,15 @@ import { ServiceTypeViewAllComponent } from './service-type/service-type-view-al
 import { ServiceTypeViewOneComponent } from './service-type/service-type-view-one/service-type-view-one.component';
 import { ServiceTypeModule } from './service-type/service-type.module';
 import { BasicDataDashboadFooterComponent } from './basic-data-dashboad-footer/basic-data-dashboad-footer.component';
+import { DestinationCategoryAddMoreComponent } from './destination-category/destination-category-add-more/destination-category-add-more.component';
+import { DestinationCategoryAddOneComponent } from './destination-category/destination-category-add-one/destination-category-add-one.component';
+import { DestinationCategoryDashboadFooterComponent } from './destination-category/destination-category-dashboad-footer/destination-category-dashboad-footer.component';
+import { DestinationCategoryDashboadComponent } from './destination-category/destination-category-dashboad/destination-category-dashboad.component';
+import { DestinationCategoryEditMoreComponent } from './destination-category/destination-category-edit-more/destination-category-edit-more.component';
+import { DestinationCategoryEditOneComponent } from './destination-category/destination-category-edit-one/destination-category-edit-one.component';
+import { DestinationCategoryViewAllComponent } from './destination-category/destination-category-view-all/destination-category-view-all.component';
+import { DestinationCategoryViewOneComponent } from './destination-category/destination-category-view-one/destination-category-view-one.component';
+import { DestinationCategoryModule } from './destination-category/destination-category.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +39,7 @@ import { BasicDataDashboadFooterComponent } from './basic-data-dashboad-footer/b
   imports: [
     CommonModule,
 
+    DestinationCategoryModule,
     ServiceTypeModule,
     IncludedServiceModule,
 
@@ -58,7 +68,16 @@ import { BasicDataDashboadFooterComponent } from './basic-data-dashboad-footer/b
     IncludedServiceAddOneComponent, 
     IncludedServiceAddMoreComponent, 
     IncludedServiceEditOneComponent, 
-    IncludedServiceEditMoreComponent
+    IncludedServiceEditMoreComponent,
+     
+    DestinationCategoryDashboadComponent, 
+    DestinationCategoryDashboadFooterComponent, 
+    DestinationCategoryViewAllComponent, 
+    DestinationCategoryViewOneComponent, 
+    DestinationCategoryAddOneComponent, 
+    DestinationCategoryAddMoreComponent, 
+    DestinationCategoryEditOneComponent, 
+    DestinationCategoryEditMoreComponent
   ]
 })
 export class BasicDataModule { }
