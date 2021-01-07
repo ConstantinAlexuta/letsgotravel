@@ -12,19 +12,17 @@ import { RouterModule } from '@angular/router';
 import { DestinationCategoryViewOneDashboardComponent } from './destination-category-view-one-dashboard/destination-category-view-one-dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
-    DestinationCategoryDashboadComponent, 
-    DestinationCategoryDashboadFooterComponent, 
-    DestinationCategoryAddOneComponent, 
-    DestinationCategoryAddMoreComponent, 
-    DestinationCategoryEditOneComponent, 
-    DestinationCategoryEditMoreComponent, 
-    DestinationCategoryViewAllComponent, 
-    DestinationCategoryViewOneComponent, 
-    DestinationCategoryViewOneDashboardComponent
+    DestinationCategoryDashboadComponent,
+    DestinationCategoryDashboadFooterComponent,
+    DestinationCategoryAddOneComponent,
+    DestinationCategoryAddMoreComponent,
+    DestinationCategoryEditOneComponent,
+    DestinationCategoryEditMoreComponent,
+    DestinationCategoryViewAllComponent,
+    DestinationCategoryViewOneComponent,
+    DestinationCategoryViewOneDashboardComponent,
   ],
   imports: [
     CommonModule,
@@ -33,73 +31,80 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     RouterModule.forChild([
       {
-        path: 'destination-category', 
+        path: 'destination-category',
         component: DestinationCategoryDashboadComponent,
         // redirectTo: 'destination-categories-view-all',
         children: [
           {
-            path:'',
+            path: '',
             redirectTo: 'view-all',
-            pathMatch: 'full' 
+            pathMatch: 'full',
           },
-          { 
-            path: 'add-more', 
-            component: DestinationCategoryAddMoreComponent
+          {
+            path: 'add-more',
+            component: DestinationCategoryAddMoreComponent,
+            data: { title: 'Add more' },
           },
-          { 
-            path: 'add-one', 
-            component: DestinationCategoryAddOneComponent
+          {
+            path: 'add-one',
+            component: DestinationCategoryAddOneComponent,
+            data: { title: 'Add one' },
           },
-          { 
-            path: 'view-all', 
-            component: DestinationCategoryViewAllComponent
+          {
+            path: 'view-all',
+            component: DestinationCategoryViewAllComponent,
+            data: { title: 'View all' },
           },
-          { 
-            path: 'view-one/:id', 
+          {
+            path: 'view-one/:id',
             component: DestinationCategoryViewOneDashboardComponent,
             children: [
-                        {
-                          path:'',
-                          redirectTo: 'view',
-                          pathMatch: 'full' 
-                        },
-                        { 
-                          path: 'view', 
-                          component: DestinationCategoryViewOneComponent
-                        },
-                        { 
-                          path: 'next/:id', 
-                          component: DestinationCategoryViewOneComponent
-                        },
-                        { 
-                          path: 'edit', 
-                          component: DestinationCategoryEditOneComponent
-                        }
-            ]
+              {
+                path: '',
+                redirectTo: 'view',
+                pathMatch: 'full',
+              },
+              {
+                path: 'view',
+                component: DestinationCategoryViewOneComponent,
+                data: { title: 'View item' },
+              },
+              {
+                path: 'next/:id',
+                component: DestinationCategoryViewOneComponent,
+                data: { title: 'Next item' },
+              },
+              {
+                path: 'edit',
+                component: DestinationCategoryEditOneComponent,
+                data: { title: 'Edit item' },
+              },
+            ],
           },
-          { 
-            path: 'edit-more', 
-            component: DestinationCategoryEditMoreComponent
-          }
-          
-          // { 
-          //   path: 'edit-one/:id', 
+          {
+            path: 'edit-more',
+            component: DestinationCategoryEditMoreComponent,
+            data: { title: 'Edit more' },
+          },
+
+          // {
+          //   path: 'edit-one/:id',
           //   component: DestinationCategoryEditOneComponent
-          // }          
-        ]
-      }
-    ])    
+          // }
+        ],
+      },
+    ]),
   ],
   exports: [
-    DestinationCategoryDashboadComponent, 
-    DestinationCategoryDashboadFooterComponent, 
-    DestinationCategoryViewAllComponent, 
-    DestinationCategoryViewOneComponent, 
-    DestinationCategoryAddOneComponent, 
-    DestinationCategoryAddMoreComponent, 
-    DestinationCategoryEditOneComponent, 
-    DestinationCategoryEditMoreComponent, 
-    DestinationCategoryViewOneDashboardComponent
-  ]
+    DestinationCategoryDashboadComponent,
+    DestinationCategoryDashboadFooterComponent,
+    DestinationCategoryViewAllComponent,
+    DestinationCategoryViewOneComponent,
+    DestinationCategoryAddOneComponent,
+    DestinationCategoryAddMoreComponent,
+    DestinationCategoryEditOneComponent,
+    DestinationCategoryEditMoreComponent,
+    DestinationCategoryViewOneDashboardComponent,
+  ],
 })
-export class DestinationCategoryModule { }
+export class DestinationCategoryModule {}

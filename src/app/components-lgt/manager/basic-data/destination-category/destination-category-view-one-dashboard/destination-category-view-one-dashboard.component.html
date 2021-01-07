@@ -18,17 +18,18 @@
                 <form class="form-inline my-2 my-lg-0">
 
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link"
-                        [routerLink]="['edit']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        [routerLink]="['edit']" routerLinkActive="active" 
+                        [routerLinkActiveOptions]="{exact: true}">
                         Edit
                     </button>
 
-                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" [routerLink]="['../', activeId - 1]"
-                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                        
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
+                        [routerLink]="['../', activeId - 1]"
+                        routerLinkActive="active" 
+                        [routerLinkActiveOptions]="{exact: true}"
                         data-bs-toggle="modal" data-bs-target="#deleteModal"
-                        
                         >
-                        Delete {{currentId}}
+                        Delete                       
                     </button>
                     <!-- (click)="onDeleteOne(+currentId+0)" -->
                     <!-- data-bs-toggle="modal" data-bs-target="#deleteModal" -->
