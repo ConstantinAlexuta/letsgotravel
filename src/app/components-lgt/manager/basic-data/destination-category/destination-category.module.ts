@@ -39,6 +39,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
             path: '',
             redirectTo: 'view-all',
             pathMatch: 'full',
+            // loadChildren: () =>
           },
           {
             path: 'add-more',

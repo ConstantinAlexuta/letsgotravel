@@ -51,7 +51,26 @@ export class DestinationCategoryService {
 
   replaceDestinationCategory(id: number, destinationCategory: any) {
     let body = JSON.stringify(destinationCategory);
-    return this.httpClient.put(this.path + '/' + id, body, httpOptions);
+    return this.httpClient
+      .put(this.path + '/' + id, body, httpOptions)
+      .subscribe(
+        (data) => {},
+        (err) => console.error(err),
+        () => console.log('updated success')
+      );
+  }
+
+  updateDestinationCategory(id: number, destinationCategory: any) {
+    let body = JSON.stringify(destinationCategory);
+    return this.httpClient
+      .put(this.path + '/' + id, body, httpOptions)
+      .subscribe(
+        (data) => {
+          return data;
+        },
+        (err) => console.error(err),
+        () => console.log('updated success')
+      );
   }
 
   public async deleteDestinationCategory(id: number) {

@@ -41,16 +41,24 @@
         </div>
 
 
+        <div>
+            <p class="has-info">
+                <span *ngIf="validMessage != ''">
+                    {{validMessage}}
+                </span>
+                <span *ngIf="showNewItemCreatedIdMessage" style="color:blue">
+                    {{newItemCreatedIdMessage}}
+                </span>
+            </p>
+        </div>
 
-        <div *ngIf="validMessage != ''">
-            <!-- <br> -->
+        <!-- <div *ngIf="validMessage != ''">
             <h6 class="has-info">{{validMessage}}</h6>
         </div>
 
         <div *ngIf="showNewItemCreatedIdMessage">
-            <!-- <br> -->
             <h6 class="has-info" style="color:blue">{{newItemCreatedIdMessage}}</h6>
-        </div>
+        </div> -->
 
         <div *ngIf="isSavedSuccessfully">
 

@@ -216,7 +216,8 @@ export class DestinationCategoryAddOneComponent implements OnInit {
     // this.getLastNewIdSaved();
     await this.delay(2000);
     this.newItemCreatedIdMessage =
-      'The new item created has the id ' + +this.lastNewIdSaved;
+      // Success feedback from server database.
+      'The new item created has the id ' + +this.lastNewIdSaved + '.';
     this.showNewItemCreatedIdMessage = true;
   }
 

@@ -1,55 +1,45 @@
+
+
 <div class="container py-4 my-4">
 
-    <h3 class="my-4">Edit this existing item</h3>
-
-    <form [formGroup]="destinationCategoryEditFormGroup" (ngSubmit)="onSubmit()" novalidate>
+    <form [formGroup]="itemForm"  (ngSubmit)="submitForm()">
 
         <div class="form-group">
-            <label>Id</label>
-            <input type="text" class="form-control form-control-sm" formControlName="id" required autofocus 
-            value="{{destinationCategory.id}}" readonly="readonly" />
+            <label for="id">
+                <span>Id</span>
+                <span [ngStyle]="!itemForm.valid && {'color': 'red'}"  >&nbsp;*</span>
+            </label>
+            <input class="form-control" name="id" id="id" type="text" formControlName="id"
+            [attr.disabled]="true"
+            >
         </div>
-
+        
         <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control form-control-sm" formControlName="name" required autofocus 
-            value="{{destinationCategory.name}}"/>
+            <label for="name">
+                <span>Name</span>
+                <span [ngStyle]="!itemForm.valid && {'color': 'red'}">&nbsp;*</span>
+            </label>
+            <input class="form-control" name="name" id="name" type="text" formControlName="name"
+            >
         </div>
-
+        
         <div class="form-group">
-            <label>Description</label>
-            <input type="text" class="form-control form-control-sm" formControlName="description" required 
-            value="{{destinationCategory.description}}"/>
+            <label for="description">
+                <span>Description</span>
+                <span [ngStyle]="!itemForm.valid && {'color': 'red'}">&nbsp;*</span>
+            </label>
+            <input class="form-control" name="description" id="description" type="text" formControlName="description"
+            >
         </div>
 
+        <button type="submit" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
+        [disabled]="!itemForm.valid">Save changes</button>
+        
+        <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2"
+        (click)="refreshItemForm()">Initial form</button>
 
-
-        <button type="submit" class="btn btn-outline-secondary px-4 mx-4 my-4"
-        (click)="onSubmit()">
-            Save
-        </button>
-        destinationCategoryEditFormGroup.valid {{destinationCategoryEditFormGroup.valid}}
-
-        <div *ngIf="validMessage != ''">
-            <br>
-            <h5 class="has-info">{{validMessage}}</h5>
-        </div>
-
-        <div *ngIf="isSavedSuccessfully">
-            <button class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" [routerLink]="['../view-all']">
-                Back to all
-            </button>
-
-            <button class="btn btn-outline-secondary px-4 mx-4 py-2 my-2"
-                [routerLink]="['/manager-offers', savedItemId]">
-                View the saved item
-            </button>
-
-            <button class="btn btn-outline-secondary px-4 mx-4 py-2 my-2"
-                [routerLink]="['/manager-offers', savedItemId ,'/edit']">
-                Edit the saved item
-            </button>
-        </div>
+        <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
+        (click)="clearItemForm()">Clear form</button>
 
     </form>
 
