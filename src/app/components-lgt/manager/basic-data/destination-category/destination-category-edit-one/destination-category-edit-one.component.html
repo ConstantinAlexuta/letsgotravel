@@ -7,39 +7,57 @@
         <div class="form-group">
             <label for="id">
                 <span>Id</span>
-                <span [ngStyle]="!itemForm.valid && {'color': 'red'}"  >&nbsp;*</span>
+                <!-- !itemForm.valid -->
+                <span [ngStyle]=" {'color': 'red'}"  >&nbsp;*</span>
             </label>
             <input class="form-control" name="id" id="id" type="text" formControlName="id"
             [attr.disabled]="true"
+            (click)="ifModifiedEnableSaveButton()"
             >
         </div>
         
         <div class="form-group">
             <label for="name">
                 <span>Name</span>
-                <span [ngStyle]="!itemForm.valid && {'color': 'red'}">&nbsp;*</span>
+                <span [ngStyle]="{'color': 'red'}">&nbsp;*</span>
             </label>
             <input class="form-control" name="name" id="name" type="text" formControlName="name"
+            (click)="ifModifiedEnableSaveButton()"
             >
         </div>
         
         <div class="form-group">
             <label for="description">
                 <span>Description</span>
-                <span [ngStyle]="!itemForm.valid && {'color': 'red'}">&nbsp;*</span>
+                <span [ngStyle]="{'color': 'red'}">&nbsp;*</span>
             </label>
             <input class="form-control" name="description" id="description" type="text" formControlName="description"
+            (click)="ifModifiedEnableSaveButton()"
             >
         </div>
 
-        <button type="submit" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
-        [disabled]="!itemForm.valid">Save changes</button>
+        <div>
+            <button type="submit" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" [disabled]="!itemForm.dirty || !itemForm.valid || isDisabledSaveButton">Save
+                changes</button>
+            
+            <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" (click)="onCancelGoToViewOne()">
+                Cancel edit
+            </button>
+            
+            <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" (click)="restoreInitialItemForm()">Initial
+                form</button>
+            
+            <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" (click)="clearItemForm()">Clear
+                form</button>
+        </div>
         
-        <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2"
-        (click)="refreshItemForm()">Initial form</button>
+        <div *ngIf="showMessageItemHasNotthingChanged">
+            {{messageItemHasNotthingChanged}}
+        </div>
 
-        <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
-        (click)="clearItemForm()">Clear form</button>
+        <div *ngIf="isModificationSavedOnServerWithSuccess">
+            {{messageIfModificationIsSavedOnServerWithSuccess}}
+        </div>
 
     </form>
 
