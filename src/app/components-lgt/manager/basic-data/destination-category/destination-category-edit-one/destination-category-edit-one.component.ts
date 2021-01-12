@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { D_CTMWRSOS, N_CTMWRSOS, showDebug } from 'src/app/app.constants';
 import { DestinationCategory } from 'src/app/shared/interfaces/destination-category';
 import { DestinationCategoryService } from '../destination-category.service';
@@ -16,7 +16,11 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
   itemId!: number;
 
-  item!: DestinationCategory;
+  item: DestinationCategory = new DestinationCategory(0, '0', '0');
+
+  itemTESTdescription: string = 'itemTESTdescription';
+
+  itemFormNgModel!: DestinationCategory;
   readonlyAfterSave = ''; //  && Disable Clear and reload
 
   itemForm = new FormGroup({
@@ -28,64 +32,86 @@ export class DestinationCategoryEditOneComponent implements OnInit {
     ]),
   });
 
+  itemITEMForm = new FormGroup({
+    id: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    name: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    description: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+  });
+
   constructor(
     private destinationCategoryService: DestinationCategoryService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    private activatedRoute: ActivatedRoute
   ) {
-    if (showDebug)
+    if (showDebug) {
       console.log(
-        '===================================================================='
+        'in constructor  ====================================================================  EDIT ONE '
       );
-    if (showDebug) console.log('itemClassName = ' + this.itemClassName);
-    if (showDebug) console.log('componentTypeName = ' + this.componentTypeName);
-    if (showDebug) console.log('in constructor');
-  }
+      console.log('in constructor  ===  itemClassName = ' + this.itemClassName);
+      console.log(
+        'in constructor  ===  componentTypeName = ' + this.componentTypeName
+      );
+    }
+    // this.item.id = 0;
+    // this.item.name = '0';
+    // this.item.description = '0';
+  } ////////////////////////////// END constructor
 
   async ngOnInit(): Promise<void> {
-    if (showDebug) console.log('in ngOnInit');
+    if (showDebug)
+      console.log(
+        '---- in ngOnInit   ===================================================================='
+      );
 
     this.itemId = +this.activatedRoute.snapshot.parent?.params.id;
 
     if (showDebug)
       console.log(
-        'in ngOnInit >> itemId = ' + this.itemId + '      BEFORE TIMEOUT'
+        '---- in ngOnInit >> itemId = ' +
+          this.itemId +
+          '      BEFORE TIMEOUT   '
       );
 
-    // setTimeout(() => {
-    //   this.getItem(this.itemId);
-    // }, 100);
-
-    if (showDebug)
-      console.log(
-        'in ngOnInit >> getItem >> item = ' +
-          JSON.stringify(this.item) +
-          '      BEFORE TIMEOUT'
-      );
-
-    setTimeout(() => {
-      this.getItem(this.itemId);
-    }, 200);
-
-    if (showDebug)
-      console.log(
-        'in ngOnInit >> getItem >> item = ' +
-          JSON.stringify(this.item) +
-          '      AFTER TIMEOUT'
-      );
-
-    if (showDebug)
-      setTimeout(() => {
+    if (showDebug) {
+      if (this.itemId != undefined) {
         console.log(
-          'in ngOnInit >> getItem >> item = ' + JSON.stringify(this.item)
+          '---- in ngOnInit >> itemId = ' + this.itemId + ' read it  OK '
         );
-      }, 100);
+      } else {
+        console.log(
+          '---- in ngOnInit >> itemId = ' +
+            this.itemId +
+            '   <<<<< this.itemId WAS NOT POSSIBLE TO BE READ IT NOW  <<<<<<<<<<<  ISSUE'
+        );
+      }
+    }
 
     setTimeout(() => {
       this.getItem(this.itemId);
       if (showDebug)
         console.log(
-          'in ngOnInit >> getItem >> item = ' +
+          '---- in ngOnInit >> getItem >> item = ' +
+            JSON.stringify(this.item) +
+            '    >> 100 ms'
+        );
+    }, 100);
+
+    setTimeout(() => {
+      if (showDebug)
+        console.log(
+          '---- in ngOnInit >> getItem >> item = ' +
+            JSON.stringify(this.item) +
+            '    >> 300 ms'
+        );
+    }, 300);
+
+    setTimeout(() => {
+      this.getItem(this.itemId);
+      if (showDebug)
+        console.log(
+          '---- in ngOnInit >> getItem >> item = ' +
             JSON.stringify(this.item) +
             '   // RESERVE UPLOADED AGAIN AFTER 400 ms'
         );
@@ -93,12 +119,15 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
     setTimeout(() => {
       this.loadItemIntoItemForm();
-      if (showDebug) console.log('in ngOnInit >> in loadItemIntoItemForm()');
+      if (showDebug)
+        console.log('---- in ngOnInit >> in loadItemIntoItemForm()');
     }, 600);
-  }
+
+    this.setDelayToShowIf();
+  } ////////////////////////////// END ngOnInit
 
   getItem(id: number) {
-    if (showDebug) console.log('in getItem');
+    if (showDebug) console.log('in getItem ');
     this.destinationCategoryService.getDestinationCategory(id).subscribe(
       (data) => {
         this.item = data;
@@ -131,61 +160,101 @@ export class DestinationCategoryEditOneComponent implements OnInit {
           );
       }
     );
-  }
+  } ////////////////////////////// END getItem
 
   isSubmitedOnce: boolean = false;
   submitForm() {
-    if (!this.isSubmitedOnce) {
-      this.checkIfEditedItemIsDifferentThanInitialItem();
+    if (showDebug)
+      console.log(
+        '////////////////////////////// in submitForm >>   ===================================================================='
+      );
 
-      if (showDebug) console.log('in submitForm');
+    if (!this.itemForm.valid) {
+      this.showMessageIfItemFormIsInvalid = true;
+      setTimeout(() => {
+        this.showMessageIfItemFormIsInvalid = false;
+      }, 10000);
+    } // if (!this.itemForm.valid)
+    else {
+      this.showMessageIfItemFormIsInvalid = false;
+      this.isFormItemEqualWithInitialItem();
+
+      // if (!this.isSubmitedOnce) {
+      // }
+
+      if (!this.editedItemIsDifferentThanInitialItem) {
+        this.showMessageItemHasNotthingChanged = true;
+
+        // setTimeout(() => {
+        //   this.loadItemIntoItemForm();
+        //   if (showDebug)
+        //     console.log(
+        //       '////////////////////////////// in submitForm >> this.loadItemIntoItemForm() after 600 ms'
+        //     );
+        // }, 200);
+
+        this.itemForm.markAsUntouched;
+        this.itemForm.markAsPristine;
+      }
 
       if (this.editedItemIsDifferentThanInitialItem) {
-        this.showMessageItemHasNotthingChanged = false;
-
         this.destinationCategoryService.replaceDestinationCategory(
           this.itemId,
           this.itemForm.value
         );
 
-        this.checkThatModificationWasReallySavedOnServer();
-        if (this.isModificationSavedOnServerWithSuccess) {
-          this.loadItemModifiedAndRetrievedFromServerIntoItemForm();
-        }
+        this.checkIfWasSavedWithBankSpacesAtMarginsAndShowMessageForTheseMiliSeconds(
+          10000
+        );
+
+        if (showDebug)
+          console.log(
+            '////////////////////////////// in submitForm >> call service >> replace method >> item send it to PUT on server'
+          );
+
+        this.isSubmitedOnce = true;
+
+        this.isModificationSavedOnServerAfter2000ms();
 
         setTimeout(() => {
-          // this.isModificationSavedOnServerWithSuccess = false;
-        }, 5000);
-      } else {
-        this.showMessageItemHasNotthingChanged = true;
+          if (this.isModificationSavedOnServerWithSuccess) {
+            this.showMessageIfModificationIsSavedOnServerWithSuccess = true;
+            this.showMessageIfModificationIsSavedOnServerWithFailure = false;
+            this.showMessageItemHasNotthingChanged = false;
+            this.toggleCancelOrExitButtonName();
+            // this.loadItemModifiedAndRetrievedFromServerIntoItemForm();
+          }
+        }, 2500);
 
         setTimeout(() => {
-          this.loadItemIntoItemForm();
-          if (showDebug)
-            console.log('in ngOnInit >> in loadItemIntoItemForm()');
-        }, 600);
+          if (!this.isModificationSavedOnServerWithSuccess) {
+            this.showMessageIfModificationIsSavedOnServerWithFailure = true;
+            this.showMessageItemHasNotthingChanged = false;
+            this.showMessageIfModificationIsSavedOnServerWithSuccess = false;
+            this.cancelOrExitButtonName = 'Cancel';
+          }
+        }, 4000);
       }
 
-      if (showDebug)
-        console.log(
-          'in submitForm >> service >> replace method >> item send it to PUT on server'
-        );
-    }
+      this.isSubmitedOnce = true;
+      this.isDisabledSaveButton = true;
 
-    this.checkIfEditedItemIsDifferentThanInitialItem();
+      setTimeout(() => {
+        // this.loadItemIntoItemForm();
+      }, 100);
 
-    this.isSubmitedOnce = true;
-    this.isDisabledSaveButton = true;
+      setTimeout(() => {
+        this.showMessageItemHasNotthingChanged = false;
+        this.showMessageIfModificationIsSavedOnServerWithSuccess = false;
+        this.showMessageIfModificationIsSavedOnServerWithFailure = false;
+      }, 10000);
+    } // if (this.itemForm.valid)
+    //
+  } ////////////////////////////// END  submitForm
 
-    setTimeout(() => {
-      this.reinitializeItemFormBooleanVariable();
-    }, 100);
-
-    setTimeout(() => {
-      this.showMessageItemHasNotthingChanged = false;
-      // this.isModificationSavedOnServerWithSuccess = false;
-    }, 7000);
-  }
+  showMessageIfItemFormIsInvalid: boolean = false;
+  messageIfItemFormIsInvalid: string =
+    'Please fill all the required fields with valid input.';
 
   editedItemIsDifferentThanInitialItem: boolean = false;
   showMessageItemHasNotthingChanged = false;
@@ -193,78 +262,99 @@ export class DestinationCategoryEditOneComponent implements OnInit {
     'The item was not saved because is the same like the initial one.';
   itemEdited!: DestinationCategory;
 
-  checkIfEditedItemIsDifferentThanInitialItem() {
+  isFormItemEqualWithInitialItem(): boolean {
     this.itemEdited = this.itemForm.value;
 
-    if (showDebug)
+    if (showDebug) {
       console.log(
-        'in checkIfEditedItemIsDifferentThanInitialItem() >>  let itemEdited: DestinationCategory = this.itemForm.value = ' +
+        'isFormItemEqualWithInitialItem() >>  let itemEdited:   DestinationCategory = this.itemForm.value = ' +
           JSON.stringify(this.itemEdited)
       );
+      console.log(
+        'isFormItemEqualWithInitialItem() >>  let item INITIAL: DestinationCategory = this.itemForm.value = ' +
+          JSON.stringify(this.item)
+      );
+    }
 
     if (!this.isItemsComparedEquals(this.item, this.itemEdited)) {
       this.editedItemIsDifferentThanInitialItem = true;
+      if (showDebug)
+        console.log(
+          'isFormItemEqualWithInitialItem() >>  this.item == this.itemEdited >>> ARE DIFFERENT'
+        );
+    } else {
+      this.editedItemIsDifferentThanInitialItem = false;
+      if (showDebug)
+        console.log(
+          'isFormItemEqualWithInitialItem() >>  this.item == this.itemEdited >>> ARE EQUALS'
+        );
     }
 
-    if (showDebug)
-      console.log(
-        'in checkIfEditedItemIsDifferentThanInitialItem() >>  this.item == this.itemEdited >>> ' +
-          (!this.editedItemIsDifferentThanInitialItem
-            ? 'ARE EQUALS'
-            : 'ARE DIFFERENT') +
-          '      editedItemIsDifferentThanInitialItem = ' +
-          this.editedItemIsDifferentThanInitialItem
-      );
-  }
+    return !this.editedItemIsDifferentThanInitialItem;
+  } //////////////////////// END isFormItemEqualWithInitialItem
 
-  isDisabledSaveButton: boolean = false;
-  // ifModifiedEnableSaveButton() {
-  //   this.checkIfEditedItemIsDifferentThanInitialItem();
+  // trimFieldsOfThisItem(itemToTrim: DestinationCategory): DestinationCategory {
+  //   let itemTemp = new DestinationCategory();
 
-  //   if (this.editedItemIsDifferentThanInitialItem) {
-  //     this.isDisabledSaveButton = false;
-  //   }
+  //   itemTemp.id = itemToTrim.id;
+  //   itemTemp.name = itemToTrim.name?.trim();
+  //   itemTemp.description = itemToTrim.description?.trim();
+
+  //   return itemTemp;
   // }
 
-  reinitializeItemFormBooleanVariable() {
-    this.isSubmitedOnce = false;
-    this.isDisabledSaveButton = false;
-    this.editedItemIsDifferentThanInitialItem = false;
-    // this.loadItemIntoItemForm();
-  }
+  isDisabledSaveButton: boolean = false;
 
   isItemsComparedEquals(
     item1: DestinationCategory,
     item2: DestinationCategory
   ) {
     if (showDebug) {
-      console.log('in isItemsComparedEquals() >> ');
+      console.log('isItemsComparedEquals() >> ');
       console.log(
-        'in isItemsComparedEquals() >> item1 = ' + JSON.stringify(item1)
+        'isItemsComparedEquals() >> item1 = ' + JSON.stringify(item1)
       );
       console.log(
-        'in isItemsComparedEquals() >> item2 = ' + JSON.stringify(item2)
+        'isItemsComparedEquals() >> item2 = ' + JSON.stringify(item2)
       );
     }
 
     if (
-      this.item.id != this.itemEdited.id ||
-      this.item.name != this.itemEdited.name ||
-      this.item.description != this.itemEdited.description
+      item1.id != item2.id ||
+      item1.name != item2.name ||
+      item1.description != item2.description
     ) {
       return false;
     } else return true;
+  } /////////////////////// END isItemsComparedEquals
+
+  showExitOption: boolean = false;
+  cancelOrExitButtonName: string = 'Cancel';
+  toggleCancelOrExitButtonName() {
+    this.showExitOption = !this.showExitOption;
+    if (this.showExitOption) {
+      this.cancelOrExitButtonName = 'Exit ';
+    } else {
+      this.cancelOrExitButtonName = 'Cancel';
+    }
   }
 
+  ///
   updatedItemFromServer!: DestinationCategory;
   isModificationSavedOnServerWithSuccess = false;
+  isModificationSavedOnServerWithFailure = false;
+
+  showMessageIfModificationIsSavedOnServerWithSuccess: boolean = false;
+  showMessageIfModificationIsSavedOnServerWithFailure: boolean = false;
+
   messageIfModificationIsSavedOnServerWithSuccess: string =
     'The modifications was saved with success on server.';
+  messageIfModificationIsSavedOnServerWithFailure: string =
+    'Failure on salvation. Please try to save again.';
 
-  checkThatModificationWasReallySavedOnServer() {
-    console.log(
-      'in checkThatModificationWasReallySavedOnServer() >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
-    );
+  isModificationSavedOnServerAfter2000ms(): boolean {
+    if (showDebug)
+      console.log('isModificationSavedOnServerAfter2000ms() >>>>>>');
 
     setTimeout(() => {
       this.destinationCategoryService
@@ -277,55 +367,76 @@ export class DestinationCategoryEditOneComponent implements OnInit {
             console.error(err);
           },
           () => {
-            console.log('updatedItemFromServerInLoop loaded from server');
-            console.log(
-              'updatedItemFromServerInLoop >>> this.destinationCategoryService.getDestinationCategory(this.itemId)' +
-                JSON.stringify(this.updatedItemFromServer)
-            );
+            if (showDebug)
+              console.log(
+                'isModificationSavedOnServerAfter2000ms() >>>>>> updatedItemFromServer loaded back from server >> ' +
+                  JSON.stringify(this.updatedItemFromServer)
+              );
           }
         );
-    }, 2000); // wait first to be saved on server
+    }, 1500); // wait first to be saved on server
 
-    if (
-      this.isItemsComparedEquals(this.itemEdited, this.updatedItemFromServer)
-    ) {
-      console.log(
-        'in checkThatModificationWasReallySavedOnServer() >> ======= >> items verified and equals with the one from Server'
-      );
-      this.isModificationSavedOnServerWithSuccess = true;
-      this.item = this.updatedItemFromServer;
-      this.restoreInitialItemForm();
+    setTimeout(() => {
+      if (
+        this.isItemsComparedEquals(this.itemEdited, this.updatedItemFromServer)
+      ) {
+        if (showDebug)
+          console.log(
+            'isModificationSavedOnServerAfter2000ms() >>>>>> itemEdited is equal with updatedItemFromServer'
+          );
+        this.isModificationSavedOnServerWithSuccess = true;
+        this.item = this.updatedItemFromServer;
+        this.itemEdited = this.updatedItemFromServer;
+      } else {
+        this.isModificationSavedOnServerWithSuccess = false;
+      }
+      return this.isModificationSavedOnServerWithSuccess;
+    }, 2500); // wait verification until retrieve data from server
+    ///
+    return this.isModificationSavedOnServerWithSuccess;
+  } //////////////////////////////// END isModificationSavedOnServerAfter2000ms
 
-      console.log(
-        'in checkThatModificationWasReallySavedOnServer() >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> in IF'
-      );
+  showMessageIfWasSavedWithBankSpacesAtMargins: boolean = false;
+  messageIfWasSavedWithBankSpacesAtMargins: string =
+    'The item was saved with empty spaces at margins of at least one field.';
+  checkIfWasSavedWithBankSpacesAtMarginsAndShowMessageForTheseMiliSeconds(
+    ms: number
+  ) {
+    let itemFromFormTrimed: DestinationCategory = this.itemForm.value;
+    let itemFromForm: DestinationCategory = this.itemForm.value;
+
+    itemFromFormTrimed.name = itemFromForm.name!.trim();
+    itemFromFormTrimed.description = itemFromForm.description!.trim();
+
+    if (!this.isItemsComparedEquals(itemFromFormTrimed, itemFromForm)) {
+      this.showMessageIfWasSavedWithBankSpacesAtMargins = true;
+
+      setTimeout(() => {
+        this.showMessageIfWasSavedWithBankSpacesAtMargins = false;
+      }, ms);
     }
-
-    console.log(
-      'in checkThatModificationWasReallySavedOnServer() >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  END'
-    );
   }
 
-  loadItemModifiedAndRetrievedFromServerIntoItemForm() {
-    if (this.updatedItemFromServer != undefined) {
-      this.itemForm.patchValue({
-        id: this.updatedItemFromServer.id,
-        name: this.updatedItemFromServer.name,
-        description: this.updatedItemFromServer.description,
-      });
-      if (showDebug)
-        console.log(
-          'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> form initialized with item data modified, saved on server and retrieved from server'
-        );
-    } else {
-      console.log(
-        'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> cannot initialize form with item data modified, saved on server and retrieved from server'
-      );
-      console.log(
-        'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> this.updatedItemFromServer is UNDEFINED'
-      );
-    }
-  }
+  // loadItemModifiedAndRetrievedFromServerIntoItemForm() {
+  //   if (this.updatedItemFromServer != undefined) {
+  //     this.itemForm.patchValue({
+  //       id: this.updatedItemFromServer.id,
+  //       name: this.updatedItemFromServer.name,
+  //       description: this.updatedItemFromServer.description,
+  //     });
+  //     if (showDebug)
+  //       console.log(
+  //         'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> form initialized with item data modified, saved on server and retrieved from server'
+  //       );
+  //   } else {
+  //     console.log(
+  //       'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> cannot initialize form with item data modified, saved on server and retrieved from server'
+  //     );
+  //     console.log(
+  //       'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> this.updatedItemFromServer is UNDEFINED'
+  //     );
+  //   }
+  // }
 
   loadItemIntoItemForm() {
     this.itemForm.patchValue({
@@ -376,8 +487,11 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
   ifModifiedEnableSaveButton() {}
 
-  onCancelGoToViewOne() {
-    this.router.navigate(['../destination-category/view-one', +this.itemId]);
+  showIf: boolean = false;
+  setDelayToShowIf() {
+    setTimeout(() => {
+      this.showIf = true;
+    }, 1000);
   }
 }
 

@@ -1,46 +1,67 @@
 
-
 <div class="container py-4 my-4">
 
-    <form [formGroup]="itemForm"  (ngSubmit)="submitForm()">
+    <form [formGroup]="itemForm" (ngSubmit)="submitForm()">
 
         <div class="form-group">
             <label for="id">
                 <span>Id</span>
-                <!-- !itemForm.valid -->
-                <span [ngStyle]=" {'color': 'red'}"  >&nbsp;*</span>
             </label>
             <input class="form-control" name="id" id="id" type="text" formControlName="id"
             [attr.disabled]="true"
             (click)="ifModifiedEnableSaveButton()"
+            value=""
             >
         </div>
         
         <div class="form-group">
             <label for="name">
                 <span>Name</span>
-                <span [ngStyle]="{'color': 'red'}">&nbsp;*</span>
+                <span [ngStyle]="{'color': (item.name == '' ? 'red' : 'black') }">&nbsp;*</span>
+                <span *ngIf="showIf && itemForm.value.name == ''" [ngStyle]="{ 'color' : 'magenta' }" [style.font-size.em]="0.8"> &nbsp; &nbsp;
+                    (required)
+                </span>
+                <span *ngIf="showIf && itemForm.value.name!.length < 1" [ngStyle]="{ 'color' : 'magenta' }" [style.font-size.em]="0.8"> &nbsp; &nbsp;
+                    (minim length = 1 character)
+                </span>
+                <span *ngIf="showIf && itemForm.value.name!.length > 100" [ngStyle]="{ 'color' : 'magenta' }" [style.font-size.em]="0.8"> &nbsp; &nbsp;
+                    (maxim length = 100 characters)
+                </span>
             </label>
-            <input class="form-control" name="name" id="name" type="text" formControlName="name"
+            <input class="form-control" name="name" id="name" type="text" formControlName="name" 
+                placeholder=""
             (click)="ifModifiedEnableSaveButton()"
+            value=""
+            
             >
         </div>
         
         <div class="form-group">
             <label for="description">
                 <span>Description</span>
-                <span [ngStyle]="{'color': 'red'}">&nbsp;*</span>
+                <span [ngStyle]="{'color': (itemForm.value.description == '' ? 'red' : 'black') }">&nbsp;*</span>
+                <span *ngIf="showIf && itemForm.value.description == ''" [ngStyle]="{ 'color' : 'magenta' }" [style.font-size.em]="0.8"> &nbsp; &nbsp;
+                    (required)</span>
             </label>
             <input class="form-control" name="description" id="description" type="text" formControlName="description"
+            placeholder=""
             (click)="ifModifiedEnableSaveButton()"
+            value=""
             >
         </div>
 
-        <div>
-            <button type="submit" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" [disabled]="!itemForm.dirty || !itemForm.valid || isDisabledSaveButton">Save
-                changes</button>
+        <div class="mt-2 mb-2">
+            <button type="submit" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
+                [disabled]="!itemForm.dirty">
+                <!-- || isDisabledSaveButton -->
+                Save changes
+            </button>
             
-            <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" (click)="onCancelGoToViewOne()">
+            <!-- (click)="onCancelGoToViewOne()" -->
+            <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
+                [routerLink]="['../../../view-one', +itemId]" 
+                routerLinkActive="active" 
+                [routerLinkActiveOptions]="{exact: true}">              
                 Cancel edit
             </button>
             
@@ -49,14 +70,35 @@
             
             <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" (click)="clearItemForm()">Clear
                 form</button>
-        </div>
-        
-        <div *ngIf="showMessageItemHasNotthingChanged">
-            {{messageItemHasNotthingChanged}}
+
+            <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" (click)="clearItemForm()"
+                [routerLink]="['../../../view-all']" 
+                routerLinkActive="active" 
+                [routerLinkActiveOptions]="{exact: true}">
+                Back to all
+            </button>
         </div>
 
-        <div *ngIf="isModificationSavedOnServerWithSuccess">
-            {{messageIfModificationIsSavedOnServerWithSuccess}}
+        <div>
+            <div *ngIf="showMessageIfModificationIsSavedOnServerWithFailure" style="color: red">
+                {{messageIfModificationIsSavedOnServerWithFailure}}
+            </div>
+
+            <div *ngIf="showMessageIfWasSavedWithBankSpacesAtMargins" style="color: rgb(7, 204, 230)">
+                {{messageIfWasSavedWithBankSpacesAtMargins}}
+            </div>
+            
+            <div *ngIf="showMessageIfModificationIsSavedOnServerWithSuccess" style="color: green">
+                {{messageIfModificationIsSavedOnServerWithSuccess}}
+            </div>
+            
+            <div *ngIf="showMessageItemHasNotthingChanged" style="color: blue">
+                {{messageItemHasNotthingChanged}}
+            </div>
+
+            <div *ngIf="showMessageIfItemFormIsInvalid" style="color: magenta">
+                {{messageIfItemFormIsInvalid}}
+            </div>
         </div>
 
     </form>
