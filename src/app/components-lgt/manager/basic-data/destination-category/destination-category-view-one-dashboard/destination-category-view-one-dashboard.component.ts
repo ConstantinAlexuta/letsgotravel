@@ -106,6 +106,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     await this.getItems();
 
     var checkData = setInterval(() => {
+      this.itemPath = SERVER_API_V1 + this.itemDashItem + '/' + this.currentId;
+
       this.currentId = +this.activatedRoute.snapshot.params.id;
 
       this.firstItemOfItemsId = +this.items[0].id!;
@@ -130,6 +132,7 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     }, 500);
 
     setTimeout(() => {
+      this.getItem();
       this.goToIdValue = this.currentId;
     }, 1000);
   }
@@ -166,13 +169,19 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   itemDeleted!: DestinationCategory;
   itemDeletedId!: number;
 
+  itemToDelete!: DestinationCategory;
+
+  showIsItemDeletedFromDataBaseMessage: boolean = false;
   isItemDeletedFromDataBase: boolean = false;
   itemDeletedIfStillExistInDataBase: DestinationCategory = null!;
 
   async onDeleteOne() {
-    (await this.itemService.getItem(this.pathId)).subscribe(
+    this.isItemDeletedFromDataBase = false;
+
+    (await this.itemService.getItem(this.itemPath)).subscribe(
       (data) => {
         this.itemDeleted = data;
+        this.itemToDelete = data;
         this.itemDeletedId = +this.itemDeleted.id!;
       },
       (err) => {
@@ -189,26 +198,31 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
       }
     );
 
-    await this.itemService.deleteItem(this.pathId);
+    setTimeout(() => {
+      this.itemService.deleteItem(this.itemPath);
+    }, 1000);
 
-    (await this.itemService.getItem(this.pathId)).subscribe(
-      (data) => {
-        this.itemDeletedIfStillExistInDataBase = data;
-      },
-      (err) => {
-        // console.log(err);
-        this.isItemDeletedFromDataBase = true;
-      },
-      () => {
-        console.log(
-          'failure on deleting ' +
-            this.itemClassName +
-            ' with id ' +
-            this.currentId +
-            ' to be deleted first was save in itemDeleted'
-        );
-      }
-    );
+    setTimeout(async () => {
+      (await this.itemService.getItem(this.itemPath)).subscribe(
+        (data) => {
+          this.itemDeletedIfStillExistInDataBase = data;
+        },
+        (err) => {
+          this.isItemDeletedFromDataBase = true;
+          this.showIsItemDeletedFromDataBaseMessage = true;
+        },
+        () => {
+          this.showIsItemDeletedFromDataBaseMessage = true;
+          console.log(
+            'failure on deleting ' +
+              this.itemClassName +
+              ' with id ' +
+              this.currentId +
+              ' to be deleted first was save in itemDeleted'
+          );
+        }
+      );
+    }, 1500);
   }
 
   // @Input()

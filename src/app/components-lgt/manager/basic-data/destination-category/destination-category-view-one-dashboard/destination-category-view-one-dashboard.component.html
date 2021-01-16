@@ -32,9 +32,6 @@
                     </button>
 
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
-                        [routerLink]="['../', activeId - 1]"
-                        routerLinkActive="active" 
-                        [routerLinkActiveOptions]="{exact: true}"
                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                         >
                         Delete                       
@@ -49,8 +46,18 @@
                                         Are you sure you want to delete this item? 
                                         <br>This action is ireversibile.
                                     </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
+
+                                <div class="modal-header" *ngIf="item">
+                                    <h6 style="font-size: 0.8em;">
+                                        Item id: &nbsp; {{item.id}}
+                                    <br>
+                                    <br>
+                                        Item name: &nbsp; {{item.name | uppercase}}
+                                    </h6>
+                                </div>
+
+
                                 <div class="modal-body">
                                     <!-- This action is ireversibile. -->
                                     Take care to not have other items that depend on this one.
@@ -58,10 +65,15 @@
                                     <br/>(status is a feature on development pending)                                    
                                 </div>
                                 <div class="modal-footer">
-
-                                    <button type="button" class="btn btn-primary mx-3"  data-bs-dismiss="modal"
+                                    
+                                    <button type="button" 
+                                        class="btn btn-primary mx-3"  
+                                        data-bs-dismiss="modal"
                                         (click)="onDeleteOne()"
-                                        data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">Delete</button>
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#deleteConfirmationModal">
+                                        Delete
+                                    </button>
 
                                     <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
                                 </div>
@@ -79,24 +91,34 @@
                                 </div>
                                 <div class="modal-body">
                                     <!-- This action is ireversibile. -->
-                                    Item {{itemClassName}}: {{itemDeleted | json}} was deleted.
-                                    <br />
-                                    <p *ngIf="!isItemDeletedFromDataBase">
-                                        Error on deleting. Item with id {{itemDeletedId}} still exist in database!
-                                    </p>
-                                    <br/>
-                                    <p *ngIf="isItemDeletedFromDataBase">
-                                        Success! Item with id {{itemDeletedId}} doesn't exist in database!
-                                    </p>
-                                    <br/>
+                                    <br>
+                                    Item {{itemClassName}}: 
+                                    <br>
+                                    {{itemDeleted | json}} 
+                                    <br>
+                                    was deleted.
+                                    <br>
+                                    <br>
                                 </div>
                                 <div class="modal-footer">
-
                                     <button type="button" class="btn btn-primary mx-3" data-bs-dismiss="modal"
                                         (click)="onDeleteItemConfirmation()">
                                         Close
                                     </button>
-
+                                </div>
+                                <div class="modal-footer" style="text-align: left;">
+                                    <div class="" *ngIf="showIsItemDeletedFromDataBaseMessage">
+                                        <p *ngIf="!isItemDeletedFromDataBase">
+                                            Error on deleting. Item with id {{itemDeletedId}} still exist in database!
+                                        </p>
+                                        <br>
+                                        <p *ngIf="isItemDeletedFromDataBase">
+                                            Success!
+                                            <br>
+                                            Item with id {{itemDeletedId}} doesn't exist in database!
+                                        </p>
+                                        <br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
