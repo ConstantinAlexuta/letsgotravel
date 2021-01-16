@@ -29,6 +29,8 @@ export class DestinationCategoryViewOneComponent implements OnInit {
   pageBrandViewOneItem!: string;
   currentShortRouter!: string; // view-one
 
+
+
   //
   // ###################################################
   //
