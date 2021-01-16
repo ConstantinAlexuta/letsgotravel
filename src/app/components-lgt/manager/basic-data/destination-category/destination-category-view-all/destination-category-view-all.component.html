@@ -6,22 +6,27 @@
     
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Description</th>
+                    <th *ngFor="let itemHeader of itemHeaders; let i = index">
+                        {{itemHeaders[i]}}
+                    </th>
                 </tr>
             </thead>
     
             <tbody>
-                <tr *ngFor="let destinationCategory of destinationCategories">
-                    <td>{{destinationCategory.id}}</td>
-                    <!-- <td [routerLink]="['../view-one', destinationCategory.id]" -->
-                    <td [routerLink]="['../view-one', destinationCategory.id]"
+
+                <tr *ngFor="let item of items; let i = index">
+
+                    <td>{{item.id}}</td>
+
+                    <td [routerLink]="['../view-one', item.id]"
                         style="color: blue;">
-                        {{destinationCategory.name}}
+                        {{item.name}}
                     </td>
-                    <td>{{destinationCategory.description}}</td>
+
+                    <td>{{item.description}}</td>
+
                 </tr>
+
             </tbody>
     
         </div>

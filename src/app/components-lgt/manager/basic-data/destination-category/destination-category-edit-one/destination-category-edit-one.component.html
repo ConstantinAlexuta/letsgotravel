@@ -53,15 +53,15 @@
         <div class="mt-2 mb-2">
             <button type="submit" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
                 [disabled]="!itemForm.dirty">
-                <!-- || isDisabledSaveButton -->
                 Save changes
             </button>
             
             <!-- (click)="onCancelGoToViewOne()" -->
+            <!-- [routerLink]="['../../../view-one', +itemId]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}" -->
             <button type="button" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
-                [routerLink]="['../../../view-one', +itemId]" 
-                routerLinkActive="active" 
-                [routerLinkActiveOptions]="{exact: true}">              
+                (click)="onCancelEdit()">              
                 Cancel edit
             </button>
             

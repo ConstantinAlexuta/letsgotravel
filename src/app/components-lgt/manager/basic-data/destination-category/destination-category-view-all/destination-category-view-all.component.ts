@@ -1,6 +1,7 @@
-import { DestinationCategoryService } from './../destination-category.service';
 import { Component, OnInit } from '@angular/core';
 import { DestinationCategory } from 'src/app/shared/interfaces/destination-category';
+import { SERVER_API_V1 } from 'src/app/app.constants';
+import { ItemService } from 'src/app/shared/services/item.service';
 
 @Component({
   selector: 'app-destination-category-view-all',
@@ -8,49 +9,35 @@ import { DestinationCategory } from 'src/app/shared/interfaces/destination-categ
   styleUrls: ['./destination-category-view-all.component.scss'],
 })
 export class DestinationCategoryViewAllComponent implements OnInit {
-  // destinationCategories!: DestinationCategoryInterface[];
-  // destinationCategories: any;
+  //
+  // ###################################################
+  itemNameItem: string = 'destination category';
+  itemDashItem: string = 'destination-category';
+  path: string = SERVER_API_V1 + this.itemDashItem; //  e.g.:  '/server/api/v1/destination-category';
+  items!: Array<DestinationCategory>;
+  itemHeaders: string[] = ['Id', 'Name', 'Description'];
+  itemFields: string[] = ['id', 'name', 'description'];
+  // ###################################################
+  //
 
-  destinationCategories!: Array<DestinationCategory>;
-
-  constructor(private destinationCategoryService: DestinationCategoryService) {}
+  constructor(private itemService: ItemService) {}
 
   async ngOnInit(): Promise<void> {
-    await this.getDestinationCategories();
+    await this.getItems();
   }
 
-  async getDestinationCategories() {
-    // this.destinationCategories =
-    // this.destinationCategoryService
-    //   .getDestinationCategories()
-    //   .toPromise()
-    //   .then(
-    //     (data) => {
-    //       this.destinationCategories = data;
-    //       console.log(JSON.stringify(data));
-    //     },
-    //     (err) => {
-    //       console.error(err);
-    //       console.error(
-    //         'error in service component number ... in getItems method'
-    //       );
-    //     }
-    //   );
-
-    // this.destinationCategories = this.destinationCategoryService.getDestinationCategories().toPromise();
-
-    this.destinationCategoryService.getDestinationCategories().subscribe(
+  async getItems() {
+    (await this.itemService.getItems(this.path)).subscribe(
       (data) => {
-        this.destinationCategories = data;
+        this.items = data;
         console.log(data);
       },
       (err) => {
         console.error(err);
       },
       () => {
-        console.log('destination categories loaded');
+        console.log(this.itemNameItem + ' items was loaded from server');
       }
     );
-    // }
   }
 }

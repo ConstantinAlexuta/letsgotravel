@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { D_CTMWRSOS, N_CTMWRSOS, showDebug } from 'src/app/app.constants';
+import { ActivatedRoute, Router } from '@angular/router';
+import { showDebug } from 'src/app/app.constants';
 import { DestinationCategory } from 'src/app/shared/interfaces/destination-category';
+import { DestinationCategoryDataExchangeService } from '../destination-category-data-exchange.service';
 import { DestinationCategoryService } from '../destination-category.service';
 
 @Component({
@@ -11,6 +13,33 @@ import { DestinationCategoryService } from '../destination-category.service';
   styleUrls: ['./destination-category-edit-one.component.scss'],
 })
 export class DestinationCategoryEditOneComponent implements OnInit {
+  //
+  // ###################################################
+  //
+  itemNameItem: string = 'destination category';
+  itemDashItem: string = 'destination-category';
+
+  // item!: DestinationCategory;
+  // items!: DestinationCategory[];
+  // itemHeaders: string[] = ['Id', 'Name', 'Description'];
+  // itemFields: string[] = ['id', 'name', 'description'];
+  //
+  // ###################################################
+  //
+  currentId: any;
+  // pathId!: string;
+  // itemPath!: string;
+  // itemsPath: string = SERVER_API_V1 + this.itemDashItem;
+  // pageBrandViewOneItem!: string;
+  // subscription!: Subscription;
+  // currentLongRouter!: string;
+  // currentShortRouter!: string; // view-one
+  //
+  // ###################################################
+  //
+
+  @Input() viewStatus: string = 'view'; // can be and "edit"
+
   itemClassName: string = 'DestinationCategory';
   componentTypeName: string = 'EditOneComponent';
 
@@ -18,10 +47,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
   item: DestinationCategory = new DestinationCategory(0, '0', '0');
 
-  itemTESTdescription: string = 'itemTESTdescription';
-
   itemFormNgModel!: DestinationCategory;
-  readonlyAfterSave = ''; //  && Disable Clear and reload
 
   itemForm = new FormGroup({
     id: new FormControl('', [Validators.required, Validators.minLength(1)]),
@@ -43,7 +69,9 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
   constructor(
     private destinationCategoryService: DestinationCategoryService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private destinationCategoryDataExchangeService: DestinationCategoryDataExchangeService
   ) {
     if (showDebug) {
       console.log(
@@ -54,25 +82,42 @@ export class DestinationCategoryEditOneComponent implements OnInit {
         'in constructor  ===  componentTypeName = ' + this.componentTypeName
       );
     }
-    // this.item.id = 0;
-    // this.item.name = '0';
-    // this.item.description = '0';
+
+    this.getItemId();
+
+    this.getItem(this.itemId);
+    //
   } ////////////////////////////// END constructor
 
+  async getItemId(): Promise<number> {
+    this.currentId = +this.activatedRoute.snapshot.parent?.params.id;
+    this.itemId = +this.activatedRoute.snapshot.parent?.params.id;
+    return this.itemId;
+  }
+
+  //showInConsoleIfDebugIsON
+  show(message: string) {
+    if (showDebug) console.log(message);
+  }
+
+  viewComeBackFromCancelEditViewSubscription!: Subscription;
+
   async ngOnInit(): Promise<void> {
+    this.messageFromCancel = false;
+    this.viewComeBackFromCancelEditViewSubscription = this.destinationCategoryDataExchangeService.currentMessageFromCancel.subscribe(
+      (value) => (this.messageFromCancel = value)
+    );
+
     if (showDebug)
       console.log(
         '---- in ngOnInit   ===================================================================='
       );
 
-    this.itemId = +this.activatedRoute.snapshot.parent?.params.id;
+    this.getItemId();
 
-    if (showDebug)
-      console.log(
-        '---- in ngOnInit >> itemId = ' +
-          this.itemId +
-          '      BEFORE TIMEOUT   '
-      );
+    this.show(
+      '---- in ngOnInit >> itemId = ' + this.itemId + '      BEFORE TIMEOUT   '
+    );
 
     if (showDebug) {
       if (this.itemId != undefined) {
@@ -87,6 +132,8 @@ export class DestinationCategoryEditOneComponent implements OnInit {
         );
       }
     }
+
+    this.getItem(this.itemId);
 
     setTimeout(() => {
       this.getItem(this.itemId);
@@ -117,6 +164,12 @@ export class DestinationCategoryEditOneComponent implements OnInit {
         );
     }, 400);
 
+    console.log(
+      '---- in ngOnInit >> getItem >> item = ' +
+        JSON.stringify(this.item) +
+        '   //  NOT LOADED YET'
+    );
+
     setTimeout(() => {
       this.loadItemIntoItemForm();
       if (showDebug)
@@ -124,19 +177,21 @@ export class DestinationCategoryEditOneComponent implements OnInit {
     }, 600);
 
     this.setDelayToShowIf();
-  } ////////////////////////////// END ngOnInit
+  } ///// END ngOnInit ///////////////////////////////////////////////////// END ngOnInit
 
   getItem(id: number) {
     if (showDebug) console.log('in getItem ');
     this.destinationCategoryService.getDestinationCategory(id).subscribe(
       (data) => {
         this.item = data;
+
         if (showDebug)
           console.log(
             'item service > get method > item with id ' +
               id +
               ' was retrieved from server database'
           );
+
         if (showDebug)
           console.log(
             'in ngOnInit >> getItem >> item = ' + JSON.stringify(this.item)
@@ -160,9 +215,9 @@ export class DestinationCategoryEditOneComponent implements OnInit {
           );
       }
     );
-  } ////////////////////////////// END getItem
+  } ////// END getItem ////////////////////////////////////// END getItem
 
-  isSubmitedOnce: boolean = false;
+  /////
   submitForm() {
     if (showDebug)
       console.log(
@@ -174,24 +229,13 @@ export class DestinationCategoryEditOneComponent implements OnInit {
       setTimeout(() => {
         this.showMessageIfItemFormIsInvalid = false;
       }, 10000);
-    } // if (!this.itemForm.valid)
+    } // END if (!this.itemForm.valid)
     else {
       this.showMessageIfItemFormIsInvalid = false;
       this.isFormItemEqualWithInitialItem();
 
-      // if (!this.isSubmitedOnce) {
-      // }
-
       if (!this.editedItemIsDifferentThanInitialItem) {
         this.showMessageItemHasNotthingChanged = true;
-
-        // setTimeout(() => {
-        //   this.loadItemIntoItemForm();
-        //   if (showDebug)
-        //     console.log(
-        //       '////////////////////////////// in submitForm >> this.loadItemIntoItemForm() after 600 ms'
-        //     );
-        // }, 200);
 
         this.itemForm.markAsUntouched;
         this.itemForm.markAsPristine;
@@ -212,8 +256,6 @@ export class DestinationCategoryEditOneComponent implements OnInit {
             '////////////////////////////// in submitForm >> call service >> replace method >> item send it to PUT on server'
           );
 
-        this.isSubmitedOnce = true;
-
         this.isModificationSavedOnServerAfter2000ms();
 
         setTimeout(() => {
@@ -222,7 +264,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
             this.showMessageIfModificationIsSavedOnServerWithFailure = false;
             this.showMessageItemHasNotthingChanged = false;
             this.toggleCancelOrExitButtonName();
-            // this.loadItemModifiedAndRetrievedFromServerIntoItemForm();
+            //  END this.loadItemModifiedAndRetrievedFromServerIntoItemForm();
           }
         }, 2500);
 
@@ -236,19 +278,12 @@ export class DestinationCategoryEditOneComponent implements OnInit {
         }, 4000);
       }
 
-      this.isSubmitedOnce = true;
-      this.isDisabledSaveButton = true;
-
-      setTimeout(() => {
-        // this.loadItemIntoItemForm();
-      }, 100);
-
       setTimeout(() => {
         this.showMessageItemHasNotthingChanged = false;
         this.showMessageIfModificationIsSavedOnServerWithSuccess = false;
         this.showMessageIfModificationIsSavedOnServerWithFailure = false;
       }, 10000);
-    } // if (this.itemForm.valid)
+    } //  END if (this.itemForm.valid)
     //
   } ////////////////////////////// END  submitForm
 
@@ -292,18 +327,6 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
     return !this.editedItemIsDifferentThanInitialItem;
   } //////////////////////// END isFormItemEqualWithInitialItem
-
-  // trimFieldsOfThisItem(itemToTrim: DestinationCategory): DestinationCategory {
-  //   let itemTemp = new DestinationCategory();
-
-  //   itemTemp.id = itemToTrim.id;
-  //   itemTemp.name = itemToTrim.name?.trim();
-  //   itemTemp.description = itemToTrim.description?.trim();
-
-  //   return itemTemp;
-  // }
-
-  isDisabledSaveButton: boolean = false;
 
   isItemsComparedEquals(
     item1: DestinationCategory,
@@ -417,37 +440,25 @@ export class DestinationCategoryEditOneComponent implements OnInit {
     }
   }
 
-  // loadItemModifiedAndRetrievedFromServerIntoItemForm() {
-  //   if (this.updatedItemFromServer != undefined) {
-  //     this.itemForm.patchValue({
-  //       id: this.updatedItemFromServer.id,
-  //       name: this.updatedItemFromServer.name,
-  //       description: this.updatedItemFromServer.description,
-  //     });
-  //     if (showDebug)
-  //       console.log(
-  //         'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> form initialized with item data modified, saved on server and retrieved from server'
-  //       );
-  //   } else {
-  //     console.log(
-  //       'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> cannot initialize form with item data modified, saved on server and retrieved from server'
-  //     );
-  //     console.log(
-  //       'in loadItemModifiedAndRetrievedFromServerIntoItemForm() >> this.updatedItemFromServer is UNDEFINED'
-  //     );
-  //   }
-  // }
-
-  loadItemIntoItemForm() {
-    this.itemForm.patchValue({
-      id: this.item.id,
-      name: this.item.name,
-      description: this.item.description,
-    });
-    if (showDebug)
-      console.log(
-        'in loadItemIntoItemForm() >> form initialized with item data'
-      );
+  loadItemIntoItemForm(): boolean {
+    if (this.item == undefined) {
+      if (showDebug)
+        console.log(
+          'in loadItemIntoItemForm() >> form  >>> NOT <<< initialized with item data'
+        );
+      return false;
+    } else {
+      this.itemForm.patchValue({
+        id: this.item.id,
+        name: this.item.name,
+        description: this.item.description,
+      });
+      if (showDebug)
+        console.log(
+          'in loadItemIntoItemForm() >> form initialized with item data'
+        );
+    }
+    return true;
   }
 
   clearItemForm() {
@@ -473,6 +484,8 @@ export class DestinationCategoryEditOneComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    this.viewComeBackFromCancelEditViewSubscription.unsubscribe();
+
     if (showDebug) {
       console.log('in ngOnDestroy');
       console.log('itemClassName = ' + this.itemClassName + '  ===>  END');
@@ -493,42 +506,23 @@ export class DestinationCategoryEditOneComponent implements OnInit {
       this.showIf = true;
     }, 1000);
   }
+
+  // @Output() isOnCancelEdit: EventEmitter<boolean> = new EventEmitter();
+
+  private messageFromCancel: boolean = false;
+
+  onCancelEdit() {
+    this.messageFromCancel = true;
+    this.destinationCategoryDataExchangeService.changeMessageFromCancel(
+      this.messageFromCancel
+    );
+    
+    // this.isOnCancelEdit.emit(true);
+
+    this.router.navigate([
+      '../' + this.itemDashItem + '/view-one/' + this.currentId + '/view',
+    ]);
+
+    // this.router.navigate(['view-one/' + this.itemId + '/view']);
+  }
 }
-
-//async ngOnInit(): Promise<void> {
-//  if (showDebug) console.log('in ngOnInit');
-
-// let letId = +this.activatedRoute.snapshot.parent?.params.id;
-
-// let msTimeToCheck = TTC; // msTimeToCheck = 5000ms // STC = msStepToCheck 50ms
-// let msTimeOut = 0;
-// let msTimeUntilSuccess = 0;
-// while (msTimeUntilSuccess < msTimeToCheck) {
-//   msTimeUntilSuccess += msTimeOut;
-//   msTimeOut = STC;
-//   setTimeout(() => {
-//     let letId = +this.activatedRoute.snapshot.parent?.params.id;
-//     let timeNeedToRetrieveData = 0;
-
-//     if (letId != undefined) {
-//       this.itemId = letId;
-//       if (showDebug)
-//         console.log(
-//           'in ngOnInit >> msTimeUntilSuccess = ' +
-//             msTimeUntilSuccess +
-//             ' >>>> itemId = ' +
-//             this.itemId
-//         );
-//     } else {
-//       timeNeedToRetrieveData += 50;
-//       if (showDebug)
-//         console.log('timeNeedToRetrieveData = ' + timeNeedToRetrieveData);
-//     }
-
-//     if (showDebug)
-//       console.log('in ngOnInit >> at end loop >> itemId = ' + this.itemId);
-//   }, msTimeOut);
-// }
-
-// this.itemId = +this.activatedRoute.snapshot.parent?.params.id;
-// if (showDebug) console.log('in ngOnInit >> itemId = ' + this.itemId);

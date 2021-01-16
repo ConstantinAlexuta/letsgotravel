@@ -18,10 +18,22 @@
 
                 <form class="form-inline my-2 my-lg-0">
 
+                    
+
+                    <!-- [routerLink]="['../../view-all']"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}" -->
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
+                        (click)="onBack()"
+                        >
+                        Back
+                    </button>
+
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link"
                         [routerLink]="['edit']" routerLinkActive="active" 
-                        [routerLinkActiveOptions]="{exact: true}">
-                        Edit
+                        [routerLinkActiveOptions]="{exact: true}"
+                        (click)="onEdit()">
+                         Edit
                     </button>
 
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
@@ -32,7 +44,6 @@
                         >
                         Delete                       
                     </button>
-                    <!-- (click)="onDeleteOne(+currentId+0)" -->
                     <!-- data-bs-toggle="modal" data-bs-target="#deleteModal" -->
                     <!-- Modal -->
                     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -54,7 +65,7 @@
                                 <div class="modal-footer">
 
                                     <button type="button" class="btn btn-primary mx-3"  data-bs-dismiss="modal"
-                                        (click)="onDeleteOne(+currentId+0)"
+                                        (click)="onDeleteOne()"
                                         data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">Delete</button>
 
                                     <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
@@ -96,6 +107,21 @@
                     </div>
 
 
+                    <div>
+                        <span>&nbsp; &nbsp; &nbsp; &nbsp;</span>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        
+                        <div style="align-items: center; align-self: center; align-content: center; text-align: center;">
+                            {{itemsLength}}
+                            <br>
+                            items
+                        </div>                        
+                        
+                        <span>&nbsp; &nbsp; &nbsp; &nbsp;</span>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+
+
 
                     <!-- {{activeId}} {{activeId}} {{ nextId }}  {{nextIdExistingInDataBase}}
 
@@ -107,84 +133,107 @@
 
                     <!-- {{destinationCategories | json}} -->
 
-                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" (click)="onClickNext()"
-                        [routerLink]="['../', activeId - 1]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" (click)="onFirst()"
+                    [disabled]="isFirstId">
+                        First
+                    </button>
+
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
+                        (click)="onPrev()"
+                        [disabled]="!isPrevId"
+                        >
                         Prev
                     </button>
 
+                    <!-- <div>
+                        firstItemOfItemsId: {{firstItemOfItemsId}}
+                        <br>
+                        prevId: {{prevId}}
+                        <br>
+                        id: {{currentId}}
+                        <br>
+                        ix: {{currentIndexFromItems}}
+                        <br>
+                        lastItemOfItemsId: {{lastItemOfItemsId}}
+                        <br>
+                        goToIdValue: {{goToIdValue}}
+                    </div> -->
+
                     <!-- [routerLink]="['../destination-category/view-one', activeId+1, 'view']" -->
+                    <!-- [routerLink]="['../', activeId + 1]" -->
+                    <!-- routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" -->
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
-                        (click)="onClickNext()"
-                        [routerLink]="['../', activeId + 1]"
-                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        (click)="onNext()"
+                        [disabled]="!isNextId"
                         >
                         Next
                     </button>
 
-                    <!-- <button class="btn btn-outline-secondary ml-3 pl-3 my-2 my-sm-0 nav-link" (click)="onClickNext()"
-                        [routerLink]="['../', activeId + 1]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                        Go to id:
-                    </button> -->
+                    <!-- [routerLink]="['../', activeId + 1]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" -->
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
+                        (click)="onLast()"
+                        [disabled]="isLastId"
+                        >
+                        Last
+                    </button>
 
-                    <!-- [(ngModel)]="EnteredIdInGoTo" -->
-                    <!-- <input                     
-                    class="btn btn-outline-secondary mr-3 pr-3 my-2 my-sm-0 nav-link"
-                    type="number"
-                    [placeholder]="activeId"
-                    style="max-width: 70px;"
-                    
-                    /> -->
+                    <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
+                        (click)="onGoToId()" 
+                        >
+                        Go to id
+                    </button>
 
-                    <!-- {{EnteredIdInGoTo}} -->
-                    <!-- (click)="onEnterGoToIdRoute()" -->
+                    <!-- <input  type="button" class=" btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
+                    value="Go to id"
+                    (click)="onGoToId()"> -->
 
-                    <!-- max-height: 25px; -->
+                    <!-- class="form-control" -->
+                    <!-- aria-label="goToIdValue" -->
+                    <input type="number" 
+                     id="goToIdValue"
+                     name="goToIdValue"  
+                     [(ngModel)]="goToIdValue"  
+                     min="firstItemOfItemsId"
+                     value="firstItemOfItemsId"
+                     max="lastItemOfItemsId"   
+                     style="width: 80px"                        
+                     >
+                    <!-- min="firstItemOfItemsId"
+                    value="firstItemOfItemsId"
+                    max="lastItemOfItemsId" -->
 
-                    <!-- {{currentId}} -->
+                    <!-- <p>{{goToIdValue}}</p> -->
 
-                    <!-- <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link"
-                        [routerLink]="['view-one/1']" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact: true}">
-                        View
-                        <input type="text" class="form-control  w-25" style="max-width: 20px; max-height: 25px;">
-                    </button> -->
+                    <!-- ngModel="goToIdValue" -->
 
-                    <!-- <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link "
-                        [routerLink]="['add-one']" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact: true}">Add one</button>
+                    <!-- <div class="input-group mb-3">
+                        <span class="input-group-text"></span>
 
-                    <button class="btn btn-outline-secondary mx-3 px-2 my-2 my-sm-0 nav-link "
-                        [routerLink]="['add-more']" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact: true}">Add more</button> -->
+                        <input type="number" class="form-control" 
+                        aria-label="goToIdValue" 
+                        [(ngModel)]="goToIdValue"
+                        >
 
-                    <!-- <button class="btn btn-outline-secondary mx-3 px-2 my-2 my-sm-0 nav-link "
-                        [routerLink]="['edit-more']" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact: true}">Edit
-                        more</button> -->
+                        <span class="input-group-text"></span>
+                    </div> -->
 
-                    <!-- <button class="btn  dropdown mx-3 px-2 my-1 my-sm-0 nav-link " routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact: true}">
+                    <div>
+                        &nbsp; &nbsp; {{firstItemOfItemsId}} <small> &nbsp; to &nbsp; </small> {{lastItemOfItemsId}} &nbsp; &nbsp;
+                    </div>
 
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <span style="height: 3.5em;">Go to</span>
-                        </a>
+                    <div>
+                        <div *ngIf="showIsLessThanMinimumMessage" style="color: red">
+                            {{isLessThanMinimumMessage}}
+                        </div>
 
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item px-1 mx-1"
-                                    [routerLink]="['../destination-category']">Destination categories</a>
-                            </li>
-                            <li><a class="dropdown-item px-1 mx-1" [routerLink]="['../service-types']">Service types</a>
-                            </li>
-                            <li><a class="dropdown-item px-1 mx-1" [routerLink]="['../included-services']">Included
-                                    services</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item px-1 mx-1" [routerLink]="['../manager-offers']">Manage
-                                    offers</a></li>
-                        </ul>
-                    </button> -->
+                        <div *ngIf="showIsBiggerThanMaximumMessage" style="color: red">
+                            {{isBiggerThanMaximumMessage}}
+                        </div>
+
+                        <div *ngIf="showIidDoesntExistMessage" style="color: red">
+                            {{idDoesntExistMessage}}
+                        </div>
+                    </div>
 
                 </form>
 
