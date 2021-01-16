@@ -1,8 +1,7 @@
-import { findLastIndex } from 'src/app/shared/functions/findLastIndex';
 import { DestinationCategoryDataExchangeService } from './../destination-category-data-exchange.service';
-import { Component, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { async, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import { DestinationCategory } from 'src/app/shared/interfaces/destination-category';
 import { ItemService } from 'src/app/shared/services/item.service';
@@ -51,7 +50,7 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   // ###################################################
   //
 
-  destinationCategory!: DestinationCategory;
+  // destinationCategory!: DestinationCategory;
   activeId!: number;
   // nextIdExistingInDataBase: number = -1;
 
@@ -62,15 +61,6 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     private destinationCategoryDataExchangeService: DestinationCategoryDataExchangeService
   ) {
     this.viewStatus = 'view';
-    // this.getTheNextAvailableId();
-    // this.nextIdExistingInDataBase = -2;
-
-    // this.currentShortRouter = this.router.url.value[0].path;
-
-    // activatedRoute.url.subscribe((url: []) =>
-    //   console.log(url[0].path)
-    // );
-
     this.currentShortRouter = activatedRoute.snapshot.url[0].path; // view-one
     this.currentShortRouterId = activatedRoute.snapshot.url[1].path; // view-one
   }
@@ -135,10 +125,13 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
       }
     }, 200);
 
-    // this.nextId = +this.currentId + 1;
+    setTimeout(() => {
+      this.goToIdValue = this.currentId;
+    }, 500);
 
-    // this.getTheNextAvailableId();
-    // this.nextIdExistingInDataBase = -2;
+    setTimeout(() => {
+      this.goToIdValue = this.currentId;
+    }, 1000);
   }
 
   async getItem() {
@@ -152,64 +145,13 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
           this.itemNameItem + ' with id ' + this.currentId + ' was loaded'
         )
     );
-    // this.nextId = +this.currentId + 1;
   }
-
-  //To prevent memory leak
-  ngOnDestroy(): void {
-    if (this.subscription) this.subscription.unsubscribe();
-  }
-
-  // destinationCategoriesTEST = 'TEST';
-  // pickUpNextOne: boolean = false;
-  // maxSize: number = -1;
-  // maxSize: number =  JSON.stringify(this.destinationCategories).length + 0;
-
-  // async getTheNextAvailableId() {
-  //   // this.nextIdExistingInDataBase = -2;
-  //   // this.getItems();
-  //   // alert('getDestinationCategories');
-
-  //   this.destinationCategoriesTEST = 'TEST2';
-
-  //   this.items.forEach(() => {
-  //     this.maxSize++;
-  //   });
-
-  //   this.destinationCategoriesTEST = 'TEST3';
-
-  //   // for(var i = 0; i < +this.destinationCategories[+this.destinationCategories.length()].id; i++){
-  //   // for(var i = 0; i < Object.keys(this.destinationCategories).length; i++){
-  //   // this.maxSize = this.destinationCategories.length + 0;
-  //   this.maxSize = JSON.stringify(this.items).length + 0;
-  //   // this.maxSize = Object.keys(this.destinationCategories).length + 0;
-
-  //   this.destinationCategoriesTEST = 'TEST3';
-
-  //   for (var i = 1; i <= this.maxSize; i++) {
-  //     this.destinationCategoriesTEST = 'TEST4';
-  //     if (this.activeId == +this.items[i].id!) {
-  //       this.pickUpNextOne = true;
-  //     }
-  //     if (this.pickUpNextOne) {
-  //       this.nextIdExistingInDataBase = +this.items[i].id!;
-  //       break;
-  //     }
-  //   }
-
-  // this.destinationCategories.forEach((element: { "": any; }) => {
-  //   element.length;
-  // });
-  // }
 
   async getItems(): Promise<any> {
-    // let itemsTemp: any;
     (await this.itemService.getItems(this.itemsPath)).subscribe(
       (data) => {
         this.items = data;
         this.itemsLength = data.length;
-        // this.currentIndexFromItems = data.indexOf(this.item);
-        // itemsTemp = data;
         console.log(data);
       },
       (err) => console.error(err),
@@ -217,13 +159,6 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
         console.log('destination categories loaded');
       }
     );
-    // return itemsTemp;
-  }
-
-  onEnterGoToIdRoute() {
-    // this.router.navigate(['/my-book-listing']);
-    this.router.navigate(['../', this.activeId + 3]);
-    // '../', activeId + 1
   }
 
   itemClassName: string = 'DestinationCategory';
@@ -234,7 +169,6 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   isItemDeletedFromDataBase: boolean = false;
   itemDeletedIfStillExistInDataBase: DestinationCategory = null!;
 
-  testIndicator: string = 'INDI-0';
   async onDeleteOne() {
     (await this.itemService.getItem(this.pathId)).subscribe(
       (data) => {
@@ -314,6 +248,12 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     this.router.navigate(['../' + this.itemDashItem + '/view-all']);
   }
 
+  setCommonNavigationSettingsAndGoToIdValue() {
+    this.setCommonNavigationSettings();
+
+    this.goToIdValue = this.currentId;
+  }
+
   setCommonNavigationSettings() {
     this.previousId = this.currentId;
     this.destinationCategoryDataExchangeService.changeMessageFromCancel(false);
@@ -321,7 +261,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   }
 
   onPrev() {
-    this.setCommonNavigationSettings();
+    this.setCommonNavigationSettingsAndGoToIdValue();
+    this.setGoToIdValueTo(this.prevId);
 
     this.router.navigate([
       '../' + this.itemDashItem + '/view-one/' + this.prevId + '/view',
@@ -329,7 +270,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   }
 
   async onNext() {
-    this.setCommonNavigationSettings();
+    this.setCommonNavigationSettingsAndGoToIdValue();
+    this.setGoToIdValueTo(this.nextId);
 
     this.router.navigate([
       '../' + this.itemDashItem + '/view-one/' + this.nextId + '/view',
@@ -337,7 +279,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   }
 
   onFirst() {
-    this.setCommonNavigationSettings();
+    this.setCommonNavigationSettingsAndGoToIdValue();
+    this.setGoToIdValueTo(this.firstItemOfItemsId);
 
     this.router.navigate([
       '../' +
@@ -349,7 +292,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   }
 
   onLast() {
-    this.setCommonNavigationSettings();
+    this.setCommonNavigationSettingsAndGoToIdValue();
+    this.setGoToIdValueTo(this.lastItemOfItemsId);
 
     this.router.navigate([
       '../' +
@@ -396,7 +340,17 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     }
   }
 
-  goToIdValue: number = -1;
+  setGoToIdValueTo(goToIdNewValue: number) {
+    this.goToIdValue = goToIdNewValue;
+  }
+
+  hideAllGoToIdMessages() {
+    this.showIsLessThanMinimumMessage = false;
+    this.showIsBiggerThanMaximumMessage = false;
+    this.showIidDoesntExistMessage = false;
+  }
+
+  goToIdValue!: number;
 
   showIsLessThanMinimumMessage: boolean = false;
   isLessThanMinimumMessage: string = 'less than min';
@@ -408,11 +362,11 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   idDoesntExistMessage: string = "id doesn't exist";
 
   onGoToId() {
+    this.hideAllGoToIdMessages();
+
     this.setCommonNavigationSettings();
 
     if (this.goToIdValue < this.firstItemOfItemsId) {
-      this.showIsBiggerThanMaximumMessage = false;
-      this.showIidDoesntExistMessage = false;
       this.showIsLessThanMinimumMessage = true;
       setTimeout(() => {
         this.showIsLessThanMinimumMessage = false;
@@ -420,8 +374,6 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     }
 
     if (this.goToIdValue > this.lastItemOfItemsId) {
-      this.showIsLessThanMinimumMessage = false;
-      this.showIidDoesntExistMessage = false;
       this.showIsBiggerThanMaximumMessage = true;
       setTimeout(() => {
         this.showIsBiggerThanMaximumMessage = false;
@@ -434,8 +386,6 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
         this.goToIdValue <= this.lastItemOfItemsId &&
         !this.checkIfThisIdExist(this.goToIdValue))
     ) {
-      this.showIsLessThanMinimumMessage = false;
-      this.showIsBiggerThanMaximumMessage = false;
       this.showIidDoesntExistMessage = true;
       setTimeout(() => {
         this.showIidDoesntExistMessage = false;
@@ -460,5 +410,13 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
       }
     });
     return answer;
+  }
+
+  //To prevent memory leak
+  ngOnDestroy(): void {
+    if (this.subscription) this.subscription.unsubscribe();
+
+    if (this.viewComeBackFromCancelEditViewSubscription)
+      this.viewComeBackFromCancelEditViewSubscription.unsubscribe();
   }
 }

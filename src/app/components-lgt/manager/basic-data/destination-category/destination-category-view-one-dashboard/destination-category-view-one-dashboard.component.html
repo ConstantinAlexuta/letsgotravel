@@ -18,11 +18,6 @@
 
                 <form class="form-inline my-2 my-lg-0">
 
-                    
-
-                    <!-- [routerLink]="['../../view-all']"
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: true}" -->
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
                         (click)="onBack()"
                         >
@@ -96,42 +91,28 @@
                                     <br/>
                                 </div>
                                 <div class="modal-footer">
-                    
+
                                     <button type="button" class="btn btn-primary mx-3" data-bs-dismiss="modal"
-                                        (click)="onDeleteItemConfirmation()">Close</button>
-                    
-                                    <!-- <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button> -->
+                                        (click)="onDeleteItemConfirmation()">
+                                        Close
+                                    </button>
+
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
                     <div>
-                        <span>&nbsp; &nbsp; &nbsp; &nbsp;</span>
+                        <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
                         &nbsp; &nbsp; &nbsp; &nbsp;
                         
                         <div style="align-items: center; align-self: center; align-content: center; text-align: center;">
-                            {{itemsLength}}
-                            <br>
-                            items
+                            
                         </div>                        
                         
                         <span>&nbsp; &nbsp; &nbsp; &nbsp;</span>
                         &nbsp; &nbsp; &nbsp; &nbsp;
                     </div>
-
-
-
-                    <!-- {{activeId}} {{activeId}} {{ nextId }}  {{nextIdExistingInDataBase}}
-
-                    {{pickUpNextOne}}
-                    {{destinationCategoriesTEST}}
-                    {{destinationCategories.length}}
-                    da:{{destinationCategories[activeId].id}}
-                    {{maxSize}} -->
-
-                    <!-- {{destinationCategories | json}} -->
 
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" (click)="onFirst()"
                     [disabled]="isFirstId">
@@ -145,23 +126,6 @@
                         Prev
                     </button>
 
-                    <!-- <div>
-                        firstItemOfItemsId: {{firstItemOfItemsId}}
-                        <br>
-                        prevId: {{prevId}}
-                        <br>
-                        id: {{currentId}}
-                        <br>
-                        ix: {{currentIndexFromItems}}
-                        <br>
-                        lastItemOfItemsId: {{lastItemOfItemsId}}
-                        <br>
-                        goToIdValue: {{goToIdValue}}
-                    </div> -->
-
-                    <!-- [routerLink]="['../destination-category/view-one', activeId+1, 'view']" -->
-                    <!-- [routerLink]="['../', activeId + 1]" -->
-                    <!-- routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" -->
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
                         (click)="onNext()"
                         [disabled]="!isNextId"
@@ -169,7 +133,6 @@
                         Next
                     </button>
 
-                    <!-- [routerLink]="['../', activeId + 1]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" -->
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
                         (click)="onLast()"
                         [disabled]="isLastId"
@@ -183,42 +146,31 @@
                         Go to id
                     </button>
 
-                    <!-- <input  type="button" class=" btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
-                    value="Go to id"
-                    (click)="onGoToId()"> -->
-
-                    <!-- class="form-control" -->
-                    <!-- aria-label="goToIdValue" -->
-                    <input type="number" 
-                     id="goToIdValue"
-                     name="goToIdValue"  
-                     [(ngModel)]="goToIdValue"  
-                     min="firstItemOfItemsId"
-                     value="firstItemOfItemsId"
-                     max="lastItemOfItemsId"   
-                     style="width: 80px"                        
-                     >
-                    <!-- min="firstItemOfItemsId"
-                    value="firstItemOfItemsId"
-                    max="lastItemOfItemsId" -->
-
-                    <!-- <p>{{goToIdValue}}</p> -->
-
-                    <!-- ngModel="goToIdValue" -->
-
-                    <!-- <div class="input-group mb-3">
-                        <span class="input-group-text"></span>
-
-                        <input type="number" class="form-control" 
-                        aria-label="goToIdValue" 
-                        [(ngModel)]="goToIdValue"
-                        >
-
-                        <span class="input-group-text"></span>
-                    </div> -->
-
-                    <div>
-                        &nbsp; &nbsp; {{firstItemOfItemsId}} <small> &nbsp; to &nbsp; </small> {{lastItemOfItemsId}} &nbsp; &nbsp;
+                    <div class="col pt-4">
+                        
+                        <div class="row">
+                            <form onsubmit="onGoToId()">
+                                <input 
+                                class="btn btn-outline-secondary mx-0 px-0 my-2 my-sm-0 nav-link"
+                                type="number" id="goToIdValue" name="goToIdValue" 
+                                [(ngModel)]="goToIdValue" min="firstItemOfItemsId"
+                                value="firstItemOfItemsId" max="lastItemOfItemsId"
+                                style="width: 100px; font-size: 1.0em;"
+                                (click)="onGoToId()" 
+                                onsubmit="onGoToId()" 
+                                >
+                            </form>
+                            
+                        </div>
+                        <div class="row mt-1">
+                            <div  style="font-size: 0.8em; text-align: center;">
+                                <small>
+                                   {{firstItemOfItemsId}} to {{lastItemOfItemsId}}
+                                    / Total: {{itemsLength}}
+                                </small>
+                            </div>
+                        </div>
+                        
                     </div>
 
                     <div>
