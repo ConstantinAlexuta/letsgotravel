@@ -35,11 +35,56 @@
                     </button>
 
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
-                        [routerLink]="['../../add-one']"
-                        routerLinkActive="active" 
-                        [routerLinkActiveOptions]="{exact: true}" (click)="onDuplicate()">
+                        data-bs-toggle="modal"
+                        data-bs-target="#duplicateModal"
+                        >
                         Duplicate
                     </button>
+                    <div class="modal fade" id="duplicateModal" tabindex="-1" 
+                        aria-labelledby="duplicateModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="duplicateModalLabel">
+                                        Do you want to make a copy of this item as a new entry item?
+                                        <br>
+                                    </h5>
+                                </div>
+                    
+                                <div class="modal-header" *ngIf="item">
+                                    <h6 style="font-size: 0.8em;">
+                                        Duplicate:
+                                        <br>
+                                        <br>
+                                        Item id: &nbsp; {{item.id}}
+                                        <br>
+                                        <br>
+                                        Item name: &nbsp; {{item.name | uppercase}}
+                                    </h6>
+                                </div>
+                    
+                    
+                                <div class="modal-body">
+                                   After duplication you can edit the new item created.
+                                </div>
+                                <div class="modal-footer">
+                    
+                                    <button type="button" class="btn btn-primary mx-3" data-bs-dismiss="modal" 
+                                        (click)="onDuplicate()"
+                                        data-bs-toggle="modal" data-bs-target="#duplicateConfirmationModal">
+                                        Duplicate
+                                    </button>
+                    
+                                    <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">
+                                        Cancel
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" [routerLink]="['edit']"
                         routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onEdit()">
@@ -48,6 +93,7 @@
 
                     <button class="btn btn-outline-secondary mx-3 px-3 my-2 my-sm-0 nav-link" 
                         data-bs-toggle="modal" data-bs-target="#deleteModal"
+                        (click)="onDelete()"
                         >
                         Delete                       
                     </button>
@@ -63,12 +109,12 @@
                                     </h5>
                                 </div>
 
-                                <div class="modal-header" *ngIf="item">
+                                <div class="modal-header" *ngIf="itemToDelete">
                                     <h6 style="font-size: 0.8em;">
-                                        Item id: &nbsp; {{item.id}}
+                                        Item id: &nbsp; {{itemToDelete.id}}
                                     <br>
                                     <br>
-                                        Item name: &nbsp; {{item.name | uppercase}}
+                                        Item name: &nbsp; {{itemToDelete.name | uppercase}}
                                     </h6>
                                 </div>
 
@@ -240,8 +286,14 @@
                 </form>
 
             </div>
+
         </div>
     </nav>
+
+    <div *ngIf="showThisIsADuplicateMessage" class="mb-4" style="color: blue">
+        {{thisIsADuplicateMessage}}
+    </div>
+
 </div>
 
 <div>

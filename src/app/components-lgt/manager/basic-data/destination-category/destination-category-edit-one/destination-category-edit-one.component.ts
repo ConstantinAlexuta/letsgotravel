@@ -21,8 +21,8 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
   // item!: DestinationCategory;
   // items!: DestinationCategory[];
-  // itemHeaders: string[] = ['Id', 'Name', 'Description'];
-  // itemFields: string[] = ['id', 'name', 'description'];
+  // itemHeaders: string[] = ['Id', 'Name', 'Description', 'Status'];
+  // itemFields: string[] = ['id', 'name', 'description', 'status'];
   //
   // ###################################################
   //
@@ -56,6 +56,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
       Validators.required,
       Validators.minLength(1),
     ]),
+    status: new FormControl('', [Validators.required, Validators.minLength(1)]),
   });
 
   itemITEMForm = new FormGroup({
@@ -65,6 +66,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
       Validators.required,
       Validators.minLength(1),
     ]),
+    status: new FormControl('', [Validators.required, Validators.minLength(1)]),
   });
 
   constructor(
@@ -345,7 +347,8 @@ export class DestinationCategoryEditOneComponent implements OnInit {
     if (
       item1.id != item2.id ||
       item1.name != item2.name ||
-      item1.description != item2.description
+      item1.description != item2.description ||
+      item1.status != item2.status
     ) {
       return false;
     } else return true;
@@ -430,6 +433,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
     itemFromFormTrimed.name = itemFromForm.name!.trim();
     itemFromFormTrimed.description = itemFromForm.description!.trim();
+    itemFromFormTrimed.status = itemFromForm.status!;
 
     if (!this.isItemsComparedEquals(itemFromFormTrimed, itemFromForm)) {
       this.showMessageIfWasSavedWithBankSpacesAtMargins = true;
@@ -452,6 +456,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
         id: this.item.id,
         name: this.item.name,
         description: this.item.description,
+        status: this.item.status,
       });
       if (showDebug)
         console.log(
@@ -465,6 +470,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
     this.itemForm.patchValue({
       name: '',
       description: '',
+      status: '',
     });
     if (showDebug)
       console.log(

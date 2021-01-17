@@ -1,11 +1,12 @@
 import { DataExchangeService } from './../../../../../shared/services/data-exchange.service';
 import { Component, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, async } from 'rxjs';
 
 import { DestinationCategory } from 'src/app/shared/interfaces/destination-category';
 import { ItemService } from 'src/app/shared/services/item.service';
 import { SERVER_API_V1 } from 'src/app/app.constants';
+import { Status } from 'src/app/shared/classes/status';
 
 @Component({
   selector: 'app-destination-category-view-one-dashboard',
@@ -21,8 +22,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
 
   item!: DestinationCategory;
   items!: DestinationCategory[];
-  itemHeaders: string[] = ['Id', 'Name', 'Description'];
-  itemFields: string[] = ['id', 'name', 'description'];
+  itemHeaders: string[] = ['Id', 'Name', 'Description', 'Status'];
+  itemFields: string[] = ['id', 'name', 'description', 'status'];
   //
   // ###################################################
   //
@@ -106,9 +107,9 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     await this.getItems();
 
     var checkData = setInterval(() => {
-      this.itemPath = SERVER_API_V1 + this.itemDashItem + '/' + this.currentId;
-
       this.currentId = +this.activatedRoute.snapshot.params.id;
+
+      this.itemPath = SERVER_API_V1 + this.itemDashItem + '/' + this.currentId;
 
       this.firstItemOfItemsId = +this.items[0].id!;
 
@@ -132,9 +133,44 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     }, 500);
 
     setTimeout(() => {
-      this.getItem();
+      this.currentId = +this.activatedRoute.snapshot.params.id;
       this.goToIdValue = this.currentId;
+      this.getItem();
     }, 1000);
+  }
+
+  updateItemAndOthers() {
+    setTimeout(() => {
+      this.currentId = +this.activatedRoute.snapshot.params.id;
+      this.goToIdValue = this.currentId;
+      this.getItem();
+    }, 500);
+  }
+
+  updateItemsAndOthersIfItemAdded() {
+    let currentLastId = this.lastItemOfItemsId;
+
+    setTimeout(() => {
+      this.getItems();
+    }, 200);
+
+    setTimeout(() => {
+      if (currentLastId == this.lastItemOfItemsId) {
+        this.getItems();
+      }
+    }, 700);
+
+    setTimeout(() => {
+      if (currentLastId == this.lastItemOfItemsId) {
+        this.getItems();
+      }
+    }, 1500);
+
+    setTimeout(() => {
+      if (currentLastId == this.lastItemOfItemsId) {
+        this.getItems();
+      }
+    }, 3000);
   }
 
   async getItem() {
@@ -175,7 +211,7 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   isItemDeletedFromDataBase: boolean = false;
   itemDeletedIfStillExistInDataBase: DestinationCategory = null!;
 
-  async onDeleteOne() {
+  async onDelete() {
     this.isItemDeletedFromDataBase = false;
 
     (await this.itemService.getItem(this.itemPath)).subscribe(
@@ -197,10 +233,10 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
         );
       }
     );
+  }
 
-    setTimeout(() => {
-      this.itemService.deleteItem(this.itemPath);
-    }, 1000);
+  async onDeleteOne() {
+    this.itemService.deleteItem(this.itemPath);
 
     setTimeout(async () => {
       (await this.itemService.getItem(this.itemPath)).subscribe(
@@ -222,7 +258,7 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
           );
         }
       );
-    }, 1500);
+    }, 800);
   }
 
   // @Input()
@@ -279,6 +315,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     this.router.navigate([
       '../' + this.itemDashItem + '/view-one/' + this.prevId + '/view',
     ]);
+
+    this.updateItemAndOthers();
   }
 
   async onNext() {
@@ -288,6 +326,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     this.router.navigate([
       '../' + this.itemDashItem + '/view-one/' + this.nextId + '/view',
     ]);
+
+    this.updateItemAndOthers();
   }
 
   onFirst() {
@@ -301,6 +341,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
         this.firstItemOfItemsId +
         '/view',
     ]);
+
+    this.updateItemAndOthers();
   }
 
   onLast() {
@@ -314,6 +356,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
         this.lastItemOfItemsId +
         '/view',
     ]);
+
+    this.updateItemAndOthers();
   }
 
   isPrevId: boolean = false;
@@ -434,5 +478,48 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
 
   onNew() {}
 
-  onDuplicate() {}
+  idOfLastItemDuplicated!: number;
+
+  showThisIsADuplicateMessage: boolean = false;
+  thisIsADuplicateMessage!: string;
+
+  async onDuplicate() {
+    this.showThisIsADuplicateMessage = false;
+
+    let itemToDuplicate = Object.assign({}, this.item); // simple clone
+
+    this.idOfLastItemDuplicated = +this.item.id!;
+
+    this.thisIsADuplicateMessage =
+      'This is a new item with a new id, duplicated from item with id ' +
+      this.idOfLastItemDuplicated;
+
+    itemToDuplicate.id = undefined;
+
+    await this.itemService.createItem(this.itemsPath, itemToDuplicate);
+
+    this.updateItemsAndOthersIfItemAdded();
+
+    setTimeout(() => {
+      this.router.navigate([
+        '../' +
+          this.itemDashItem +
+          '/view-one/' +
+          this.lastItemOfItemsId +
+          '/view',
+      ]);
+
+      this.showThisIsADuplicateMessage = true;
+
+      setTimeout(() => {
+        this.getItem();
+      }, 200);
+    }, 1000);
+
+    setTimeout(() => {
+      this.showThisIsADuplicateMessage = false;
+    }, 10000);
+  }
+
+  
 }

@@ -18,8 +18,8 @@ export class DestinationCategoryViewOneComponent implements OnInit {
   itemDashItem: string = 'destination-category';
 
   item!: DestinationCategory;
-  itemHeaders: string[] = ['Id', 'Name', 'Description'];
-  itemFields: string[] = ['id', 'name', 'description'];
+  itemHeaders: string[] = ['Id', 'Name', 'Description', 'Status'];
+  itemFields: string[] = ['id', 'name', 'description', 'status'];
   //
   // ###################################################
   //
@@ -28,8 +28,7 @@ export class DestinationCategoryViewOneComponent implements OnInit {
   pathId!: string;
   pageBrandViewOneItem!: string;
   currentShortRouter!: string; // view-one
-
-
+  i!: number;
 
   //
   // ###################################################
@@ -39,6 +38,8 @@ export class DestinationCategoryViewOneComponent implements OnInit {
     private itemService: ItemService,
     private activatedRoute: ActivatedRoute
   ) {
+    this.i = -1;
+
     this.currentShortRouter = activatedRoute.snapshot.url[0].path; // view
 
     setInterval(() => {
@@ -68,6 +69,7 @@ export class DestinationCategoryViewOneComponent implements OnInit {
     //
     // ###################################################
     //
+    this.i = -1;
     this.currentId = await this.activatedRoute.snapshot.parent?.params.id;
     this.pathId =
       SERVER_API_V1 + this.itemDashItem + '/' + (await this.currentId); //  e.g.:  '/server/api/v1/destination-category/id';

@@ -15,8 +15,8 @@ export class DestinationCategoryViewAllComponent implements OnInit {
   itemDashItem: string = 'destination-category';
   path: string = SERVER_API_V1 + this.itemDashItem; //  e.g.:  '/server/api/v1/destination-category';
   items!: Array<DestinationCategory>;
-  itemHeaders: string[] = ['Id', 'Name', 'Description'];
-  itemFields: string[] = ['id', 'name', 'description'];
+  itemHeaders: string[] = ['Id', 'Name', 'Description', 'Status'];
+  itemFields: string[] = ['id', 'name', 'description', 'status'];
   // ###################################################
   //
 

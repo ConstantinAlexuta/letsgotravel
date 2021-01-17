@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { DestinationCategory } from 'src/app/shared/interfaces/destination-category';
 import { ActivatedRoute, Router } from '@angular/router';
 import { findLastIndex } from 'src/app/shared/functions/findLastIndex';
+import { Status } from 'src/app/shared/classes/status';
 
 @Component({
   selector: 'app-destination-category-add-one',
@@ -34,6 +35,7 @@ export class DestinationCategoryAddOneComponent implements OnInit {
     this.destinationCategoryFormGroup = new FormGroup({
       name: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
+      status: new FormControl('', Validators.required),
     });
 
     this.isSavedSuccessfully = false;
@@ -224,4 +226,17 @@ export class DestinationCategoryAddOneComponent implements OnInit {
   delay(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
+
+  statuses: Status[] = [
+    { value: 'NEW' },
+    { value: 'DRAFT' },
+    { value: 'DUPLICATE' },
+    { value: 'VERIFIED' },
+    { value: 'APPROVED' },
+    { value: 'ACTIVE' },
+    { value: 'INCOMPLETE' },
+    { value: 'DISABLED' },
+    { value: 'ARCHIVED' },
+  ];
+  
 }

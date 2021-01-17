@@ -25,7 +25,21 @@
              />
         </div>
 
-       
+        <div class="form-group">
+            <label>Status</label>
+            <label style="color: red">&nbsp;*</label>
+
+            <select 
+                class="form-control form-select form-select-sm" 
+                formControlName="status"
+                aria-label="Default select example"
+                required 
+                placeholder=""
+                >
+                <option selected>DRAFT</option>
+                <option *ngFor="let status of statuses" value="status.value">{{status.value}}</option>               
+            </select>
+        </div>
 
         <button type="submit" class="btn btn-outline-secondary px-4 mx-4 my-4"
         (click)="onClickSaveTwice()">
