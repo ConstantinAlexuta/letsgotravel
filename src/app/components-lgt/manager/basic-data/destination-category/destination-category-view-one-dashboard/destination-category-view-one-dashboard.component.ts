@@ -1,4 +1,4 @@
-import { DestinationCategoryDataExchangeService } from './../destination-category-data-exchange.service';
+import { DataExchangeService } from './../../../../../shared/services/data-exchange.service';
 import { Component, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -58,7 +58,7 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     private itemService: ItemService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private destinationCategoryDataExchangeService: DestinationCategoryDataExchangeService
+    private dataExchangeService: DataExchangeService
   ) {
     this.viewStatus = 'view';
     this.currentShortRouter = activatedRoute.snapshot.url[0].path; // view-one
@@ -84,7 +84,7 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     // ###################################################
     //
 
-    this.viewComeBackFromCancelEditViewSubscription = this.destinationCategoryDataExchangeService.currentMessageFromCancel.subscribe(
+    this.viewComeBackFromCancelEditViewSubscription = this.dataExchangeService.currentMessageFromCancel.subscribe(
       (value) => {
         this.messageFromCancel = value;
         if (value == true) {
@@ -234,9 +234,7 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   onBack() {
     if (this.messageFromCancel) {
       this.viewStatus = 'view';
-      this.destinationCategoryDataExchangeService.changeMessageFromCancel(
-        false
-      );
+      this.dataExchangeService.changeMessageFromCancel(false);
     }
 
     if (this.viewStatus == 'view') {
@@ -252,12 +250,12 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
   }
 
   onEdit() {
-    this.destinationCategoryDataExchangeService.changeMessageFromCancel(false);
+    this.dataExchangeService.changeMessageFromCancel(false);
     this.viewStatus = 'edit';
   }
 
   onDeleteItemConfirmation() {
-    this.destinationCategoryDataExchangeService.changeMessageFromCancel(false);
+    this.dataExchangeService.changeMessageFromCancel(false);
     this.viewStatus = 'view';
     this.router.navigate(['../' + this.itemDashItem + '/view-all']);
   }
@@ -270,7 +268,7 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
 
   setCommonNavigationSettings() {
     this.previousId = this.currentId;
-    this.destinationCategoryDataExchangeService.changeMessageFromCancel(false);
+    this.dataExchangeService.changeMessageFromCancel(false);
     this.viewStatus = 'view';
   }
 
@@ -433,4 +431,8 @@ export class DestinationCategoryViewOneDashboardComponent implements OnInit {
     if (this.viewComeBackFromCancelEditViewSubscription)
       this.viewComeBackFromCancelEditViewSubscription.unsubscribe();
   }
+
+  onNew() {}
+
+  onDuplicate() {}
 }

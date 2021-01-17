@@ -4,8 +4,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { showDebug } from 'src/app/app.constants';
 import { DestinationCategory } from 'src/app/shared/interfaces/destination-category';
-import { DestinationCategoryDataExchangeService } from '../destination-category-data-exchange.service';
 import { DestinationCategoryService } from '../destination-category.service';
+import { DataExchangeService } from 'src/app/shared/services/data-exchange.service';
 
 @Component({
   selector: 'app-destination-category-edit-one',
@@ -71,7 +71,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
     private destinationCategoryService: DestinationCategoryService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private destinationCategoryDataExchangeService: DestinationCategoryDataExchangeService
+    private dataExchangeService: DataExchangeService
   ) {
     if (showDebug) {
       console.log(
@@ -104,7 +104,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.messageFromCancel = false;
-    this.viewComeBackFromCancelEditViewSubscription = this.destinationCategoryDataExchangeService.currentMessageFromCancel.subscribe(
+    this.viewComeBackFromCancelEditViewSubscription = this.dataExchangeService.currentMessageFromCancel.subscribe(
       (value) => (this.messageFromCancel = value)
     );
 
@@ -513,10 +513,8 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
   onCancelEdit() {
     this.messageFromCancel = true;
-    this.destinationCategoryDataExchangeService.changeMessageFromCancel(
-      this.messageFromCancel
-    );
-    
+    this.dataExchangeService.changeMessageFromCancel(this.messageFromCancel);
+
     // this.isOnCancelEdit.emit(true);
 
     this.router.navigate([
