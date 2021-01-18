@@ -229,8 +229,7 @@ export class DestinationCategoryAddOneComponent implements OnInit {
 
   statuses: Status[] = [
     { value: 'NEW' },
-    { value: 'DRAFT' },
-    { value: 'DUPLICATE' },
+    { value: 'DRAFT' },    
     { value: 'VERIFIED' },
     { value: 'APPROVED' },
     { value: 'ACTIVE' },

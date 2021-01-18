@@ -28,8 +28,6 @@ export class DestinationCategoryViewOneComponent implements OnInit {
   pathId!: string;
   pageBrandViewOneItem!: string;
   currentShortRouter!: string; // view-one
-  i!: number;
-
   //
   // ###################################################
   //
@@ -38,8 +36,6 @@ export class DestinationCategoryViewOneComponent implements OnInit {
     private itemService: ItemService,
     private activatedRoute: ActivatedRoute
   ) {
-    this.i = -1;
-
     this.currentShortRouter = activatedRoute.snapshot.url[0].path; // view
 
     setInterval(() => {
@@ -69,13 +65,14 @@ export class DestinationCategoryViewOneComponent implements OnInit {
     //
     // ###################################################
     //
-    this.i = -1;
     this.currentId = await this.activatedRoute.snapshot.parent?.params.id;
     this.pathId =
       SERVER_API_V1 + this.itemDashItem + '/' + (await this.currentId); //  e.g.:  '/server/api/v1/destination-category/id';
     //
     // ###################################################
     //
+
+    this.showItemListEmptyMessageAfterDelay();
 
     await this.getItem(this.pathId);
 
@@ -91,5 +88,13 @@ export class DestinationCategoryViewOneComponent implements OnInit {
       () =>
         console.log('destination category with path ' + pathId + ' was loaded')
     );
+  }
+
+  isAfterDelay: boolean = false;
+
+  showItemListEmptyMessageAfterDelay() {
+    setTimeout(() => {
+      this.isAfterDelay = true;
+    }, 1500);
   }
 }

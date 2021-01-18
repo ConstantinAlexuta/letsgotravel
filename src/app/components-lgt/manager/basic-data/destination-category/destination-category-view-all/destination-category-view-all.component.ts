@@ -24,6 +24,7 @@ export class DestinationCategoryViewAllComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.getItems();
+    this.showItemListEmptyMessageAfterDelay();
   }
 
   async getItems() {
@@ -39,5 +40,13 @@ export class DestinationCategoryViewAllComponent implements OnInit {
         console.log(this.itemNameItem + ' items was loaded from server');
       }
     );
+  }
+
+  isAfterDelay: boolean = false;
+
+  showItemListEmptyMessageAfterDelay() {
+    setTimeout(() => {
+      this.isAfterDelay = true;
+    }, 1500);
   }
 }

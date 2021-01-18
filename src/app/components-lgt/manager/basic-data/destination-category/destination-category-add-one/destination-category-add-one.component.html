@@ -36,8 +36,8 @@
                 required 
                 placeholder=""
                 >
-                <option selected>DRAFT</option>
-                <option *ngFor="let status of statuses" value="status.value">{{status.value}}</option>               
+                <!-- <option selected>NEW</option> -->
+                <option *ngFor="let status of statuses; let i = index" value="{{status.value}}">{{status.value}}</option>               
             </select>
         </div>
 

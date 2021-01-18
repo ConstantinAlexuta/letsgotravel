@@ -6,6 +6,7 @@ import { showDebug } from 'src/app/app.constants';
 import { DestinationCategory } from 'src/app/shared/interfaces/destination-category';
 import { DestinationCategoryService } from '../destination-category.service';
 import { DataExchangeService } from 'src/app/shared/services/data-exchange.service';
+import { Status } from 'src/app/shared/classes/status';
 
 @Component({
   selector: 'app-destination-category-edit-one',
@@ -50,16 +51,6 @@ export class DestinationCategoryEditOneComponent implements OnInit {
   itemFormNgModel!: DestinationCategory;
 
   itemForm = new FormGroup({
-    id: new FormControl('', [Validators.required, Validators.minLength(1)]),
-    name: new FormControl('', [Validators.required, Validators.minLength(1)]),
-    description: new FormControl('', [
-      Validators.required,
-      Validators.minLength(1),
-    ]),
-    status: new FormControl('', [Validators.required, Validators.minLength(1)]),
-  });
-
-  itemITEMForm = new FormGroup({
     id: new FormControl('', [Validators.required, Validators.minLength(1)]),
     name: new FormControl('', [Validators.required, Validators.minLength(1)]),
     description: new FormControl('', [
@@ -244,6 +235,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
       }
 
       if (this.editedItemIsDifferentThanInitialItem) {
+        // console.log('====TEST================= touched');
         this.destinationCategoryService.replaceDestinationCategory(
           this.itemId,
           this.itemForm.value
@@ -300,7 +292,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
   itemEdited!: DestinationCategory;
 
   isFormItemEqualWithInitialItem(): boolean {
-    this.itemEdited = this.itemForm.value;
+    this.itemEdited = Object.assign({}, this.itemForm.value); // copy object
 
     if (showDebug) {
       console.log(
@@ -411,8 +403,8 @@ export class DestinationCategoryEditOneComponent implements OnInit {
             'isModificationSavedOnServerAfter2000ms() >>>>>> itemEdited is equal with updatedItemFromServer'
           );
         this.isModificationSavedOnServerWithSuccess = true;
-        this.item = this.updatedItemFromServer;
-        this.itemEdited = this.updatedItemFromServer;
+        this.item = Object.assign({}, this.updatedItemFromServer);
+        this.itemEdited = Object.assign({}, this.updatedItemFromServer);
       } else {
         this.isModificationSavedOnServerWithSuccess = false;
       }
@@ -433,7 +425,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
     itemFromFormTrimed.name = itemFromForm.name!.trim();
     itemFromFormTrimed.description = itemFromForm.description!.trim();
-    itemFromFormTrimed.status = itemFromForm.status!;
+    // itemFromFormTrimed.status = itemFromForm.status!.trim();
 
     if (!this.isItemsComparedEquals(itemFromFormTrimed, itemFromForm)) {
       this.showMessageIfWasSavedWithBankSpacesAtMargins = true;
@@ -470,7 +462,7 @@ export class DestinationCategoryEditOneComponent implements OnInit {
     this.itemForm.patchValue({
       name: '',
       description: '',
-      status: '',
+      status: 'NEW',
     });
     if (showDebug)
       console.log(
@@ -529,4 +521,15 @@ export class DestinationCategoryEditOneComponent implements OnInit {
 
     // this.router.navigate(['view-one/' + this.itemId + '/view']);
   }
+
+  statuses: Status[] = [
+    { value: 'NEW' },
+    { value: 'DRAFT' },
+    { value: 'VERIFIED' },
+    { value: 'APPROVED' },
+    { value: 'ACTIVE' },
+    { value: 'INCOMPLETE' },
+    { value: 'DISABLED' },
+    { value: 'ARCHIVED' },
+  ];
 }

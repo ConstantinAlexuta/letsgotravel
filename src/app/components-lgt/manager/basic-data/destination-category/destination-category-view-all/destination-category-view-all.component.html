@@ -1,6 +1,28 @@
+<div *ngIf="!items && isAfterDelay" 
+    class="container my-5"
+    style="align-items: center; align-content: center; align-self: center;">
+    Items list was not been possible to be read it from server.
+    <br>
+    The database server it's possible to be stopped.
+    <br>
+    Or internet connection is not available.
+</div>
 
-<div class="container" style="align-items: center; align-content: center; align-self: center;">
-    <div class="table table-responsive px-3 py-4" >
+
+<div *ngIf="items && items.length == 0 && isAfterDelay" 
+    class="container my-5" 
+    style="align-items: center; align-content: center; align-self: center;">
+    Items list is empty. 
+    <br>
+    Add the first item by selecting the "Add one" option.
+</div>
+
+
+<div *ngIf="items && items.length != 0" 
+    class="container" 
+    style="align-items: center; align-content: center; align-self: center;">
+    
+    <div class="table table-responsive px-3 py-4 mt-1" >
     
         <div class="table mb-0">
     
@@ -19,7 +41,9 @@
                     <td>{{item.id}}</td>
 
                     <td [routerLink]="['../view-one', item.id]"
-                        style="color: blue;">
+                        style="color: blue;"
+                        [title]="item.name! + ' >>> click to see more details'"
+                        >
                         {{item.name}}
                     </td>
 
@@ -34,6 +58,19 @@
         </div>
     
     </div>
+
+    <div class="ml-3 mb-5">
+
+        <div *ngIf="items && items.length == 1">
+            Is only one item in this list.
+        </div>
+
+        <div *ngIf="items && items.length > 1">
+            Are a total of {{items.length}} items in this list.
+        </div>
+        
+    </div>
+
 </div>
 
 

@@ -1,4 +1,9 @@
 
+
+this.itemForm.valid >>> {{this.itemForm.valid}}
+<br> editedItemIsDifferentThanInitialItem >>> {{editedItemIsDifferentThanInitialItem}}
+<br> itemForm.value >>> {{itemForm.value | json}}
+
 <div class="container pb-4 mb-4">
 
     <form [formGroup]="itemForm" (ngSubmit)="submitForm()">
@@ -60,13 +65,17 @@
                     (required)
                 </span>
             </label>
-            <input class="form-control" name="status" id="status" type="text" formControlName="status"
-            placeholder=""
-            (click)="ifModifiedEnableSaveButton()"
-            value=""
-            >
-        </div>
 
+            <select class="form-control form-select form-select-sm" formControlName="status" aria-label="Default select example"
+                required placeholder=""
+                name="status" id="status"
+                (click)="ifModifiedEnableSaveButton()"
+                >
+                <!-- <option selected>NEW</option> -->
+                <option *ngFor="let status of statuses; let i = index" value="{{status.value}}">{{status.value}}</option>
+            </select>
+        </div>
+      
         <div class="mt-5 mb-4">
             <button type="submit" class="btn btn-outline-secondary px-4 mx-4 py-2 my-2" 
                 [disabled]="!itemForm.dirty">
